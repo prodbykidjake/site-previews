@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Preview</title>
+<!--
+  SiteLeads demo template — one file, every niche.
+
+  Fastest way to make a demo for a lead: no editing, just a link with URL params:
+    index.html?niche=pdr&name=Ace%20Dent%20Pros&phone=6145550123&city=Columbus&rating=4.9&reviews=87
+
+  Params: niche, name, phone, city, areas (comma list), rating, reviews, owner, years
+  Or edit the SITE block below for a fully custom page (real reviews, photos).
+  Niche keys are listed in NICHES below; open the file with no params to flip through them.
+-->
+<style>
+:root{
+  --bg:#f7f7f5; --surface:#ffffff; --ink:#16181d; --muted:#5d6370; --line:#e4e4e0;
+  --hero:#121418; --hero-ink:#f4f4f2; --accent:#e8590c; --accent-ink:#fff;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:76px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.banner{background:#fff4d6;color:#5a4300;font-size:13px;text-align:center;padding:8px 16px;border-bottom:1px solid #f0dfa8}
+.switcher{background:#1d2027;color:#cfd3dc;font-size:13px;padding:8px 16px;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.switcher select{font:inherit;padding:4px 8px;border-radius:8px;border:0}
+header.top{position:sticky;top:0;z-index:5;background:rgba(18,20,24,.92);backdrop-filter:blur(8px);color:var(--hero-ink)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logo span{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:999px;padding:12px 22px;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:rgba(255,255,255,.1);color:var(--hero-ink)}
+.btn-sm{padding:8px 16px;font-size:14px}
+.hero{background:var(--hero);color:var(--hero-ink);padding:64px 0 72px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--accent);opacity:.18;filter:blur(40px)}
+.hero .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:#c9ccd3;background:rgba(255,255,255,.08);padding:6px 12px;border-radius:999px}
+.stars{color:#ffc53d;letter-spacing:1px}
+.hero h1{font-size:clamp(32px,6vw,54px);line-height:1.08;letter-spacing:-.03em;margin:18px 0 14px;max-width:780px}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#c9ccd3;max-width:620px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:#aeb3bd}
+.trust b{color:var(--hero-ink)}
+section{padding:64px 0}
+h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin-bottom:10px}
+.sub{color:var(--muted);max-width:620px;margin-bottom:32px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card .ic{width:40px;height:40px;border-radius:10px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.feature{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feature .wrap{display:grid;gap:40px;grid-template-columns:1fr 1.1fr;align-items:start}
+.checks{list-style:none;padding:0;display:grid;gap:10px;margin-top:18px}
+.checks li{padding-left:30px;position:relative}
+.checks li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;display:grid;place-items:center;font-weight:800}
+form.req{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:14px}
+form.req .tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input,select,textarea{font:inherit;padding:11px 12px;border-radius:10px;border:1px solid #d3d3ce;background:#fff;width:100%}
+textarea{min-height:90px;resize:vertical}
+.row2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.pkgs{display:grid;gap:10px}
+.pkg{display:flex;gap:12px;align-items:flex-start;border:1px solid #d3d3ce;border-radius:10px;padding:12px;background:#fff;cursor:pointer;font-weight:500}
+.pkg input{width:auto;margin-top:4px}
+.pkg b{display:block}
+.pkg small{color:var(--muted)}
+.drop{border:2px dashed #c9c9c3;border-radius:10px;padding:18px;text-align:center;color:var(--muted);font-weight:500;background:#fff}
+.note{font-size:13px;color:var(--muted)}
+.ok{display:none;background:#e6f6ea;color:#1c5d2c;border-radius:10px;padding:12px;font-size:14px}
+.reviews .card p{color:var(--ink)}
+.reviews .who{margin-top:12px;font-size:14px;color:var(--muted)}
+.ph{border-style:dashed;box-shadow:none;background:transparent}
+.area{display:flex;flex-wrap:wrap;gap:8px}
+.area span{background:var(--surface);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:15px}
+.steps{counter-reset:s}
+.steps .card h3:before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;margin-right:10px}
+.cta-band{background:var(--hero);color:var(--hero-ink);text-align:center}
+.cta-band p{color:#c9ccd3;margin:6px 0 24px}
+footer{padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:6;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;gap:10px}
+.callbar .btn{flex:1}
+@media (min-width:860px){.callbar{display:none} body{padding-bottom:0}}
+@media (max-width:860px){.feature .wrap{grid-template-columns:1fr}.hide-sm{display:none}}
+@media (max-width:480px){.row2{grid-template-columns:1fr}.hero{padding:44px 0 52px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ===================== EDIT PER LEAD (or use URL params) ===================== */
+/*SITE-START*/const SITE = {
+ "niche": "junk-removal",
+ "name": "Move N Trash Hauling & Junk Removal",
+ "phone": "6265945488",
+ "rating": 5.0,
+ "reviewCount": 67,
+ "city": "La Puente",
+ "owner": "Juan",
+ "areas": [
+  "La Puente",
+  "West Covina",
+  "Hacienda Heights",
+  "Baldwin Park",
+  "Covina",
+  "El Monte"
+ ],
+ "hours": [
+  [
+   "Every day",
+   "Open 24 hours"
+  ]
+ ],
+ "custom": {
+  "services": [
+   [
+    "Yard debris",
+    "Palm fronds, branches, and green waste hauled away."
+   ],
+   [
+    "Furniture & junk",
+    "Couches, mattresses, and household junk."
+   ],
+   [
+    "Cleanouts",
+    "Garages, backyards, and full properties."
+   ],
+   [
+    "Same-day hauling",
+    "Open 24 hours, 7 days."
+   ]
+  ],
+  "trust": [
+   "Open 24/7",
+   "Same-day pickup"
+  ]
+ },
+ "reviews": [
+  {
+   "text": "I highly recommend Juan and his team.",
+   "who": "Jessica A."
+  },
+  {
+   "text": "Juan did a great job!",
+   "who": "Vudou"
+  }
+ ],
+ "builtBy": "SiteLeads",
+ "prebuilt": true
+};/*SITE-END*/
+
+/* ===================== NICHE PRESETS ===================== */
+// feature.type: dispatch | photos | packages | schedule | select
+const NICHES = {
+  "mobile-mechanic": { label:"Mobile mechanic", sample:"Driveway Auto Repair", accent:"#e8590c",
+    h1:"Car trouble? We come to you.", lead:"Mobile mechanic serving {city}. Repairs at your home, work, or roadside — no tow, no waiting room.",
+    services:[["Diagnostics","Check-engine lights and no-starts, diagnosed where the car sits."],["Brakes","Pads, rotors, and calipers replaced in your driveway."],["Batteries & starters","Dead battery? We test, replace, and get you moving."],["Maintenance","Oil changes, belts, and fluids on your schedule."]],
+    feature:{type:"dispatch", title:"Request roadside help", pitch:"Stuck somewhere? Send your location and what's going on, and we'll call you right back with an ETA.", bullets:["Tell us the vehicle and the problem","Share your location in one tap","Get a callback with an ETA and price"], items:["Won't start","Flat or tire issue","Brakes","Overheating","Check engine light","Other"]}},
+  "pdr": { label:"Paintless dent repair (PDR)", sample:"Ace Dent Pros", accent:"#2563eb",
+    h1:"Dents gone. Paint untouched.", lead:"Paintless dent repair in {city}. Hail damage, door dings, and creases fixed without body filler or repainting.",
+    services:[["Door dings","Parking-lot dings gone in under an hour."],["Hail damage","Full hail repair, insurance claims welcome."],["Creases","Larger dents and body-line creases."],["Mobile service","We come to your home or office."]],
+    feature:{type:"photos", title:"Upload damage photos for a quote", pitch:"Snap a few photos of the dent and we'll send a price, usually the same day.", bullets:["Two or three photos from different angles","Rough size of each dent","Price back by text"]}},
+  "garage-door": { label:"Garage door repair", sample:"Overhead Door Fix", accent:"#dc2626",
+    h1:"Garage door stuck? Fixed today.", lead:"Fast garage door repair across {city}. Springs, openers, cables, and off-track doors.",
+    services:[["Broken springs","Torsion and extension springs replaced safely."],["Openers","Repair or install of all major brands."],["Off-track doors","Realigned, rollers and cables replaced."],["New doors","Quotes on new doors and installs."]],
+    feature:{type:"dispatch", title:"Request same-day service", pitch:"Tell us what's wrong and we'll call back with a time window.", bullets:["Pick the problem","Add a photo if you want","Same-day callback"], items:["Won't open","Broken spring","Opener not working","Off track","Noisy","New door quote"]}},
+  "wildlife-removal": { label:"Wildlife removal", sample:"Critter Control Pros", accent:"#15803d",
+    h1:"Animals in your attic? We'll get them out.", lead:"Wildlife removal in {city}. Raccoons, squirrels, bats, and more, plus entry-point repair so they don't come back.",
+    services:[["Inspection","Find how they're getting in."],["Removal","Trapping and exclusion done right."],["Exclusion & repair","Seal entry points for good."],["Cleanup","Droppings and damaged insulation removed."]],
+    feature:{type:"dispatch", title:"Emergency service request", pitch:"Hearing something right now? Send a request and we'll prioritize it.", bullets:["What animal and where","Is it inside the living space?","Fast callback"], items:["Raccoon","Squirrel","Bats","Birds","Snake","Not sure"]}},
+  "pool-leak": { label:"Pool leak detection", sample:"Clearwater Leak Detection", accent:"#0891b2",
+    h1:"Losing water? We find the leak.", lead:"Pool and spa leak detection in {city}. Pressure testing, dye testing, and repair, usually without draining.",
+    services:[["Leak detection","Pressure and dye testing on every line."],["Plumbing repair","Underground line repair."],["Shell & tile","Cracks and fittings sealed."],["Equipment","Pump, filter, and valve leaks."]],
+    feature:{type:"photos", title:"Request a leak inspection", pitch:"Tell us how much water you're losing and send a photo of the pool.", bullets:["Inches lost per day","When it started","Photo of the pool and equipment"]}},
+  "crawl-space": { label:"Crawl space specialist", sample:"Dry Ground Crawl Space", accent:"#7c3aed",
+    h1:"A dry, healthy crawl space.", lead:"Crawl space encapsulation, moisture control, and repair for {city} homes.",
+    services:[["Encapsulation","Vapor barrier and sealing."],["Dehumidifiers","Humidity under control year-round."],["Mold & moisture","Treatment and prevention."],["Structural","Sagging floors and joist support."]],
+    feature:{type:"photos", title:"Free crawl space inspection", pitch:"Send a photo or two from your crawl space hatch and book a free look.", bullets:["Photos from the access door","Any musty smell or soft floors?","Free inspection visit"]}},
+  "concrete-leveling": { label:"Concrete leveling", sample:"Level Up Concrete", accent:"#64748b",
+    h1:"Sunken concrete, lifted level.", lead:"Concrete leveling in {city} for driveways, sidewalks, patios, and garage floors, at a fraction of replacement cost.",
+    services:[["Driveways","Lift sunken slabs back to level."],["Sidewalks","Remove trip hazards."],["Patios & steps","Fix sinking and gaps."],["Garage floors","Level and seal."]],
+    feature:{type:"photos", title:"Upload photos for an estimate", pitch:"Send photos of the sunken area and we'll estimate it, no visit needed.", bullets:["A wide photo and a close-up","Rough size of the area","Estimate by text"]}},
+  "mobile-rv": { label:"Mobile RV repair", sample:"Road Ready RV Service", accent:"#b45309",
+    h1:"RV repair at your campsite or driveway.", lead:"Mobile RV technician serving {city}. Electrical, plumbing, appliances, roofs, and slide-outs.",
+    services:[["Electrical","Batteries, converters, and shore power."],["Appliances","Fridges, AC, furnaces, and water heaters."],["Roofs & seals","Leak repair and resealing."],["Slides & awnings","Slide-out and awning repair."]],
+    feature:{type:"dispatch", title:"Request a service call", pitch:"Tell us your RV type, the problem, and where you're parked.", bullets:["RV type and year","Where you're parked","Callback with a time"], items:["Electrical","AC / furnace","Fridge","Plumbing / water","Roof leak","Slide-out / awning"]}},
+  "estate-cleanout": { label:"Estate cleanout", sample:"Fresh Start Estate Services", accent:"#475569",
+    h1:"Estate cleanouts, handled with care.", lead:"Full-service estate and home cleanouts in {city}. Sorting, donation, hauling, and a broom-clean finish.",
+    services:[["Full cleanouts","Whole homes, attics, and garages."],["Sorting & donation","Keep, donate, sell, or toss."],["Hauling","All debris removed."],["Realtor-ready","Broom clean for listing."]],
+    feature:{type:"photos", title:"Upload photos for a quote", pitch:"Send photos of the rooms and we'll quote the job without a walkthrough.", bullets:["A photo of each room","Any stairs or tight access?","Quote by text or email"]}},
+  "epoxy-flooring": { label:"Epoxy flooring", sample:"Pro Coat Floors", accent:"#0f766e",
+    h1:"Garage floors that look showroom-new.", lead:"Epoxy and polyaspartic floor coatings in {city}. Garages, basements, and shops.",
+    services:[["Garage floors","Flake and metallic systems."],["Basements","Moisture-resistant coatings."],["Commercial","Shops and warehouses."],["Repair & prep","Crack repair and grinding."]],
+    feature:{type:"packages", title:"Choose a finish and book a consult", pitch:"Pick the look you want and we'll come measure for an exact price.", bullets:["Pick a finish","Choose a consult time","Exact quote on site"], items:[["Flake finish","Most popular, hides wear"],["Metallic","High-end showroom look"],["Solid color","Clean and simple"]]}},
+  "mobile-detailing": { label:"Mobile detailing", sample:"Shine Mobile Detailing", accent:"#9333ea",
+    h1:"Detailing that comes to your driveway.", lead:"Mobile car detailing in {city}. We bring the water and power.",
+    services:[["Interior","Deep clean, shampoo, and odor removal."],["Exterior","Hand wash, clay, and wax."],["Ceramic coating","Long-term paint protection."],["Fleet","Business vehicles on a schedule."]],
+    feature:{type:"packages", title:"Choose a package and book", pitch:"Pick a package and a time. We'll confirm by text.", bullets:["Pick a package","Choose a day","We show up fully equipped"], items:[["Express","Exterior wash and interior vacuum"],["Full detail","Inside and out, most popular"],["Ceramic","Full detail plus ceramic coating"]]}},
+  "junk-removal": { label:"Junk removal", sample:"Haul It Away", accent:"#16a34a",
+    h1:"Point at it. We haul it.", lead:"Junk removal in {city}. Furniture, appliances, yard waste, and full cleanouts, often same day.",
+    services:[["Furniture","Couches, mattresses, and more."],["Appliances","Fridges, washers, and dryers."],["Cleanouts","Garages, basements, and estates."],["Yard debris","Branches, sheds, and fencing."]],
+    feature:{type:"photos", title:"Upload photos for an instant quote", pitch:"Snap the pile and get a price back fast. No visit needed.", bullets:["Photo of everything going","Ground floor or stairs?","Price back by text"]}},
+  "roofer": { label:"Roofer", sample:"Summit Roofing", accent:"#b91c1c",
+    h1:"Roof repair and replacement you can trust.", lead:"Roofing contractor serving {city}. Repairs, replacements, and storm damage.",
+    services:[["Repairs","Leaks, flashing, and missing shingles."],["Replacement","Full tear-off and new roof."],["Storm damage","Insurance claim help."],["Inspections","Free roof inspections."]],
+    feature:{type:"photos", title:"Upload photos and request an estimate", pitch:"Send photos of the damage or the leak and we'll schedule a free estimate.", bullets:["Photos of the roof or ceiling stain","When it started","Free estimate visit"]}},
+  "mobile-notary": { label:"Mobile notary", sample:"On-the-Go Notary", accent:"#1d4ed8",
+    h1:"A notary who comes to you.", lead:"Mobile notary and loan signing agent serving {city}. Homes, hospitals, offices, evenings and weekends.",
+    services:[["General notary","Affidavits, POAs, and more."],["Loan signings","Certified signing agent."],["Hospitals & care","Bedside signings."],["After hours","Evenings and weekends."]],
+    feature:{type:"schedule", title:"Schedule an appointment", pitch:"Pick a time and place and we'll confirm by text.", bullets:["What you need notarized","Where and when","Confirmation by text"]}},
+  "appliance-repair": { label:"Appliance repair", sample:"FixRight Appliance", accent:"#0369a1",
+    h1:"Appliance repair, fast and fair.", lead:"Appliance repair in {city}. All major brands, most repairs on the first visit.",
+    services:[["Refrigerators","Not cooling, leaking, or noisy."],["Washers & dryers","Won't spin, drain, or heat."],["Ovens & ranges","Burners and igniters."],["Dishwashers","Not draining or cleaning."]],
+    feature:{type:"select", title:"Select your appliance and describe the issue", pitch:"Tell us what's broken and we'll call with a time and a diagnostic price.", bullets:["Pick the appliance","Describe what's wrong","Callback with a time"], items:["Refrigerator","Washer","Dryer","Oven / range","Dishwasher","Other"]}},
+  "pet-grooming": { label:"Mobile pet grooming", sample:"Curbside Paws Grooming", accent:"#db2777",
+    h1:"Grooming in our van, at your curb.", lead:"Mobile dog and cat grooming in {city}. One-on-one, no cages, no car rides.",
+    services:[["Full groom","Bath, haircut, nails, and ears."],["Bath & tidy","Between full grooms."],["Nail trims","Quick visits."],["De-shedding","For double coats."]],
+    feature:{type:"packages", title:"Choose a package and book", pitch:"Tell us about your pet and pick a time.", bullets:["Breed and size","Pick a package","We pull up at your curb"], items:[["Full groom","Bath, cut, nails, and ears"],["Bath & tidy","Bath, face, feet, and nails"],["Nails only","Quick trim"]]}},
+  "pool-service": { label:"Pool service", sample:"Blue Wave Pool Care", accent:"#0284c7",
+    h1:"A clean pool, every week.", lead:"Weekly pool service and repair in {city}. Chemicals, cleaning, and equipment, all handled.",
+    services:[["Weekly service","Chemicals, skim, vacuum, and brush."],["Green-to-clean","Algae cleanup."],["Equipment","Pumps, filters, and heaters."],["Openings & closings","Seasonal service."]],
+    feature:{type:"packages", title:"Ask about a maintenance plan", pitch:"Pick a plan and we'll send a quote for your pool.", bullets:["Pool size and type","Pick a plan","Quote by text"], items:[["Weekly full service","Chemicals and cleaning"],["Chemicals only","Balanced every week"],["One-time cleanup","Green-to-clean"]]}},
+};
+
+/* ===================== RENDER (no need to edit below) ===================== */
+const q = new URLSearchParams(location.search);
+const hasParams = [...q.keys()].length > 0;
+const S = {...SITE};
+if (q.get("niche")) S.niche = q.get("niche");
+for (const k of ["name","phone","city","owner","years","rating"]) if (q.get(k)) S[k] = q.get(k);
+if (q.get("reviews")) S.reviewCount = +q.get("reviews");
+if (q.get("areas")) S.areas = q.get("areas").split(",").map(s=>s.trim()).filter(Boolean);
+const N = {...(NICHES[S.niche] || NICHES["mobile-mechanic"]), ...(S.custom || {})};
+const name = S.name || N.sample;
+const city = S.city || "your area";
+const fill = s => s.replaceAll("{city}", city);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const digits = String(S.phone||"").replace(/\D/g,"");
+const phonePretty = digits.length===10 ? `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}` : (digits || "(555) 555-0123");
+const tel = `tel:${digits || "5555550123"}`;
+const sms = `sms:${digits || "5555550123"}`;
+document.documentElement.style.setProperty("--accent", N.accent);
+document.title = `${name} | ${N.label} in ${city}`;
+const words = name.split(" ");
+const logo = words.length>1 ? `${esc(words.slice(0,-1).join(" "))} <span>${esc(words.at(-1))}</span>` : esc(name);
+const rating = Number(S.rating)||0;
+const ratingStr = rating ? rating.toFixed(1) : "5.0";
+const starStr = "★★★★★".slice(0, Math.round(rating)) || "★★★★★";
+
+function featureForm(f){
+  const contact = `<div class="row2"><label>Name<input placeholder="Your name"></label><label>Phone<input type="tel" placeholder="Best number"></label></div>`;
+  let mid = "";
+  if (f.type==="dispatch" || f.type==="select"){
+    mid = `<label>${f.type==="select"?(f.selectLabel||"Appliance"):"What's going on?"}<select>${f.items.map(i=>`<option>${esc(i)}</option>`).join("")}</select></label>`
+        + (f.type==="dispatch" ? `<label>Your location<input placeholder="Address or cross streets"></label>` : "")
+        + `<label>Details<textarea placeholder="${f.placeholder||(f.type==="select"?"Brand, model, and what it's doing":"Vehicle, year, anything we should know")}"></textarea></label>`;
+  } else if (f.type==="photos"){
+    mid = `<div class="drop">Tap to add photos<br><small>JPG or PNG, up to 5</small></div><label>Describe it<textarea placeholder="Size, location, when it happened"></textarea></label><label>Address or ZIP<input></label>`;
+  } else if (f.type==="packages"){
+    mid = `<div class="pkgs">${f.items.map((p,i)=>`<label class="pkg"><input type="radio" name="pkg" ${i===1||f.items.length===1?"checked":""}><span><b>${esc(p[0])}</b><small>${esc(p[1])}</small></span></label>`).join("")}</div><div class="row2"><label>Preferred day<input type="date"></label><label>Time<select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label></div>`;
+  } else if (f.type==="schedule"){
+    mid = `<label>What needs notarizing?<input placeholder="e.g. power of attorney, loan docs"></label><div class="row2"><label>Date<input type="date"></label><label>Time<input type="time"></label></div><label>Meeting address<input placeholder="Home, office, hospital…"></label>`;
+  }
+  return `<form class="req" onsubmit="event.preventDefault();this.querySelector('.ok').style.display='block'">
+    <div class="tag">${esc(f.title)}</div>${mid}${contact}
+    <button class="btn btn-accent" type="submit">Send request</button>
+    <div class="ok">Demo only: on the live site this goes straight to ${esc(name)}'s phone and email.</div>
+    <p class="note">Prefer to talk? Call <a href="${tel}">${phonePretty}</a>.</p></form>`;
+}
+
+const reviewsHTML = S.reviews.length
+  ? S.reviews.map(r=>`<div class="card"><div class="stars">★★★★★</div><p>“${esc(r.text)}”</p><div class="who">${esc(r.who)} · Google review</div></div>`).join("")
+  : [1,2,3].map(()=>`<div class="card ph"><div class="stars">★★★★★</div><p class="note">Your real Google reviews show here.</p></div>`).join("");
+
+const areas = S.areas.length ? S.areas : [city, "and surrounding areas"];
+
+const switcher = !hasParams && !S.prebuilt ? `<div class="switcher">Template preview, niche:
+  <select onchange="location.search='?niche='+this.value">${Object.entries(NICHES).map(([k,v])=>`<option value="${k}" ${k===S.niche?"selected":""}>${esc(v.label)}</option>`).join("")}</select></div>` : "";
+
+document.getElementById("app").innerHTML = `
+${switcher}
+<div class="banner">Preview built for ${esc(name)} by ${esc(S.builtBy)}. Not a live site, and not affiliated with ${esc(name)} until approved.</div>
+<header class="top"><div class="wrap"><div class="logo">${logo}</div>
+  <a class="btn btn-accent btn-sm" href="${tel}">Call ${phonePretty}</a></div></header>
+
+<div class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="stars">${starStr}</span> ${ratingStr} rated${S.reviewCount?` · ${S.reviewCount} reviews`:""} · ${esc(city)}</div>
+  <h1>${esc(N.h1)}</h1>
+  <p class="lead">${esc(fill(N.lead))}</p>
+  <div class="ctas"><a class="btn btn-accent" href="${tel}">Call now</a><a class="btn btn-ghost" href="#request">${esc(N.feature.title)}</a></div>
+  <div class="trust"><span><b>Locally owned</b>${S.owner?` by ${esc(S.owner)}`:""}</span>${S.years?`<span><b>${esc(S.years)}+ years</b> experience</span>`:""}${(N.trust||["Upfront pricing","Fast response"]).map((t,i)=>`<span class="${i?"hide-sm":""}"><b>${esc(t.split(" ")[0])}</b> ${esc(t.split(" ").slice(1).join(" "))}</span>`).join("")}</div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>What we do</h2><p class="sub">${esc(N.label)} services in ${esc(city)} and nearby.</p>
+  <div class="grid">${N.services.map(([t,d])=>`<div class="card"><div class="ic">${esc(t[0])}</div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div>
+</div></section>
+
+<section class="feature" id="request"><div class="wrap">
+  <div><h2>${esc(N.feature.title)}</h2><p class="sub" style="margin-bottom:0">${esc(N.feature.pitch)}</p>
+    <ul class="checks">${N.feature.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul></div>
+  ${featureForm(N.feature)}
+</div></section>
+
+<section class="reviews"><div class="wrap">
+  <h2>What customers say</h2><p class="sub">${ratingStr} stars${S.reviewCount?` from ${S.reviewCount} reviews`:""}.</p>
+  <div class="grid">${reviewsHTML}</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>How it works</h2><p class="sub">Simple from first call to finished job.</p>
+  <div class="grid steps">
+    <div class="card"><h3>Reach out</h3><p>Call, text, or send the form above.</p></div>
+    <div class="card"><h3>Get a price</h3><p>Clear pricing before any work starts.</p></div>
+    <div class="card"><h3>We handle it</h3><p>Done right and cleaned up after.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="grid" style="align-items:start">
+    <div><h2>Service area</h2><p class="sub">Proudly serving:</p>
+      <div class="area">${areas.map(a=>`<span>${esc(a)}</span>`).join("")}</div></div>
+    ${S.hours && S.hours.length ? `<div class="card"><h3>Hours</h3>${S.hours.map(([d,t])=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span>${esc(d)}</span><b>${esc(t)}</b></div>`).join("")}${S.address?`<p class="note" style="margin-top:12px">${esc(S.address)}</p>`:""}</div>` : ""}
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>Ready when you are.</h2><p>Call or text ${esc(name)} today.</p>
+  <a class="btn btn-accent" href="${tel}">Call ${phonePretty}</a>
+</div></section>
+<footer>© ${new Date().getFullYear()} ${esc(name)} · ${esc(N.label)} · ${esc(city)}</footer>
+<div class="callbar"><a class="btn btn-accent" href="${tel}">Call</a><a class="btn" style="background:#eef0f3" href="${sms}">Text</a><a class="btn" style="background:#eef0f3" href="#request">Request</a></div>
+`;
+</script>
+</body>
+</html>
