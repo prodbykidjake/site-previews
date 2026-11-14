@@ -115,9 +115,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* split-word reveal */
 .sw-line{display:inline}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
-.w>span{display:inline-block;transform:translateY(105%);animation:wup 1s var(--ease) forwards;animation-delay:calc(.25s + var(--i)*.06s)}
+.w>span{display:inline-block;transform:translateY(105%);animation:wup 1s var(--ease) forwards;animation-delay:calc(1.1s + var(--i)*.06s)}
 @keyframes wup{to{transform:none}}
-.fade-in{opacity:0;animation:fin 1s var(--ease) .7s forwards}
+.fade-in{opacity:0;animation:fin 1s var(--ease) 1.5s forwards}
 @keyframes fin{to{opacity:1}}
 
 /* ---------- marquee ---------- */
@@ -275,6 +275,38 @@ form.req .btn{width:100%}
   body{padding-bottom:84px}
   .hd .btn-sm{display:none}
 }
+
+
+/* ---------- polish: intro, live status, review cards, photo fades, grain ---------- */
+.intro{position:fixed;inset:0;z-index:200;background:var(--deep);color:var(--on-deep);display:grid;place-items:center;padding:24px;animation:introUp 1s var(--ease) .8s forwards;pointer-events:none}
+.intro span{display:block;overflow:hidden;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);text-transform:var(--case);font-size:clamp(44px,9vw,132px);line-height:1.02;text-align:center;padding-bottom:.06em}
+[data-theme=garage] .intro span{font-weight:700}
+.intro span i{display:block;font-style:normal;transform:translateY(105%);animation:wup .75s var(--ease) .05s forwards}
+.intro::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--on-deep);opacity:.85;transform-origin:0 50%;transform:scaleX(0);animation:bar .8s var(--ease) forwards}
+@keyframes introUp{to{transform:translateY(-101%)}}
+@keyframes bar{to{transform:scaleX(1)}}
+.seen .intro{display:none}
+.seen .w>span{animation-delay:calc(.15s + var(--i)*.06s)}
+.seen .fade-in{animation-delay:.55s}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);color:#fff;white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:#3ddc84;animation:pulse 2s infinite}
+.status.closed i{background:#ff7a6b;animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.65)}70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.hw-chip,.hc-badge{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.hc-badge{align-items:flex-end}
+.hours .h-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.hours .h-top h3{margin:0}
+.hours .status{background:var(--bg);color:var(--ink);border-color:var(--line);backdrop-filter:none;-webkit-backdrop-filter:none}
+.q cite{display:flex;align-items:center;gap:14px}
+.av{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:700 18px var(--body)}
+.q cite b{display:block;line-height:1.3}
+.q cite small{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;margin-top:2px}
+.q cite small svg{width:14px;height:14px}
+img.lz{opacity:0;transition:opacity .9s var(--ease)}
+img.lz.ld{opacity:1}
+[data-theme=garage] body::after,[data-theme=dent] body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.intro{display:none}img.lz{opacity:1}}
 
 /* scroll reveals */
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
@@ -498,16 +530,44 @@ function featureForm(f){
     <div class="ok">Preview only. On the live site this goes straight to ${esc(name)}'s phone.</div></form>`;
 }
 
+
+/* live open/closed status from the listed hours (Los Angeles time) */
+function openStatus(){
+  if(!hours.length) return null;
+  const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const dayIdx=x=>DN.indexOf(x.trim().slice(0,3));
+  const daysOf=spec=>{ if(/every day/i.test(spec)) return [0,1,2,3,4,5,6]; const m=spec.split(/[–-]/); if(m.length===2){ const a=dayIdx(m[0]), b=dayIdx(m[1]); if(a<0||b<0) return []; const out=[]; for(let d=a;;d=(d+1)%7){ out.push(d); if(d===b) break; } return out; } const i=dayIdx(spec); return i<0?[]:[i]; };
+  const tm=x=>{ const m=String(x||"").trim().match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i); if(!m) return null; let h=+m[1]%12; if(/pm/i.test(m[3])) h+=12; return h*60+(+m[2]||0); };
+  const sched={};
+  hours.forEach(([spec,t])=>daysOf(spec).forEach(d=>{ if(/24 hours/i.test(t)) sched[d]="all"; else if(/closed/i.test(t)) sched[d]=null; else { const [a,b]=t.split(/[–-]/); const o=tm(a), c=tm(b); if(o!=null&&c!=null) sched[d]=[o,c]; } }));
+  const now=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Los_Angeles"}));
+  const d=now.getDay(), m=now.getHours()*60+now.getMinutes();
+  const fmt=x=>{ const h=Math.floor(x/60), mm=x%60; return (h%12||12)+(mm?":"+String(mm).padStart(2,"0"):"")+(h>=12?" PM":" AM"); };
+  const today=sched[d];
+  if(today==="all") return {open:true,text:"Open now, 24 hours"};
+  if(today && m>=today[0] && m<today[1]) return {open:true,text:`Open now until ${fmt(today[1])}`};
+  for(let k=0;k<8;k++){ const dd=(d+k)%7, x=sched[dd]; if(!x) continue;
+    const when = k===0 ? "" : k===1 ? "tomorrow " : DN[dd]+" ";
+    if(x==="all"){ if(k>0) return {open:false,text:`Closed now, opens ${when.trim()}`}; continue; }
+    if(k===0 && m<x[0]) return {open:false,text:`Closed now, opens ${fmt(x[0])}`};
+    if(k>0) return {open:false,text:`Closed now, opens ${when}${fmt(x[0])}`}; }
+  return null;
+}
+const ST = openStatus();
+const statusPill = ST ? `<span class="status ${ST.open?"":"closed"}"><i></i>${ST.text}</span>` : "";
+const gIcon = `<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
+try { if (sessionStorage.getItem("seen-intro")) document.documentElement.classList.add("seen"); sessionStorage.setItem("seen-intro","1"); } catch(e) {}
+
 /* ---------- hero ---------- */
 const chip = `<span class="chip"><span class="st">${stars}</span> ${ratingStr}${S.reviewCount?` · ${S.reviewCount} Google reviews`:""}</span>`;
 const heroMedia = cls => hero
-  ? `<img class="kb" src="${img(hero,2200)}" alt="${esc(name)}" fetchpriority="high">`
+  ? `<img class="kb lz" src="${img(hero,2200)}" alt="${esc(name)}" fetchpriority="high">`
   : `<div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 80% 0%,color-mix(in srgb,var(--accent) 40%,transparent),transparent 60%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),repeating-linear-gradient(0deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),#111"></div>`;
 
 const heroHTML = DARK ? `
 <section class="hw">
   <div class="hw-media on-photo">${heroMedia()}
-    <div class="hw-chip fade-in">${chip}</div>
+    <div class="hw-chip fade-in">${chip}${statusPill}</div>
     <div class="hw-side fade-in mono" style="color:#fff;opacity:.85">${esc(N.label||"")}<br>${esc(city)}</div>
     <div class="wm" id="wm"><span>${esc(short)}</span></div>
   </div>
@@ -519,7 +579,7 @@ const heroHTML = DARK ? `
 </section>` : `
 <section class="hc">
   <div class="hc-media rvi in">${heroMedia()}</div>
-  <div class="hc-badge fade-in">${chip}</div>
+  <div class="hc-badge fade-in">${chip}${statusPill}</div>
   <div class="hc-card">
     <span class="mono kicker">${esc(N.label||"")} · ${esc(city)}</span>
     <h1 class="disp">${words(N.h1 || name)}</h1>
@@ -571,7 +631,7 @@ const services = `
 const galleryHTML = pics.length > 1 ? `
 <section class="s" id="work" style="padding-bottom:clamp(60px,8vw,110px)">
   <div class="wrap"><div class="s-head"><h2 class="disp rv">On the job</h2><div class="gal-ctl rv"><button aria-label="Previous" data-g="-1">←</button><button aria-label="Next" data-g="1">→</button></div></div></div>
-  <div class="gal-wrap"><div class="gal" id="gal">${pics.map((u,i)=>`<figure class="rv" style="--d:${Math.min(i,4)*.07}s" data-i="${i}"><img src="${img(u,1400)}" alt="${esc(name)} photo ${i+1}" loading="lazy"><span class="num">${String(i+1).padStart(2,"0")}</span></figure>`).join("")}</div></div>
+  <div class="gal-wrap"><div class="gal" id="gal">${pics.map((u,i)=>`<figure class="rv" style="--d:${Math.min(i,4)*.07}s" data-i="${i}"><img class="lz" src="${img(u,1400)}" alt="${esc(name)} photo ${i+1}" loading="lazy"><span class="num">${String(i+1).padStart(2,"0")}</span></figure>`).join("")}</div></div>
   <div class="wrap"><p class="credit">Photos from ${esc(name)}'s Google listing and customer reviews.</p></div>
 </section>` : "";
 
@@ -590,7 +650,7 @@ const request = `
 const reviewsHTML = reviews.length ? `
 <section class="s" id="reviews"><div class="wrap rev">
   <div class="score rv"><span class="mono kicker">Google reviews</span><b style="margin-top:22px"><span class="count" data-to="${ratingStr}" data-dec="1">${ratingStr}</span></b><div class="st">${stars}</div><p>${S.reviewCount?`From ${S.reviewCount} reviews on Google`:"On Google"}</p></div>
-  <div class="rv" style="--d:.1s"><div class="qs" id="qs">${reviews.map((r,i)=>`<figure class="q ${i?"":"on"}"><blockquote>${esc(r.text)}</blockquote><cite><b>${esc(r.who)}</b> · Google review</cite></figure>`).join("")}</div>
+  <div class="rv" style="--d:.1s"><div class="qs" id="qs">${reviews.map((r,i)=>`<figure class="q ${i?"":"on"}"><blockquote>${esc(r.text)}</blockquote><cite><span class="av" aria-hidden="true">${esc((r.who||"?").replace(/[^A-Za-z0-9]/g,"").charAt(0).toUpperCase()||"G")}</span><span><b>${esc(r.who)}</b><small>${gIcon} Google review</small></span></cite></figure>`).join("")}</div>
     ${reviews.length>1?`<div class="dots" id="dots">${reviews.map((_,i)=>`<button aria-label="Review ${i+1}" class="${i?"":"on"}"></button>`).join("")}</div>`:""}</div>
 </div></section>` : "";
 
@@ -611,7 +671,7 @@ const areaHours = `
 <section class="s" id="area"><div class="wrap ah">
   <div><div class="s-head" style="margin-bottom:28px"><h2 class="disp rv">Where we work</h2></div>
     <ul class="towns">${areas.map((a,i)=>`<li class="rv" style="--d:${i*.05}s">${esc(a)}<small>${String(i+1).padStart(2,"0")}</small></li>`).join("")}</ul></div>
-  ${hours.length||S.address?`<aside class="hours rv" style="--d:.1s"><h3>Hours</h3>${hours.map(([d,t])=>`<div class="hr"><span>${esc(d)}</span><b>${esc(t)}</b></div>`).join("")}
+  ${hours.length||S.address?`<aside class="hours rv" style="--d:.1s"><div class="h-top"><h3>Hours</h3>${statusPill}</div>${hours.map(([d,t])=>`<div class="hr"><span>${esc(d)}</span><b>${esc(t)}</b></div>`).join("")}
     ${S.address?`<p class="addr">${esc(S.address)}<br><a href="${mapUrl}" target="_blank" rel="noopener">Get directions ↗</a></p>`:""}
     <a class="btn btn-a" href="${tel}">Call ${phonePretty}</a></aside>`:""}
 </div></section>`;
@@ -626,6 +686,7 @@ const end = `
 </div></section>`;
 
 document.getElementById("app").innerHTML = `
+<div class="intro" aria-hidden="true"><span><i>${esc(short)}</i></span></div>
 <div class="prog" id="prog"></div>
 <div class="pv">Website preview made for <b>${esc(name)}</b>. Not live yet, and not affiliated with ${esc(name)} until approved.</div>
 <header class="hd" id="hd"><div class="wrap">
@@ -645,6 +706,9 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function fit(el, box, maxPx){ if(!el) return; el.style.fontSize="100px"; const w=el.scrollWidth||1; const cs=getComputedStyle(box); const target=(box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight))*0.97; el.style.fontSize=Math.min(maxPx||9999, 100*target/w)+"px"; }
 function fitAll(){ const wm=$("#wm span"); if(wm){ fit(wm, $(".hw-media"), 420); } const bc=$("#bigcall"); if(bc){ bc.style.display="inline-block"; fit(bc, bc.parentElement, 360); bc.style.display="block"; } }
 document.fonts ? document.fonts.ready.then(fitAll) : 0; fitAll(); addEventListener("resize", fitAll);
+
+// photos fade in once loaded
+$$("img.lz").forEach(i=>{ if(i.complete && i.naturalWidth) i.classList.add("ld"); else { i.addEventListener("load",()=>i.classList.add("ld")); i.addEventListener("error",()=>i.classList.add("ld")); } });
 
 // reveals
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{rootMargin:"0px 0px -8% 0px",threshold:.08});
