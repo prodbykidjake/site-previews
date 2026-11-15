@@ -1,783 +1,1061 @@
-<!doctype html>
+<!DOCTYPE html>
+
+<!--
+  Free website template by 8B: https://8b.com/templates/ferrule/
+  Source: https://github.com/8bsite/plumber-website-template
+  MIT License (code) https://8b.com/ · Photos: Unsplash License, see CREDITS.md · Fonts: Google Fonts (OFL)
+  One HTML file, no build step. Notes for people and AI agents: README.md and AGENTS.md.
+  Scroll motion: CSS scroll-driven animations and an inline script, no libraries. A GSAP build of this page: index.gsap.html.
+-->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<title>Website preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=TikTok+Sans:wght@300..700&display=swap">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Emergency Leak Detection · Leak detection &amp; plumbing in San Fernando Valley</title>
+<meta content="Emergency leak detection and plumbing repair in the San Fernando Valley. Slab leaks, pinhole leaks, and pipes behind walls." name="description"/>
+<meta content="8B Templates" name="generator"/>
+<meta content="website" property="og:type"/>
+<meta content="Emergency Leak Detection · Leak detection &amp; plumbing in San Fernando Valley" property="og:title"/>
+<meta content="Emergency leak detection and plumbing repair in the San Fernando Valley. Slab leaks, pinhole leaks, and pipes behind walls." property="og:description"/>
+
+<meta content="summary" name="twitter:card"/>
+<link href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23ff5b1f%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2744%27%20font-family%3D%27Arial%2CHelvetica%2Csans-serif%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20text-anchor%3D%27middle%27%20fill%3D%27%230e0e0e%27%3EL%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="font" crossorigin="" href="https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GwevMToedPibnq0SZe1Q.woff2" rel="preload" type="font/woff2"/>
 <style>
-/* ---------- theme tokens ---------- */
-:root{
-  --bg:#0c0c0b;--bg2:#141413;--ink:#f1f0ec;--muted:#8f8e89;--line:#262624;--card:#171716;
-  --accent:#ff5b1f;--on-accent:#0c0c0b;--hl:#ff6a33;--deep:#ff5b1f;--on-deep:#0c0c0b;
-  --display:"Instrument Sans",system-ui,sans-serif;--body:"Instrument Sans",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;
-  --dvar:"wdth" 75;--dwt:600;--track:-.03em;--case:uppercase;--r:6px;--rb:4px;
-  --ease:cubic-bezier(.2,.75,.1,1);--wrap:1320px;--gut:clamp(16px,4vw,48px);
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwRGFWfOw.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-[data-theme=dent]{
-  --bg:#0f0f0f;--bg2:#181a18;--ink:#ededed;--muted:#a3a8a2;--line:#2a2d2a;--card:#1d1f1d;
-  --accent:#d9e2cc;--on-accent:#0f0f0f;--hl:#c8d6b4;--deep:#2f382f;--on-deep:#ededed;
-  --display:"TikTok Sans","Instrument Sans",sans-serif;--dvar:normal;--dwt:300;--track:-.05em;--case:none;--r:20px;--rb:999px;
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwYGFWfOw.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-[data-theme=trade]{
-  --bg:#f2f2f2;--bg2:#ffffff;--ink:#0e0e0e;--muted:#5c5c5c;--line:#d5d5d5;--card:#ffffff;
-  --accent:#ff5b1f;--on-accent:#ffffff;--hl:#d94612;--deep:#0e0e0e;--on-deep:#f2f2f2;
-  --body:"Geist",system-ui,sans-serif;--dvar:"wdth" 88;--dwt:500;--track:-.035em;--case:none;--r:18px;--rb:999px;
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwTGFWfOw.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
-[data-theme=field]{
-  --bg:#fbfcf8;--bg2:#e7ece3;--ink:#141713;--muted:#525a50;--line:#d3dacf;--card:#ffffff;
-  --accent:#eef48b;--on-accent:#141713;--hl:#1f3d2c;--deep:#1f3d2c;--on-deep:#eef2e8;
-  --display:"Host Grotesk",system-ui,sans-serif;--body:"Host Grotesk",system-ui,sans-serif;--dvar:normal;--dwt:500;--track:-.03em;--case:none;--r:24px;--rb:999px;
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwSGFWfOw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* ---------- base ---------- */
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit;color:inherit}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
-.disp{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);line-height:.95}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--muted)}
-.kicker::before{content:"";width:22px;height:1px;background:currentColor}
-::selection{background:var(--accent);color:var(--on-accent)}
-
-/* buttons */
-.btn{--h:52px;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:var(--h);padding:0 26px;border-radius:var(--rb);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .4s var(--ease),border-color .4s,transform .4s var(--ease);white-space:nowrap}
-.btn::after{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .5s var(--ease)}
-.btn:hover::after{transform:none}
-.btn .ar{transition:transform .4s var(--ease)}.btn:hover .ar{transform:translateX(4px)}
-.btn-a{background:var(--accent);color:var(--on-accent)}.btn-a::after{background:var(--ink)}.btn-a:hover{color:var(--bg)}
-.btn-o{border-color:currentColor}.btn-o::after{background:var(--ink)}.btn-o:hover{color:var(--bg);border-color:var(--ink)}
-.on-photo .btn-o{color:#fff}.on-photo .btn-o::after{background:#fff}.on-photo .btn-o:hover{color:#111;border-color:#fff}
-.btn-sm{--h:40px;padding:0 18px;font-size:14px}
-
-/* preview banner + progress */
-.pv{position:relative;z-index:60;background:var(--ink);color:var(--bg);font:500 12px/1.4 var(--body);text-align:center;padding:8px 16px}
-.pv b{font-weight:700}
-.prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:80}
-
-/* header */
-.hd{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
-.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
-.hd.solid{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-color:var(--line)}
-.logo{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:600;font-size:19px;letter-spacing:-.02em;line-height:1.05;max-width:46vw}
-[data-theme=garage] .logo{text-transform:uppercase;letter-spacing:.02em}
-.logo small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-.nav{display:flex;gap:28px;font-size:14px;font-weight:500}
-.nav a{position:relative;opacity:.8;transition:opacity .3s}.nav a:hover{opacity:1}
-.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
-.nav a:hover::after{transform:scaleX(1);transform-origin:left}
-@media (max-width:900px){.nav{display:none}}
-
-/* ---------- hero: wordmark variant (dark) ---------- */
-.hw-media{position:relative;height:min(84svh,900px);min-height:520px;overflow:hidden;margin:0 var(--gut);border-radius:var(--r)}
-.hw-media img,.hc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.kb{animation:kb 22s ease-in-out infinite alternate;transform-origin:60% 40%}
-@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-1.5%,1%)}}
-.hw-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.05) 55%,rgba(0,0,0,.72) 100%)}
-.hw-chip{position:absolute;top:22px;left:22px;z-index:2;color:#fff}
-.chip{display:inline-flex;align-items:center;gap:10px;padding:9px 14px 9px 12px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:500;color:#fff}
-.chip .st{color:#ffc93c;letter-spacing:1px}
-.hw-side{position:absolute;top:22px;right:22px;z-index:2;text-align:right;color:#fff}
-.wm{position:absolute;left:0;right:0;bottom:-.06em;z-index:2;color:#fff;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);text-transform:var(--case);line-height:.8;white-space:nowrap;text-align:center;pointer-events:none}
-[data-theme=garage] .wm{font-weight:700;letter-spacing:-.02em}
-.wm span{display:inline-block}
-.hw-intro{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(56px,7vw,110px)}
-.hw-intro h1{font-size:clamp(42px,6.2vw,96px);text-transform:var(--case)}
-.hw-intro .lead{font-size:clamp(17px,1.4vw,20px);color:var(--muted);max-width:46ch;margin-bottom:28px}
-.ctas{display:flex;gap:12px;flex-wrap:wrap}
-@media (max-width:860px){.hw-side{display:none}.hw-intro{grid-template-columns:1fr}.hw-media{height:62svh;min-height:420px}}
-
-/* ---------- hero: card variant (light) ---------- */
-.hc{position:relative;padding:0 var(--gut);max-width:calc(var(--wrap) + 2*var(--gut));margin:0 auto}
-.hc-media{position:relative;height:min(86svh,880px);min-height:560px;border-radius:var(--r);overflow:hidden}
-.hc-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,0) 50%)}
-.hc-card{position:absolute;left:calc(var(--gut) + clamp(14px,2vw,28px));bottom:clamp(14px,2vw,28px);width:min(560px,calc(100% - 2*var(--gut) - 28px));background:var(--card);border-radius:calc(var(--r) - 6px);padding:clamp(24px,3vw,40px);z-index:2;box-shadow:0 30px 80px -30px rgba(0,0,0,.35)}
-[data-theme=field] .hc-card{background:var(--accent)}
-.hc-card h1{font-size:clamp(36px,4.4vw,64px);margin:16px 0 16px}
-.hc-card .lead{color:var(--muted);margin-bottom:22px;max-width:44ch}
-[data-theme=field] .hc-card .lead{color:#3c4430}
-.ticks{list-style:none;display:grid;gap:6px;margin:0 0 24px;font-size:15px}
-.ticks li{display:flex;gap:10px;align-items:center}.ticks li::before{content:"";width:16px;height:1px;background:currentColor}
-.hc-badge{position:absolute;top:clamp(14px,2vw,28px);right:calc(var(--gut) + clamp(14px,2vw,28px));z-index:2}
-.rate-k{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
-.rate-k .st{color:#f5a400;letter-spacing:1px}
-[data-theme=field] .rate-k .st{color:#1f3d2c}
-@media (max-width:860px){.hc-media{height:56svh;min-height:380px}.hc-card{position:relative;left:auto;bottom:auto;width:auto;margin:-70px 12px 0}}
-
-/* split-word reveal */
-.sw-line{display:inline}
-.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
-.w>span{display:inline-block;transform:translateY(105%);animation:wup 1s var(--ease) forwards;animation-delay:calc(1.1s + var(--i)*.06s)}
-@keyframes wup{to{transform:none}}
-.fade-in{opacity:0;animation:fin 1s var(--ease) 1.5s forwards}
-@keyframes fin{to{opacity:1}}
-
-/* ---------- marquee ---------- */
-.mq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0;background:var(--bg)}
-.mq-t{display:inline-flex;animation:mq 38s linear infinite}
-.mq:hover .mq-t{animation-play-state:paused}
-.mq-t span{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);text-transform:var(--case);font-size:clamp(26px,3.2vw,44px);padding-right:.6em;line-height:1}
-.mq-t i{font-style:normal;color:var(--hl);padding-right:.6em;font-size:clamp(20px,2.4vw,32px);line-height:1.3}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* ---------- sections ---------- */
-section.s{padding:clamp(80px,10vw,150px) 0}
-.s-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(36px,5vw,64px);flex-wrap:wrap}
-.s-head h2{font-size:clamp(38px,5.4vw,84px);max-width:13ch;text-transform:var(--case)}
-.s-head p{color:var(--muted);max-width:40ch}
-.alt{background:var(--bg2)}
-
-/* statement + stats */
-.stmt{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:-.02em;font-size:clamp(28px,3.8vw,58px);line-height:1.1;max-width:22ch}
-[data-theme=dent] .stmt{font-weight:300}
-.stmt .sw{opacity:.16;transition:opacity .35s}
-.stmt .sw.lit{opacity:1}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(48px,6vw,90px);border-top:1px solid var(--line)}
-.stat{padding:26px 22px 0 0;border-right:1px solid var(--line);margin-right:22px}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);font-size:clamp(46px,5.6vw,88px);line-height:1}
-.stat span{display:block;color:var(--muted);font-size:14px;margin-top:10px}
-@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(n+3){margin-top:10px}}
-
-/* services */
-.svc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:start}
-.svc.nophoto{grid-template-columns:1fr}
-.svc-photo{position:sticky;top:100px;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--bg2)}
-.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .8s var(--ease),transform 1.4s var(--ease)}
-.svc-photo img.on{opacity:1;transform:none}
-.svc-photo .tagp{position:absolute;left:16px;bottom:16px;z-index:2}
-.svc-list{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:baseline;padding:clamp(22px,2.6vw,34px) 0;border-bottom:1px solid var(--line);cursor:default;transition:padding .5s var(--ease)}
-.row .n{font:500 13px var(--mono);color:var(--muted)}
-.row h3{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:-.02em;font-size:clamp(26px,3vw,44px);line-height:1.02;text-transform:var(--case);transition:color .4s,transform .5s var(--ease)}
-.row p{color:var(--muted);margin-top:8px;max-width:46ch;font-size:16px}
-.row .ar2{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .4s,border-color .4s,transform .5s var(--ease),color .4s}
-.row.act h3,.row:hover h3{color:var(--hl);transform:translateX(6px)}
-.row.act .ar2,.row:hover .ar2{background:var(--accent);border-color:var(--accent);color:var(--on-accent);transform:rotate(-45deg)}
-@media (max-width:860px){.svc{grid-template-columns:1fr}.svc-photo{position:relative;top:0;aspect-ratio:16/11}.row{grid-template-columns:40px 1fr}.row .ar2{display:none}}
-
-/* gallery */
-.gal-wrap{position:relative}
-.gal{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 8px;scrollbar-width:none;cursor:grab}
-.gal::-webkit-scrollbar{display:none}
-.gal figure{flex:0 0 auto;height:clamp(300px,42vw,560px);aspect-ratio:var(--ar,4/5);border-radius:var(--r);overflow:hidden;scroll-snap-align:start;position:relative;background:var(--bg2);cursor:zoom-in}
-.gal figure:nth-child(3n+2){--ar:5/4}.gal figure:nth-child(3n){--ar:3/4}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.gal figure:hover img{transform:scale(1.06)}
-.gal figure .num{position:absolute;top:12px;left:12px;color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:5px 9px;border-radius:999px;font:500 11px var(--mono)}
-.gal-ctl{display:flex;gap:10px}
-.gal-ctl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:18px;transition:background .3s,color .3s,border-color .3s}
-.gal-ctl button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.credit{color:var(--muted);font-size:13px;margin-top:18px}
-.lb{position:fixed;inset:0;z-index:100;background:rgba(8,8,8,.94);display:none;align-items:center;justify-content:center;padding:4vh 4vw}
-.lb.open{display:flex;animation:fin .35s forwards}
-.lb img{max-width:100%;max-height:88vh;border-radius:10px;object-fit:contain}
-.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px}
-.lb .x{top:20px;right:20px}.lb .pr{left:20px;top:50%;transform:translateY(-50%)}.lb .nx{right:20px;top:50%;transform:translateY(-50%)}
-
-/* request */
-.req-s{background:var(--deep);color:var(--on-deep)}
-[data-theme=garage] .req-s{background:var(--bg2);color:var(--ink)}
-.req-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
-.req-g h2{font-size:clamp(38px,5vw,76px);text-transform:var(--case);margin:18px 0 22px}
-.req-g .pitch{opacity:.75;max-width:42ch;font-size:18px}
-.steps-mini{list-style:none;margin-top:34px;counter-reset:c}
-.steps-mini li{counter-increment:c;display:flex;gap:16px;align-items:center;padding:16px 0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent)}
-.steps-mini li::before{content:"0" counter(c);font:500 12px var(--mono);opacity:.6}
-.callline{margin-top:30px;font-size:15px;opacity:.85}.callline a{border-bottom:1px solid currentColor;font-weight:600}
-form.req{background:var(--card);color:var(--ink);border-radius:var(--r);padding:clamp(22px,3vw,36px);display:grid;gap:14px;box-shadow:0 40px 90px -40px rgba(0,0,0,.5)}
-[data-theme=garage] form.req{border:1px solid var(--line)}
-form.req .ft{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);font-size:26px;letter-spacing:-.02em;line-height:1.1;margin-bottom:6px}
-form.req label{display:grid;gap:7px;font-size:13px;font-weight:600;color:var(--muted)}
-form.req input,form.req select,form.req textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:calc(var(--r)/2);padding:13px 14px;font-size:16px;font-weight:400;transition:border-color .3s,box-shadow .3s}
-[data-theme=trade] form.req input,[data-theme=trade] form.req select,[data-theme=trade] form.req textarea,[data-theme=field] form.req input,[data-theme=field] form.req select,[data-theme=field] form.req textarea{background:var(--bg)}
-form.req input:focus,form.req select:focus,form.req textarea:focus{outline:0;border-color:var(--hl);box-shadow:0 0 0 3px color-mix(in srgb,var(--hl) 22%,transparent)}
-form.req textarea{min-height:92px;resize:vertical}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.drop{border:1.5px dashed var(--line);border-radius:calc(var(--r)/2);padding:24px;text-align:center;color:var(--muted);font-size:15px;cursor:pointer;transition:border-color .3s,background .3s}
-.drop:hover{border-color:var(--hl);background:var(--bg)}
-.pkgs{display:grid;gap:8px}.pkg{display:flex!important;gap:12px;align-items:center;border:1px solid var(--line);border-radius:calc(var(--r)/2);padding:12px 14px;cursor:pointer}
-.pkg input{width:auto}.pkg span{display:grid;color:var(--ink)}.pkg small{color:var(--muted);font-weight:400}
-.ok{display:none;background:color-mix(in srgb,var(--accent) 30%,var(--card));color:var(--ink);padding:12px 14px;border-radius:calc(var(--r)/2);font-size:14px}
-form.req .btn{width:100%}
-@media (max-width:860px){.req-g{grid-template-columns:1fr}}
-@media (max-width:480px){.row2{grid-template-columns:1fr}}
-
-/* reviews */
-.rev{display:grid;grid-template-columns:4fr 8fr;gap:clamp(32px,6vw,96px);align-items:start}
-.score b{display:block;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);font-size:clamp(96px,13vw,200px);line-height:.85}
-.score .st{color:#f5a400;font-size:22px;letter-spacing:3px;margin:16px 0 6px}
-[data-theme=field] .score .st{color:var(--hl)}
-.score p{color:var(--muted)}
-.qs{position:relative;min-height:clamp(240px,24vw,320px)}
-.q{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .9s var(--ease);pointer-events:none}
-.q.on{opacity:1;transform:none;pointer-events:auto}
-.q blockquote{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:-.02em;font-size:clamp(30px,3.6vw,56px);line-height:1.1}
-[data-theme=dent] .q blockquote{font-weight:300}
-.q blockquote::before{content:"“";display:block;font-size:2.2em;line-height:.6;color:var(--hl);margin-bottom:.15em}
-.q cite{display:block;margin-top:26px;font-style:normal;color:var(--muted);font-size:15px}
-.q cite b{color:var(--ink);font-weight:600}
-.dots{display:flex;gap:8px;margin-top:22px}
-.dots button{width:34px;height:4px;border-radius:4px;border:0;background:var(--line);cursor:pointer;position:relative;overflow:hidden}
-.dots button.on::after{content:"";position:absolute;inset:0;background:var(--hl);transform-origin:0;animation:dfill 6.5s linear forwards}
-@keyframes dfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@media (max-width:860px){.rev{grid-template-columns:1fr}.qs{min-height:300px}}
-
-/* process */
-.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);position:relative}
-.proc::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line)}
-.proc .p{position:relative}
-.proc .dot{width:56px;height:56px;border-radius:50%;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;font:500 13px var(--mono);margin-bottom:26px;transition:background .6s,color .6s,border-color .6s}
-.proc .p.in .dot{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-.alt .proc .dot{background:var(--bg2)}
-.proc h3{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);font-size:clamp(24px,2.4vw,34px);letter-spacing:-.02em;line-height:1.05;margin-bottom:10px}
-.proc p{color:var(--muted);max-width:32ch}
-@media (max-width:760px){.proc{grid-template-columns:1fr}.proc::before{display:none}}
-
-/* area + hours */
-.ah{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,6vw,96px);align-items:start}
-.towns{list-style:none}
-.towns li{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);font-size:clamp(34px,4.6vw,72px);line-height:1.08;text-transform:var(--case);border-bottom:1px solid var(--line);padding:6px 0;display:flex;justify-content:space-between;align-items:baseline;transition:color .35s,padding .5s var(--ease)}
-.towns li small{font:500 12px var(--mono);color:var(--muted)}
-.towns li:hover{color:var(--hl);padding-left:14px}
-.hours{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,36px);position:sticky;top:100px}
-.hours h3{font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);font-size:30px;letter-spacing:-.02em;margin-bottom:16px}
-.hr{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line);font-size:16px}
-.hr b{font-weight:600;text-align:right}
-.addr{margin-top:20px;color:var(--muted);font-size:15px}
-.addr a{color:var(--ink);border-bottom:1px solid var(--line)}
-.hours .btn{width:100%;margin-top:22px}
-@media (max-width:860px){.ah{grid-template-columns:1fr}.hours{position:relative;top:0}}
-
-/* big cta + footer */
-.end{background:var(--deep);color:var(--on-deep);padding:clamp(80px,10vw,140px) 0 0;overflow:hidden}
-[data-theme=garage] .end{background:var(--accent);color:var(--on-accent)}
-.end .kicker{color:inherit;opacity:.7}
-.end h2{font-size:clamp(40px,6vw,96px);margin:18px 0 10px;text-transform:var(--case);max-width:14ch}
-.bigcall{display:block;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);white-space:nowrap;line-height:.9;margin-top:clamp(36px,5vw,70px);transition:opacity .3s}
-[data-theme=garage] .bigcall{font-weight:700}
-.bigcall:hover{opacity:.75}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:26px 0 30px;margin-top:clamp(36px,5vw,60px);border-top:1px solid color-mix(in srgb,currentColor 22%,transparent);font-size:13px;opacity:.75}
-.callbar{display:none}
-@media (max-width:760px){
-  .callbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:70;padding:8px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;transform:translateY(140%);transition:transform .5s var(--ease)}
-  .callbar.show{transform:none}
-  .callbar .btn{--h:46px;padding:0 10px}
-  .callbar .btn-o{color:var(--ink)}
-  body{padding-bottom:84px}
-  .hd .btn-sm{display:none}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-
-/* ---------- polish: intro, live status, review cards, photo fades, grain ---------- */
-.intro{position:fixed;inset:0;z-index:200;background:var(--deep);color:var(--on-deep);display:grid;place-items:center;padding:24px;animation:introUp 1s var(--ease) .8s forwards;pointer-events:none}
-.intro span{display:block;overflow:hidden;font-family:var(--display);font-variation-settings:var(--dvar);font-weight:var(--dwt);letter-spacing:var(--track);text-transform:var(--case);font-size:clamp(44px,9vw,132px);line-height:1.02;text-align:center;padding-bottom:.06em}
-[data-theme=garage] .intro span{font-weight:700}
-.intro span i{display:block;font-style:normal;transform:translateY(105%);animation:wup .75s var(--ease) .05s forwards}
-.intro::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--on-deep);opacity:.85;transform-origin:0 50%;transform:scaleX(0);animation:bar .8s var(--ease) forwards}
-@keyframes introUp{to{transform:translateY(-101%)}}
-@keyframes bar{to{transform:scaleX(1)}}
-.seen .intro{display:none}
-.seen .w>span{animation-delay:calc(.15s + var(--i)*.06s)}
-.seen .fade-in{animation-delay:.55s}
-.status{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);color:#fff;white-space:nowrap}
-.status i{width:8px;height:8px;border-radius:50%;background:#3ddc84;animation:pulse 2s infinite}
-.status.closed i{background:#ff7a6b;animation:none}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.65)}70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
-.hw-chip,.hc-badge{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.hc-badge{align-items:flex-end}
-.hours .h-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.hours .h-top h3{margin:0}
-.hours .status{background:var(--bg);color:var(--ink);border-color:var(--line);backdrop-filter:none;-webkit-backdrop-filter:none}
-.q cite{display:flex;align-items:center;gap:14px}
-.av{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:700 18px var(--body)}
-.q cite b{display:block;line-height:1.3}
-.q cite small{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;margin-top:2px}
-.q cite small svg{width:14px;height:14px}
-img.lz{opacity:0;transition:opacity .9s var(--ease)}
-img.lz.ld{opacity:1}
-[data-theme=garage] body::after,[data-theme=dent] body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.intro{display:none}img.lz{opacity:1}}
-
-/* scroll reveals */
-.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
-.rvi{clip-path:inset(12% 6% 12% 6% round var(--r));transition:clip-path 1.4s var(--ease)}
-.rvi.in{clip-path:inset(0 0 0 0 round var(--r))}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .w>span{transform:none}.fade-in{opacity:1}.rv{opacity:1;transform:none}.rvi{clip-path:none}.stmt .sw{opacity:1}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 88%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GwevMToedPibnq0She1YmV.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 88%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GwevMToedPibnq0SZe1Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-</head>
-<body>
-<div id="app"></div>
-<script>
-/* ===================== EDIT THIS: one business ===================== */
-/*SITE-START*/const SITE = {
- "niche": "pool-leak",
- "name": "Emergency Leak Detection",
- "phone": "8185102192",
- "rating": 5.0,
- "reviewCount": 43,
- "city": "the San Fernando Valley",
- "areas": [
-  "Northridge",
-  "Van Nuys",
-  "Sherman Oaks",
-  "Encino",
-  "Reseda",
-  "Burbank"
- ],
- "hours": [
-  [
-   "Sun–Fri",
-   "Open 24 hours"
-  ],
-  [
-   "Saturday",
-   "Closed"
-  ]
- ],
- "custom": {
-  "label": "Leak detection & plumbing",
-  "h1": "Water leak? We find it and fix it — day or night.",
-  "lead": "Emergency leak detection and plumbing repair in the San Fernando Valley. Slab leaks, pinhole leaks, and pipes behind walls.",
-  "services": [
-   [
-    "Leak detection",
-    "Hidden leaks found behind walls and under floors."
-   ],
-   [
-    "Pipe repair",
-    "Pinhole leaks in copper pipes repaired."
-   ],
-   [
-    "Showers & toilets",
-    "Shower leaks and toilet tanks fixed."
-   ],
-   [
-    "Water heaters",
-    "Repair and replacement."
-   ]
-  ],
-  "feature": {
-   "type": "dispatch",
-   "title": "Request emergency service",
-   "pitch": "Water where it shouldn't be? Tell us what's happening and we'll call right back.",
-   "bullets": [
-    "What's leaking and where",
-    "Your address",
-    "Fast callback"
-   ],
-   "placeholder": "Where is the water coming from?",
-   "items": [
-    "Leak behind wall / under floor",
-    "Shower or toilet",
-    "Water heater",
-    "Pipe burst",
-    "Other"
-   ]
-  },
-  "trust": [
-   "Open 24 hours",
-   "Same-day service"
-  ]
- },
- "reviews": [
-  {
-   "text": "They worked from nine in the morning till 10 at night cleared up leak…",
-   "who": "Addisyn W."
-  },
-  {
-   "text": "I recently had a pinhole leak in a copper pipe behind the wall, and…",
-   "who": "Berenice T."
-  }
- ],
- "photos": {
-  "hero": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RWa-YeJ0dH_OIWlTRNeV9sxPANBEEUIwtDqp6erdrV0GG2HsYKda5Q4CD2klBiIhWFXdQ9yz-60xqWCoCnUkX7VfYCCkgPdmRh0H16te5o4-CRNWsWmj42f_n-gjCbyl8sBDPgCrUmQWL7",
-  "gallery": [
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R8NWUqTr0GwQenmRKBm6N8HP3NxnIx0D-KBzA7CuWbA4yvYTARcPNV2PeW7MNQT96FPHXzDEa9NfIQhDnwJmAZDXply0MN8BMhkJghiGI0ROMQ2lfK6zs7mYxSixDvopD3WbEIwo-gW4Ku",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SbejiTbfL2id44BtAi_0RikKpBq0lzQeGtnwsQGq7bYos2FTTMdAgU6kWrkT0B68k8QFUQUkslArNmqAI1EPweSNRpht3uw96bZtoz67LpTchG6AR-eSU5HHBWsivOgjAPgFNMfwxGS9PV",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q8lza35h7u6ptWEcFt_xutxqsNk8v76jwFWwT70DN49aH0mwrz3MqveO4eL2A3Peno3o_qdpUFF_7tIFRThGZp-5aJxLLvJqYViTlHEG2lXJ5Zo3BDyELcqVtnjjbMsAEsj5UecbiIaS5Z",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TD-Cd6MdFkAt395q46AqUgNCauXpJpFVB8d7JFI7sJ93C34Fes_JtZ_Lv0RT51WMnjY5ZK3eJA9zSt5psORpKKyTn_im6hzrqHFpC2k4jQ-nuNSrWtq3oVlq6AGPwPLt_6eOEaw1ZjdglK",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tge2xrr6yNlhgLFNs8uk3CB3QLJUuJBVLuqPtv7pAIC2DKW96OBEm8hfPxUKsbtKhGumI32kCgNkh1uGMBSelQRn2MazJmPRl9tP_WHhVlXlOM-P1nvzRQrng3ADGRicH-_c5IQc1j5P0d",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T8BkhUuUoy0eFlI4zF9v8CvRo6Or0cdO2E3yzTSUbwsnPPykpLTCu8jTd73ZpVoYwIbiTAQq60muymyx39jFWfwv_MYLV3wPuTB2_uff0DIbh_GzJ3ta0-QsSjCfh8ILsUmr6X4o_8ZvMw",
-   "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sq1k9GBuEL5vIJGQ1aBW9jZLgIFzU5SkVocfaN5mybngeI4r8AibpmJxwe6t8PXnJF2Abmu2ynDzPSx0LgQyRkI1rQHIZCmZlGikMkCafxEPe6xwKOVPV-RE9HeI--XbMv5QOESU73Squ4"
-  ]
- },
- "short": "Leak Detection",
- "prebuilt": true
-};/*SITE-END*/
-
-/* niche presets (copy, services, signature form) */
-const NICHES = /*NICHES-START*/{
-  "mobile-mechanic": { label:"Mobile mechanic", sample:"Driveway Auto Repair", accent:"#e8590c",
-    h1:"Car trouble? We come to you.", lead:"Mobile mechanic serving {city}. Repairs at your home, work, or roadside — no tow, no waiting room.",
-    services:[["Diagnostics","Check-engine lights and no-starts, diagnosed where the car sits."],["Brakes","Pads, rotors, and calipers replaced in your driveway."],["Batteries & starters","Dead battery? We test, replace, and get you moving."],["Maintenance","Oil changes, belts, and fluids on your schedule."]],
-    feature:{type:"dispatch", title:"Request roadside help", pitch:"Stuck somewhere? Send your location and what's going on, and we'll call you right back with an ETA.", bullets:["Tell us the vehicle and the problem","Share your location in one tap","Get a callback with an ETA and price"], items:["Won't start","Flat or tire issue","Brakes","Overheating","Check engine light","Other"]}},
-  "pdr": { label:"Paintless dent repair (PDR)", sample:"Ace Dent Pros", accent:"#2563eb",
-    h1:"Dents gone. Paint untouched.", lead:"Paintless dent repair in {city}. Door dings, dents, and creases fixed without body filler or repainting.",
-    services:[["Door dings","Parking-lot dings gone in under an hour."],["Hail damage","Full hail repair, insurance claims welcome."],["Creases","Larger dents and body-line creases."],["Mobile service","We come to your home or office."]],
-    feature:{type:"photos", title:"Upload damage photos for a quote", pitch:"Snap a few photos of the dent and we'll text you back with a price.", bullets:["Two or three photos from different angles","Rough size of each dent","Price back by text"]}},
-  "garage-door": { label:"Garage door repair", sample:"Overhead Door Fix", accent:"#dc2626",
-    h1:"Garage door stuck? Fixed today.", lead:"Fast garage door repair across {city}. Springs, openers, cables, and off-track doors.",
-    services:[["Broken springs","Torsion and extension springs replaced safely."],["Openers","Repair or install of all major brands."],["Off-track doors","Realigned, rollers and cables replaced."],["New doors","Quotes on new doors and installs."]],
-    feature:{type:"dispatch", title:"Request same-day service", pitch:"Tell us what's wrong and we'll call back with a time window.", bullets:["Pick the problem","Add a photo if you want","Same-day callback"], items:["Won't open","Broken spring","Opener not working","Off track","Noisy","New door quote"]}},
-  "wildlife-removal": { label:"Wildlife removal", sample:"Critter Control Pros", accent:"#15803d",
-    h1:"Animals in your attic? We'll get them out.", lead:"Wildlife removal in {city}. Raccoons, squirrels, bats, and more, plus entry-point repair so they don't come back.",
-    services:[["Inspection","Find how they're getting in."],["Removal","Trapping and exclusion done right."],["Exclusion & repair","Seal entry points for good."],["Cleanup","Droppings and damaged insulation removed."]],
-    feature:{type:"dispatch", title:"Emergency service request", pitch:"Hearing something right now? Send a request and we'll prioritize it.", bullets:["What animal and where","Is it inside the living space?","Fast callback"], items:["Raccoon","Squirrel","Bats","Birds","Snake","Not sure"]}},
-  "pool-leak": { label:"Pool leak detection", sample:"Clearwater Leak Detection", accent:"#0891b2",
-    h1:"Losing water? We find the leak.", lead:"Pool and spa leak detection in {city}. Pressure testing, dye testing, and repair, usually without draining.",
-    services:[["Leak detection","Pressure and dye testing on every line."],["Plumbing repair","Underground line repair."],["Shell & tile","Cracks and fittings sealed."],["Equipment","Pump, filter, and valve leaks."]],
-    feature:{type:"photos", title:"Request a leak inspection", pitch:"Tell us how much water you're losing and send a photo of the pool.", bullets:["Inches lost per day","When it started","Photo of the pool and equipment"]}},
-  "crawl-space": { label:"Crawl space specialist", sample:"Dry Ground Crawl Space", accent:"#7c3aed",
-    h1:"A dry, healthy crawl space.", lead:"Crawl space encapsulation, moisture control, and repair for {city} homes.",
-    services:[["Encapsulation","Vapor barrier and sealing."],["Dehumidifiers","Humidity under control year-round."],["Mold & moisture","Treatment and prevention."],["Structural","Sagging floors and joist support."]],
-    feature:{type:"photos", title:"Free crawl space inspection", pitch:"Send a photo or two from your crawl space hatch and book a free look.", bullets:["Photos from the access door","Any musty smell or soft floors?","Free inspection visit"]}},
-  "concrete-leveling": { label:"Concrete leveling", sample:"Level Up Concrete", accent:"#64748b",
-    h1:"Sunken concrete, lifted level.", lead:"Concrete leveling in {city} for driveways, sidewalks, patios, and garage floors, at a fraction of replacement cost.",
-    services:[["Driveways","Lift sunken slabs back to level."],["Sidewalks","Remove trip hazards."],["Patios & steps","Fix sinking and gaps."],["Garage floors","Level and seal."]],
-    feature:{type:"photos", title:"Upload photos for an estimate", pitch:"Send photos of the sunken area and we'll estimate it, no visit needed.", bullets:["A wide photo and a close-up","Rough size of the area","Estimate by text"]}},
-  "mobile-rv": { label:"Mobile RV repair", sample:"Road Ready RV Service", accent:"#b45309",
-    h1:"RV repair at your campsite or driveway.", lead:"Mobile RV technician serving {city}. Electrical, plumbing, appliances, roofs, and slide-outs.",
-    services:[["Electrical","Batteries, converters, and shore power."],["Appliances","Fridges, AC, furnaces, and water heaters."],["Roofs & seals","Leak repair and resealing."],["Slides & awnings","Slide-out and awning repair."]],
-    feature:{type:"dispatch", title:"Request a service call", pitch:"Tell us your RV type, the problem, and where you're parked.", bullets:["RV type and year","Where you're parked","Callback with a time"], items:["Electrical","AC / furnace","Fridge","Plumbing / water","Roof leak","Slide-out / awning"]}},
-  "estate-cleanout": { label:"Estate cleanout", sample:"Fresh Start Estate Services", accent:"#475569",
-    h1:"Estate cleanouts, handled with care.", lead:"Full-service estate and home cleanouts in {city}. Sorting, donation, hauling, and a broom-clean finish.",
-    services:[["Full cleanouts","Whole homes, attics, and garages."],["Sorting & donation","Keep, donate, sell, or toss."],["Hauling","All debris removed."],["Realtor-ready","Broom clean for listing."]],
-    feature:{type:"photos", title:"Upload photos for a quote", pitch:"Send photos of the rooms and we'll quote the job without a walkthrough.", bullets:["A photo of each room","Any stairs or tight access?","Quote by text or email"]}},
-  "epoxy-flooring": { label:"Epoxy flooring", sample:"Pro Coat Floors", accent:"#0f766e",
-    h1:"Garage floors that look showroom-new.", lead:"Epoxy and polyaspartic floor coatings in {city}. Garages, basements, and shops.",
-    services:[["Garage floors","Flake and metallic systems."],["Basements","Moisture-resistant coatings."],["Commercial","Shops and warehouses."],["Repair & prep","Crack repair and grinding."]],
-    feature:{type:"packages", title:"Choose a finish and book a consult", pitch:"Pick the look you want and we'll come measure for an exact price.", bullets:["Pick a finish","Choose a consult time","Exact quote on site"], items:[["Flake finish","Most popular, hides wear"],["Metallic","High-end showroom look"],["Solid color","Clean and simple"]]}},
-  "mobile-detailing": { label:"Mobile detailing", sample:"Shine Mobile Detailing", accent:"#9333ea",
-    h1:"Detailing that comes to your driveway.", lead:"Mobile car detailing in {city}. We bring the water and power.",
-    services:[["Interior","Deep clean, shampoo, and odor removal."],["Exterior","Hand wash, clay, and wax."],["Ceramic coating","Long-term paint protection."],["Fleet","Business vehicles on a schedule."]],
-    feature:{type:"packages", title:"Choose a package and book", pitch:"Pick a package and a time. We'll confirm by text.", bullets:["Pick a package","Choose a day","We show up fully equipped"], items:[["Express","Exterior wash and interior vacuum"],["Full detail","Inside and out, most popular"],["Ceramic","Full detail plus ceramic coating"]]}},
-  "junk-removal": { label:"Junk removal", sample:"Haul It Away", accent:"#16a34a",
-    h1:"Point at it. We haul it.", lead:"Junk removal in {city}. Furniture, appliances, yard waste, and full cleanouts.",
-    services:[["Furniture","Couches, mattresses, and more."],["Appliances","Fridges, washers, and dryers."],["Cleanouts","Garages, basements, and estates."],["Yard debris","Branches, sheds, and fencing."]],
-    feature:{type:"photos", title:"Upload photos for a quote", pitch:"Snap the pile and we'll text you back with a price.", bullets:["Photo of everything going","Ground floor or stairs?","Price back by text"]}},
-  "roofer": { label:"Roofer", sample:"Summit Roofing", accent:"#b91c1c",
-    h1:"Roof repair and replacement you can trust.", lead:"Roofing contractor serving {city}. Repairs, replacements, and storm damage.",
-    services:[["Repairs","Leaks, flashing, and missing shingles."],["Replacement","Full tear-off and new roof."],["Storm damage","Insurance claim help."],["Inspections","Free roof inspections."]],
-    feature:{type:"photos", title:"Upload photos and request an estimate", pitch:"Send photos of the damage or the leak and we'll schedule a free estimate.", bullets:["Photos of the roof or ceiling stain","When it started","Free estimate visit"]}},
-  "mobile-notary": { label:"Mobile notary", sample:"On-the-Go Notary", accent:"#1d4ed8",
-    h1:"A notary who comes to you.", lead:"Mobile notary and loan signing agent serving {city}. Homes, hospitals, offices, evenings and weekends.",
-    services:[["General notary","Affidavits, POAs, and more."],["Loan signings","Certified signing agent."],["Hospitals & care","Bedside signings."],["After hours","Evenings and weekends."]],
-    feature:{type:"schedule", title:"Schedule an appointment", pitch:"Pick a time and place and we'll confirm by text.", bullets:["What you need notarized","Where and when","Confirmation by text"]}},
-  "appliance-repair": { label:"Appliance repair", sample:"FixRight Appliance", accent:"#0369a1",
-    h1:"Appliance repair, fast and fair.", lead:"Appliance repair in {city}. All major brands, most repairs on the first visit.",
-    services:[["Refrigerators","Not cooling, leaking, or noisy."],["Washers & dryers","Won't spin, drain, or heat."],["Ovens & ranges","Burners and igniters."],["Dishwashers","Not draining or cleaning."]],
-    feature:{type:"select", title:"Select your appliance and describe the issue", pitch:"Tell us what's broken and we'll call with a time and a diagnostic price.", bullets:["Pick the appliance","Describe what's wrong","Callback with a time"], items:["Refrigerator","Washer","Dryer","Oven / range","Dishwasher","Other"]}},
-  "pet-grooming": { label:"Mobile pet grooming", sample:"Curbside Paws Grooming", accent:"#db2777",
-    h1:"Grooming in our van, at your curb.", lead:"Mobile dog and cat grooming in {city}. One-on-one, no cages, no car rides.",
-    services:[["Full groom","Bath, haircut, nails, and ears."],["Bath & tidy","Between full grooms."],["Nail trims","Quick visits."],["De-shedding","For double coats."]],
-    feature:{type:"packages", title:"Choose a package and book", pitch:"Tell us about your pet and pick a time.", bullets:["Breed and size","Pick a package","We pull up at your curb"], items:[["Full groom","Bath, cut, nails, and ears"],["Bath & tidy","Bath, face, feet, and nails"],["Nails only","Quick trim"]]}},
-  "pool-service": { label:"Pool service", sample:"Blue Wave Pool Care", accent:"#0284c7",
-    h1:"A clean pool, every week.", lead:"Weekly pool service and repair in {city}. Chemicals, cleaning, and equipment, all handled.",
-    services:[["Weekly service","Chemicals, skim, vacuum, and brush."],["Green-to-clean","Algae cleanup."],["Equipment","Pumps, filters, and heaters."],["Openings & closings","Seasonal service."]],
-    feature:{type:"packages", title:"Ask about a maintenance plan", pitch:"Pick a plan and we'll send a quote for your pool.", bullets:["Pool size and type","Pick a plan","Quote by text"], items:[["Weekly full service","Chemicals and cleaning"],["Chemicals only","Balanced every week"],["One-time cleanup","Green-to-clean"]]}},
-}/*NICHES-END*/;
-
-const THEME_BY_NICHE = {"mobile-mechanic":"garage","pdr":"dent","mobile-detailing":"dent","garage-door":"trade","pool-leak":"trade","mobile-rv":"trade","appliance-repair":"trade","roofer":"trade","epoxy-flooring":"trade","concrete-leveling":"trade","junk-removal":"field","wildlife-removal":"field","estate-cleanout":"field","crawl-space":"field","pool-service":"trade","pet-grooming":"field","mobile-notary":"trade"};
-
-/* ===================== RENDER ===================== */
-const S = {...SITE};
-const N = {...(NICHES[S.niche] || NICHES["mobile-mechanic"] || {}), ...(S.custom || {})};
-const theme = S.theme || N.theme || THEME_BY_NICHE[S.niche] || "trade";
-document.documentElement.dataset.theme = theme;
-const DARK = theme === "garage" || theme === "dent";
-
-const name = S.name || N.sample || "Your Business";
-const short = S.short || name;
-const city = S.city || "your area";
-const fill = s => String(s||"").replaceAll("{city}", city);
-const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const digits = String(S.phone||"").replace(/\D/g,"");
-const phonePretty = digits.length===10 ? `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}` : (digits || "(555) 555-0123");
-const tel = `tel:${digits || "5555550123"}`, sms = `sms:${digits || "5555550123"}`;
-const rating = Number(S.rating)||0, ratingStr = rating ? rating.toFixed(1) : "5.0";
-const stars = "★★★★★";
-const P = S.photos || {};
-const gallery = (P.gallery||[]).filter(Boolean);
-const hero = P.hero || "";
-const pics = [hero, ...gallery].filter(Boolean);
-const img = (u,w) => `${u}=w${w}`;
-const areas = (S.areas||[]).length ? S.areas : [city];
-const hours = S.hours || [];
-const reviews = S.reviews || [];
-const trust = N.trust || [];
-const feature = N.feature || {type:"select",title:"Request service",pitch:"",bullets:[],items:["Other"]};
-document.title = `${name} · ${N.label || ""}${city ? " in " + city : ""}`;
-
-const words = (t, base=0) => esc(t).split(" ").map((w,i)=>`<span class="w"><span style="--i:${base+i}">${w}</span></span>`).join(" ");
-const allHours = hours.map(h=>h.join(" ")).join(" ");
-const open247 = /24 hours/i.test(allHours) && !/closed/i.test(allHours);
-const every = /every day/i.test(allHours) || open247;
-const hoursBadge = open247 ? "Open 24/7" : every ? "Open 7 days" : "";
-
-function featureForm(f){
-  const contact = `<div class="row2"><label>Name<input placeholder="Your name"></label><label>Phone<input type="tel" placeholder="Best number"></label></div>`;
-  let mid = "";
-  if (f.type==="dispatch" || f.type==="select"){
-    mid = `<label>${esc(f.selectLabel || (f.type==="select" ? "What do you need?" : "What's going on?"))}<select>${(f.items||[]).map(i=>`<option>${esc(i)}</option>`).join("")}</select></label>`
-        + (f.type==="dispatch" ? `<label>Your location<input placeholder="Address or cross streets"></label>` : "")
-        + `<label>Details<textarea placeholder="${esc(f.placeholder || "Anything we should know")}"></textarea></label>`;
-  } else if (f.type==="photos"){
-    mid = `<div class="drop">＋ Tap to add photos<br><small>JPG or PNG, up to 5</small></div><label>Describe it<textarea placeholder="${esc(f.placeholder || "Size, location, when it happened")}"></textarea></label><label>Address or ZIP<input></label>`;
-  } else if (f.type==="packages"){
-    mid = `<div class="pkgs">${f.items.map((p,i)=>`<label class="pkg"><input type="radio" name="pkg" ${i===1||f.items.length===1?"checked":""}><span><b>${esc(p[0])}</b><small>${esc(p[1])}</small></span></label>`).join("")}</div><div class="row2"><label>Preferred day<input type="date"></label><label>Time<select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label></div>`;
-  } else if (f.type==="schedule"){
-    mid = `<label>What do you need?<input></label><div class="row2"><label>Date<input type="date"></label><label>Time<input type="time"></label></div><label>Address<input></label>`;
-  }
-  return `<form class="req rv" style="--d:.1s" onsubmit="event.preventDefault();this.querySelector('.ok').style.display='block'">
-    <div class="ft">${esc(f.title)}</div>${mid}${contact}
-    <button class="btn btn-a" type="submit">Send request <span class="ar">→</span></button>
-    <div class="ok">Preview only. On the live site this goes straight to ${esc(name)}'s phone.</div></form>`;
+<style data-8b-part="layers">
+@layer tokens, base, atoms, layout, sections, scenes;
+</style>
+<style data-8b-part="tokens">
+@layer tokens {
+:root {
+  --color-1: #f2f2f2;
+  --color-2: #0e0e0e;
+  --color-3: #ff5b1f;
+  --color-4: #c63d00;
+  --color-5: #ffffff;
+  --color-6: #2a4cff;
+  --color-7: #c9c9c9;
+  --color-8: #5c5c5c;
+  --font-1: "Instrument Sans", "Instrument Sans Fallback", "Arial Narrow", Arial, sans-serif;
+  --font-2: "Geist", "Geist Fallback", Arial, sans-serif;
+  --radius-1: 26px;
+  --radius-2: 999px;
+  --space-1: clamp(14px, 2vw, 28px);
 }
-
-
-/* live open/closed status from the listed hours (Los Angeles time) */
-function openStatus(){
-  if(!hours.length) return null;
-  const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  const dayIdx=x=>DN.indexOf(x.trim().slice(0,3));
-  const daysOf=spec=>{ if(/every day/i.test(spec)) return [0,1,2,3,4,5,6]; const m=spec.split(/[–-]/); if(m.length===2){ const a=dayIdx(m[0]), b=dayIdx(m[1]); if(a<0||b<0) return []; const out=[]; for(let d=a;;d=(d+1)%7){ out.push(d); if(d===b) break; } return out; } const i=dayIdx(spec); return i<0?[]:[i]; };
-  const tm=x=>{ const m=String(x||"").trim().match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i); if(!m) return null; let h=+m[1]%12; if(/pm/i.test(m[3])) h+=12; return h*60+(+m[2]||0); };
-  const sched={};
-  hours.forEach(([spec,t])=>daysOf(spec).forEach(d=>{ if(/24 hours/i.test(t)) sched[d]="all"; else if(/closed/i.test(t)) sched[d]=null; else { const [a,b]=t.split(/[–-]/); const o=tm(a), c=tm(b); if(o!=null&&c!=null) sched[d]=[o,c]; } }));
-  const now=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Los_Angeles"}));
-  const d=now.getDay(), m=now.getHours()*60+now.getMinutes();
-  const fmt=x=>{ const h=Math.floor(x/60), mm=x%60; return (h%12||12)+(mm?":"+String(mm).padStart(2,"0"):"")+(h>=12?" PM":" AM"); };
-  const today=sched[d];
-  if(today==="all") return {open:true,text:"Open now, 24 hours"};
-  if(today && m>=today[0] && m<today[1]) return {open:true,text:`Open now until ${fmt(today[1])}`};
-  for(let k=0;k<8;k++){ const dd=(d+k)%7, x=sched[dd]; if(!x) continue;
-    const when = k===0 ? "" : k===1 ? "tomorrow " : DN[dd]+" ";
-    if(x==="all"){ if(k>0) return {open:false,text:`Closed now, opens ${when.trim()}`}; continue; }
-    if(k===0 && m<x[0]) return {open:false,text:`Closed now, opens ${fmt(x[0])}`};
-    if(k>0) return {open:false,text:`Closed now, opens ${when}${fmt(x[0])}`}; }
-  return null;
 }
-const ST = openStatus();
-const statusPill = ST ? `<span class="status ${ST.open?"":"closed"}"><i></i>${ST.text}</span>` : "";
-const gIcon = `<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
-try { if (sessionStorage.getItem("seen-intro")) document.documentElement.classList.add("seen"); sessionStorage.setItem("seen-intro","1"); } catch(e) {}
-
-/* ---------- hero ---------- */
-const chip = `<span class="chip"><span class="st">${stars}</span> ${ratingStr}${S.reviewCount?` · ${S.reviewCount} Google reviews`:""}</span>`;
-const heroMedia = cls => hero
-  ? `<img class="kb lz" src="${img(hero,2200)}" alt="${esc(name)}" fetchpriority="high">`
-  : `<div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 80% 0%,color-mix(in srgb,var(--accent) 40%,transparent),transparent 60%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),repeating-linear-gradient(0deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),#111"></div>`;
-
-const heroHTML = DARK ? `
-<section class="hw">
-  <div class="hw-media on-photo">${heroMedia()}
-    <div class="hw-chip fade-in">${chip}${statusPill}</div>
-    <div class="hw-side fade-in mono" style="color:#fff;opacity:.85">${esc(N.label||"")}<br>${esc(city)}</div>
-    <div class="wm" id="wm"><span>${esc(short)}</span></div>
-  </div>
-  <div class="wrap hw-intro">
-    <h1 class="disp">${words(N.h1 || name)}</h1>
-    <div class="fade-in"><p class="lead">${esc(fill(N.lead))}</p>
-      <div class="ctas"><a class="btn btn-a" href="${tel}">Call ${phonePretty} <span class="ar">→</span></a><a class="btn btn-o" href="#request">${esc(feature.title)}</a></div></div>
-  </div>
-</section>` : `
-<section class="hc">
-  <div class="hc-media rvi in">${heroMedia()}</div>
-  <div class="hc-badge fade-in">${chip}${statusPill}</div>
-  <div class="hc-card">
-    <span class="mono kicker">${esc(N.label||"")} · ${esc(city)}</span>
-    <h1 class="disp">${words(N.h1 || name)}</h1>
-    <p class="lead fade-in">${esc(fill(N.lead))}</p>
-    ${trust.length||S.owner ? `<ul class="ticks fade-in">${S.owner?`<li>Locally owned by ${esc(S.owner)}</li>`:""}${trust.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:""}
-    <div class="ctas fade-in"><a class="btn btn-a" href="${tel}">Call ${phonePretty} <span class="ar">→</span></a><a class="btn btn-o" href="#request">${esc(feature.title)}</a></div>
-  </div>
-</section>`;
-
-/* ---------- marquee ---------- */
-const mqItems = [...(N.services||[]).map(s=>s[0]), ...(hoursBadge?[hoursBadge]:[]), ...trust.filter(t=>t!==hoursBadge), `Serving ${city}`];
-const glyph = {garage:"✦",dent:"◦",trade:"●",field:"✿"}[theme];
-const mqRun = mqItems.map(t=>`<span>${esc(t)}</span><i>${glyph}</i>`).join("");
-const marquee = `<div class="mq" aria-hidden="true"><div class="mq-t">${mqRun}${mqRun}${mqRun}${mqRun}</div></div>`;
-
-/* ---------- intro statement + stats ---------- */
-const noun = (N.label||"").replace(/\s*\(.*?\)/g,"").toLowerCase();
-const who = S.owner && !/ and /.test(S.owner) ? `${S.owner}'s ${noun}` : `${name}, ${noun}`;
-const stmtText = N.intro || [
-  `${who} in ${city}${rating && S.reviewCount ? `, rated ${ratingStr} stars by ${S.reviewCount} customers on Google` : ""}.`,
-  hoursBadge ? `${hoursBadge}` + (areas.length>2 ? ` across ${areas.slice(0,3).join(", ")} and nearby.` : ".") : (areas.length>2 ? `Serving ${areas.slice(0,3).join(", ")} and nearby.` : "")
-].join(" ").trim();
-const statsArr = [];
-if (rating) statsArr.push([`<span class="count" data-to="${ratingStr}" data-dec="1">${ratingStr}</span>`, "Google rating"]);
-if (S.reviewCount) statsArr.push([`<span class="count" data-to="${S.reviewCount}">${S.reviewCount}</span>`, "Google reviews"]);
-if (open247) statsArr.push(["24/7", "Open around the clock"]);
-else if (every) statsArr.push(["7", "Days a week"]);
-if (S.years) statsArr.push([`<span class="count" data-to="${parseInt(S.years)}">${parseInt(S.years)}</span>+`, "Years in business"]);
-if (statsArr.length < 4 && areas.length > 1) statsArr.push([`<span class="count" data-to="${areas.length}">${areas.length}</span>`, "Neighborhoods served"]);
-const intro = `
-<section class="s"><div class="wrap">
-  <div class="mono kicker rv">${S.owner ? `${esc(S.owner)} · ${esc(name)}` : esc(name)}</div>
-  <p class="stmt" id="stmt" style="margin-top:26px">${esc(stmtText).split(" ").map(w=>`<span class="sw">${w}</span>`).join(" ")}</p>
-  <div class="stats">${statsArr.slice(0,4).map(([b,s],i)=>`<div class="stat rv" style="--d:${i*.08}s"><b>${b}</b><span>${s}</span></div>`).join("")}</div>
-</div></section>`;
-
-/* ---------- services ---------- */
-const svcPics = pics.length ? (N.services||[]).map((_,i)=>pics[(i+1)%pics.length]) : [];
-const services = `
-<section class="s alt" id="services"><div class="wrap">
-  <div class="s-head"><h2 class="disp rv">What we do</h2><p class="rv" style="--d:.1s">${esc(N.label||"")} in ${esc(city)} and the neighborhoods around it.</p></div>
-  <div class="svc ${svcPics.length?"":"nophoto"}">
-    ${svcPics.length?`<div class="svc-photo rvi">${svcPics.map((u,i)=>`<img src="${img(u,1200)}" alt="" loading="lazy" class="${i?"":"on"}">`).join("")}<span class="tagp chip">${esc(name)}</span></div>`:""}
-    <div class="svc-list">${(N.services||[]).map(([t,d],i)=>`<div class="row rv ${i?"":"act"}" data-k="${i}"><span class="n">0${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div><span class="ar2">→</span></div>`).join("")}</div>
-  </div>
-</div></section>`;
-
-/* ---------- gallery ---------- */
-const galleryHTML = pics.length > 1 ? `
-<section class="s" id="work" style="padding-bottom:clamp(60px,8vw,110px)">
-  <div class="wrap"><div class="s-head"><h2 class="disp rv">On the job</h2><div class="gal-ctl rv"><button aria-label="Previous" data-g="-1">←</button><button aria-label="Next" data-g="1">→</button></div></div></div>
-  <div class="gal-wrap"><div class="gal" id="gal">${pics.map((u,i)=>`<figure class="rv" style="--d:${Math.min(i,4)*.07}s" data-i="${i}"><img class="lz" src="${img(u,1400)}" alt="${esc(name)} photo ${i+1}" loading="lazy"><span class="num">${String(i+1).padStart(2,"0")}</span></figure>`).join("")}</div></div>
-  <div class="wrap"><p class="credit">Photos from ${esc(name)}'s Google listing and customer reviews.</p></div>
-</section>` : "";
-
-/* ---------- request ---------- */
-const request = `
-<section class="s req-s" id="request"><div class="wrap req-g">
-  <div class="rv"><span class="mono kicker" style="color:inherit;opacity:.7">Get in touch</span>
-    <h2 class="disp">${esc(feature.title)}</h2>
-    <p class="pitch">${esc(feature.pitch||"")}</p>
-    ${(feature.bullets||[]).length?`<ol class="steps-mini">${feature.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ol>`:""}
-    <p class="callline">Rather talk? Call or text <a href="${tel}">${phonePretty}</a></p></div>
-  ${featureForm(feature)}
-</div></section>`;
-
-/* ---------- reviews ---------- */
-const reviewsHTML = reviews.length ? `
-<section class="s" id="reviews"><div class="wrap rev">
-  <div class="score rv"><span class="mono kicker">Google reviews</span><b style="margin-top:22px"><span class="count" data-to="${ratingStr}" data-dec="1">${ratingStr}</span></b><div class="st">${stars}</div><p>${S.reviewCount?`From ${S.reviewCount} reviews on Google`:"On Google"}</p></div>
-  <div class="rv" style="--d:.1s"><div class="qs" id="qs">${reviews.map((r,i)=>`<figure class="q ${i?"":"on"}"><blockquote>${esc(r.text)}</blockquote><cite><span class="av" aria-hidden="true">${esc((r.who||"?").replace(/[^A-Za-z0-9]/g,"").charAt(0).toUpperCase()||"G")}</span><span><b>${esc(r.who)}</b><small>${gIcon} Google review</small></span></cite></figure>`).join("")}</div>
-    ${reviews.length>1?`<div class="dots" id="dots">${reviews.map((_,i)=>`<button aria-label="Review ${i+1}" class="${i?"":"on"}"></button>`).join("")}</div>`:""}</div>
-</div></section>` : "";
-
-/* ---------- process ---------- */
-const process = `
-<section class="s alt" style="padding:clamp(70px,8vw,120px) 0"><div class="wrap">
-  <div class="s-head"><h2 class="disp rv">How it works</h2></div>
-  <div class="proc">
-    <div class="p rv"><div class="dot">01</div><h3>Call or text</h3><p>Reach ${esc(S.owner || name)} directly at ${phonePretty}, or send the form.</p></div>
-    <div class="p rv" style="--d:.12s"><div class="dot">02</div><h3>Talk it through</h3><p>Describe what's going on and get a straight answer.</p></div>
-    <div class="p rv" style="--d:.24s"><div class="dot">03</div><h3>Get it handled</h3><p>${esc(N.step3 || "Set a time that works and we take it from there.")}</p></div>
-  </div>
-</div></section>`;
-
-/* ---------- area + hours ---------- */
-const mapUrl = S.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + " " + S.address)}` : "";
-const areaHours = `
-<section class="s" id="area"><div class="wrap ah">
-  <div><div class="s-head" style="margin-bottom:28px"><h2 class="disp rv">Where we work</h2></div>
-    <ul class="towns">${areas.map((a,i)=>`<li class="rv" style="--d:${i*.05}s">${esc(a)}<small>${String(i+1).padStart(2,"0")}</small></li>`).join("")}</ul></div>
-  ${hours.length||S.address?`<aside class="hours rv" style="--d:.1s"><div class="h-top"><h3>Hours</h3>${statusPill}</div>${hours.map(([d,t])=>`<div class="hr"><span>${esc(d)}</span><b>${esc(t)}</b></div>`).join("")}
-    ${S.address?`<p class="addr">${esc(S.address)}<br><a href="${mapUrl}" target="_blank" rel="noopener">Get directions ↗</a></p>`:""}
-    <a class="btn btn-a" href="${tel}">Call ${phonePretty}</a></aside>`:""}
-</div></section>`;
-
-/* ---------- end ---------- */
-const end = `
-<section class="end"><div class="wrap">
-  <span class="mono kicker">${esc(name)}</span>
-  <h2 class="disp">Ready when you are.</h2>
-  <a class="bigcall" id="bigcall" href="${tel}">${phonePretty}</a>
-  <div class="foot"><span>© ${new Date().getFullYear()} ${esc(name)} · ${esc(city)}</span><span>Website preview made for ${esc(name)}</span></div>
-</div></section>`;
-
-document.getElementById("app").innerHTML = `
-<div class="intro" aria-hidden="true"><span><i>${esc(short)}</i></span></div>
-<div class="prog" id="prog"></div>
-<div class="pv">Website preview made for <b>${esc(name)}</b>. Not live yet, and not affiliated with ${esc(name)} until approved.</div>
-<header class="hd" id="hd"><div class="wrap">
-  <a class="logo" href="#">${esc(name.length > 24 ? short : name)}<small>${esc(N.label||"")}</small></a>
-  <nav class="nav"><a href="#services">Services</a>${galleryHTML?`<a href="#work">Work</a>`:""}${reviewsHTML?`<a href="#reviews">Reviews</a>`:""}<a href="#area">Area</a></nav>
-  <a class="btn btn-a btn-sm" href="${tel}">${phonePretty}</a>
-</div></header>
-${heroHTML}${marquee}${intro}${services}${galleryHTML}${reviewsHTML}${request}${process}${areaHours}${end}
-<div class="callbar" id="callbar"><a class="btn btn-a" href="${tel}">Call now</a><a class="btn btn-o" href="${sms}">Text</a><a class="btn btn-o" href="#request">Form</a></div>
-<div class="lb" id="lb"><img alt=""><button class="x" aria-label="Close">✕</button><button class="pr" aria-label="Previous">←</button><button class="nx" aria-label="Next">→</button></div>`;
-
-/* ===================== MOTION ===================== */
-const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-// fit giant type to its container width
-function fit(el, box, maxPx){ if(!el) return; el.style.fontSize="100px"; const w=el.scrollWidth||1; const cs=getComputedStyle(box); const target=(box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight))*0.97; el.style.fontSize=Math.min(maxPx||9999, 100*target/w)+"px"; }
-function fitAll(){ const wm=$("#wm span"); if(wm){ fit(wm, $(".hw-media"), 420); } const bc=$("#bigcall"); if(bc){ bc.style.display="inline-block"; fit(bc, bc.parentElement, 360); bc.style.display="block"; } }
-document.fonts ? document.fonts.ready.then(fitAll) : 0; fitAll(); addEventListener("resize", fitAll);
-
-// photos fade in once loaded
-$$("img.lz").forEach(i=>{ if(i.complete && i.naturalWidth) i.classList.add("ld"); else { i.addEventListener("load",()=>i.classList.add("ld")); i.addEventListener("error",()=>i.classList.add("ld")); } });
-
-// reveals
-const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{rootMargin:"0px 0px -8% 0px",threshold:.08});
-$$(".rv,.rvi,.proc .p").forEach(el=>io.observe(el));
-
-// count up
-const cio = new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; cio.unobserve(e.target); const el=e.target, to=parseFloat(el.dataset.to), dec=+el.dataset.dec||0; if(reduce){return;} const t0=performance.now(), dur=1400; const step=t=>{ const p=Math.min(1,(t-t0)/dur), v=to*(1-Math.pow(1-p,3)); el.textContent=v.toFixed(dec); if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); }),{threshold:.6});
-$$(".count").forEach(el=>cio.observe(el));
-
-// scroll-driven: progress bar, header, statement words, callbar
-const hd=$("#hd"), prog=$("#prog"), stmt=$("#stmt"), sws=stmt?[...stmt.querySelectorAll(".sw")]:[], cb=$("#callbar");
-function onScroll(){
-  const y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
-  prog.style.transform=`scaleX(${h>0?y/h:0})`;
-  hd.classList.toggle("solid", y>40);
-  if(cb) cb.classList.toggle("show", y>innerHeight*.6);
-  if(stmt){ const r=stmt.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight*.85-r.top)/(r.height+innerHeight*.35))); const n=Math.round(p*sws.length*1.15); sws.forEach((w,i)=>w.classList.toggle("lit", reduce || i<n)); }
+</style>
+<style data-8b-part="base">
+@layer base {
+@font-face { font-family: "Instrument Sans Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 81.2%; ascent-override: 119.4%; descent-override: 30.8%; line-gap-override: 0%; }
+@font-face { font-family: "Geist Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 102.9%; ascent-override: 98.2%; descent-override: 29.2%; line-gap-override: 0%; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-1); color: var(--color-2); font-family: var(--font-2); font-size: 16px; line-height: 1.5; font-weight: 400; overflow-x: clip; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-6); outline-offset: 3px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 }
-addEventListener("scroll", onScroll, {passive:true}); onScroll();
+</style>
+<style data-8b-part="system">
+@layer atoms {
+.m-text { font-family: var(--font-2); font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-2 { font-family: var(--font-1); font-size: 120px; font-weight: 400; font-stretch: 88%; line-height: 0.86; letter-spacing: -0.01em; text-transform: uppercase; font-style: normal; }
+.m-text-3 { font-family: var(--font-2); font-size: clamp(18px, 1.8vw, 24px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; text-transform: none; font-style: normal; color: var(--color-4); }
+.m-text-4 { font-family: var(--font-2); font-size: 13px; font-weight: 400; line-height: 1.35; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-5 { font-family: var(--font-1); font-size: clamp(26px, 3vw, 40px); font-weight: 400; font-stretch: 88%; line-height: 0.95; letter-spacing: -0.005em; text-transform: uppercase; font-style: normal; }
+.m-text-6 { font-family: var(--font-2); font-size: clamp(18px, 1.6vw, 22px); font-weight: 400; line-height: 1.35; letter-spacing: -0.01em; text-transform: none; font-style: normal; }
 
-// services: swap photo on hover / as rows pass the middle
-const rows=$$(".row"), sp=$$(".svc-photo img");
-function act(k){ rows.forEach(r=>r.classList.toggle("act", r.dataset.k==k)); sp.forEach((im,i)=>im.classList.toggle("on", i==k)); }
-rows.forEach(r=>r.addEventListener("mouseenter",()=>act(r.dataset.k)));
-const rio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) act(e.target.dataset.k); }),{rootMargin:"-45% 0px -45% 0px"});
-rows.forEach(r=>rio.observe(r));
-
-// gallery: arrows, drag, lightbox
-const gal=$("#gal");
-if(gal){
-  $$("[data-g]").forEach(b=>b.addEventListener("click",()=>gal.scrollBy({left:(+b.dataset.g)*gal.clientWidth*.7,behavior:"smooth"})));
-  let down=false,sx=0,sl=0,moved=false;
-  gal.addEventListener("pointerdown",e=>{ if(e.pointerType!=="mouse") return; down=true;moved=false;sx=e.clientX;sl=gal.scrollLeft;gal.style.scrollSnapType="none";gal.style.cursor="grabbing"; });
-  addEventListener("pointermove",e=>{ if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true; gal.scrollLeft=sl-dx; });
-  addEventListener("pointerup",()=>{ if(!down) return; down=false; gal.style.scrollSnapType=""; gal.style.cursor=""; });
-  const lb=$("#lb"), lbi=lb.querySelector("img"); let cur=0;
-  const show=i=>{ cur=(i+pics.length)%pics.length; lbi.src=img(pics[cur],2000); lb.classList.add("open"); };
-  gal.addEventListener("click",e=>{ const f=e.target.closest("figure"); if(f && !moved) show(+f.dataset.i); });
-  lb.querySelector(".x").onclick=()=>lb.classList.remove("open");
-  lb.querySelector(".pr").onclick=e=>{e.stopPropagation();show(cur-1)};
-  lb.querySelector(".nx").onclick=e=>{e.stopPropagation();show(cur+1)};
-  lb.addEventListener("click",e=>{ if(e.target===lb) lb.classList.remove("open"); });
-  addEventListener("keydown",e=>{ if(!lb.classList.contains("open")) return; if(e.key==="Escape") lb.classList.remove("open"); if(e.key==="ArrowRight") show(cur+1); if(e.key==="ArrowLeft") show(cur-1); });
+.m-btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 0; border-radius: var(--radius-2); background: var(--color-3); color: var(--color-2); font-family: var(--font-2); font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; cursor: pointer; overflow: hidden; }
+.m-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-2); clip-path: inset(50% 0 50% 0 round var(--radius-2)); transition: clip-path .5s cubic-bezier(.7, 0, .2, 1); }
+.m-btn__label, .m-btn__icon { transition: color .3s, stroke .3s; }
+.m-btn__icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; flex: none; }
+.m-btn-2 { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-2); background: var(--color-2); color: var(--color-5); font-family: var(--font-2); font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; cursor: pointer; overflow: hidden; }
+.m-btn-2::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-3); clip-path: inset(50% 0 50% 0 round var(--radius-2)); transition: clip-path .5s cubic-bezier(.7, 0, .2, 1); }
+.m-btn-2 > span { transition: color .3s; }
+.m-btn-3 { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--color-7); border-radius: var(--radius-2); background: var(--color-5); color: var(--color-2); font-family: var(--font-2); font-size: 14px; font-weight: 400; line-height: 1; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; cursor: pointer; overflow: hidden; }
+.m-btn-3::before { content: ""; position: absolute; inset: -1px; z-index: -1; background: var(--color-2); clip-path: inset(50% 0 50% 0 round var(--radius-2)); transition: clip-path .5s cubic-bezier(.7, 0, .2, 1); }
+.m-btn-3 > span { transition: color .3s; }
+@media (hover: hover) {
+  .m-btn:hover::before, .m-btn-2:hover::before, .m-btn-3:hover::before { clip-path: inset(0 0 0 0 round var(--radius-2)); }
+  .m-btn:hover { color: var(--color-5); }
+  .m-btn-2:hover { color: var(--color-2); }
+  .m-btn-3:hover { color: var(--color-5); }
 }
+.m-link { color: inherit; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 2px; transition: background-size .45s cubic-bezier(.7, 0, .2, 1); }
+@media (hover: hover) {
+  .m-link:hover { background-size: 0 1px; background-position: 100% 100%; }
+}
+.m-icon-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--color-7); border-radius: var(--radius-2); background: var(--color-5); color: var(--color-2); cursor: pointer; }
+.m-icon-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform .5s cubic-bezier(.7, 0, .2, 1); }
+@media (hover: hover) {
+  .m-icon-btn:hover svg { transform: rotate(90deg); }
+}
+.m-badge { font-stretch: normal; display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border: 1px solid currentColor; border-radius: var(--radius-2); font-family: var(--font-2); font-size: 13px; font-weight: 500; line-height: 1; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.m-badge-2 { font-stretch: normal; display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: var(--radius-2); background: var(--color-6); color: var(--color-5); font-family: var(--font-2); font-size: 13px; font-weight: 500; line-height: 1; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.m-badge-3 { font-stretch: normal; display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: var(--radius-2); background: var(--color-3); color: var(--color-2); font-family: var(--font-2); font-size: 13px; font-weight: 500; line-height: 1; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.m-band { position: relative; overflow: hidden; border-radius: var(--radius-1); background: var(--color-2); }
+.m-band > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.m-star { display: block; width: 120px; height: 120px; overflow: visible; fill: none; stroke: var(--color-3); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.m-star path { vector-effect: non-scaling-stroke; }
+.m-surface { background: var(--color-5); color: var(--color-2); border: 1px solid var(--color-7); border-radius: var(--radius-1); padding: clamp(20px, 2.4vw, 32px); }
+.m-field { display: block; width: 100%; min-height: 52px; padding: 14px 16px; border: 1px solid var(--color-7); border-radius: 14px; background: var(--color-5); color: var(--color-2); font-family: var(--font-2); font-size: 16px; font-weight: 400; line-height: 1.4; letter-spacing: 0; appearance: none; }
+textarea.m-field { min-height: 120px; resize: vertical; }
+.m-field-2 { position: relative; display: inline-flex; align-items: center; }
+.m-field-2__select { min-height: 40px; padding: 0 36px 0 16px; border: 1px solid var(--color-7); border-radius: var(--radius-2); background: var(--color-5); color: var(--color-2); font-family: var(--font-2); font-size: 14px; font-weight: 400; line-height: 1; letter-spacing: -0.005em; appearance: none; cursor: pointer; }
+.m-field-2__icon { position: absolute; right: 12px; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; pointer-events: none; }
+}
+</style>
+<style data-8b-part="layout">
+@layer layout {
+.l-gutter { padding-inline: var(--space-1); }
+.l-clip { overflow-x: clip; }
+}
+</style>
+<style data-8b-part="section:navigation">
+@layer sections {
+#navigation { position: fixed; inset: 0 0 auto; z-index: 50; padding: 12px var(--space-1); transition: transform .5s cubic-bezier(.7, 0, .2, 1); }
+#navigation.is-hidden { transform: translateY(calc(-100% - 6px)); }
+#navigation .nav__bar { display: flex; align-items: center; gap: 6px; }
+#navigation .nav__brand { font-size: 16px; font-weight: 500; padding: 0 14px; border-radius: 10px; }
+#navigation .nav__brand::before { border-radius: 10px; clip-path: inset(50% 0 50% 0 round 10px); }
+#navigation .nav__brand sup { font-size: .6em; margin-left: 1px; }
+#navigation .nav__area { margin-left: clamp(8px, 9vw, 150px); }
+#navigation .nav__group { display: flex; gap: 4px; margin: 0 auto; }
+#navigation .nav__menu { display: none; }
+#navigation .nav__overlay { position: fixed; inset: 0; z-index: 60; background: var(--color-1); padding: 12px var(--space-1) 32px; display: flex; flex-direction: column; gap: 28px; overflow-y: auto; }
+#navigation .nav__overlay[hidden] { display: none; }
+#navigation .nav__overlay-top { display: flex; justify-content: space-between; align-items: center; }
+#navigation .nav__overlay-links { display: grid; gap: 4px; }
+#navigation .nav__overlay-links a { text-decoration: none; font-size: clamp(44px, 13vw, 64px); }
+#navigation .nav__overlay-foot { margin-top: auto; display: grid; gap: 12px; justify-items: start; }
+@media (max-width: 1080px) {
+  #navigation .nav__phone { display: none; }
+}
+@media (max-width: 880px) {
+  #navigation .nav__group, #navigation .nav__area { display: none; }
+  #navigation .nav__menu { display: inline-flex; }
+  #navigation .nav__bar > .nav__book { margin-left: auto; }
+}
+@media (hover: hover) {
+  #navigation .nav__brand:hover::before { clip-path: inset(0 0 0 0 round 10px); }
+}
+}
+</style>
+<style data-8b-part="section:opening">
+@layer sections {
+#opening { position: relative; overflow-x: clip; }
+#opening .op__first { position: sticky; top: 0; z-index: 1; height: 100svh; min-height: 540px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: 0 var(--space-1) var(--space-1); }
+#opening .op__spacer { height: var(--op-nav, 64px); }
+#opening .op__frame { position: relative; z-index: 2; min-height: 150px; }
+#opening .op__band { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-1); background: var(--color-2); }
+#opening .op__drift { position: absolute; inset: 0; transform: scale(1.08); }
+#opening .op__drift > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#opening .op__shade { position: absolute; inset: 0; opacity: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--color-2) 20%, transparent) 0%, color-mix(in srgb, var(--color-2) 40%, transparent) 40%, color-mix(in srgb, var(--color-2) 82%, transparent) 78%); pointer-events: none; }
+#opening .op__type { position: relative; z-index: 1; container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; padding-top: 14px; }
+#opening .op__title { display: contents; }
+#opening .op__line { display: block; white-space: nowrap; font-size: min(calc(100cqw / 10.2), calc(var(--op-box) / (var(--len) * 0.51))); }
+#opening .op__line > span { display: block; }
+#opening .op__l1 { --op-box: 100cqw; grid-column: 1 / -1; grid-row: 1; }
+#opening .op__l2 { --op-box: 82cqw; grid-column: 3 / -1; grid-row: 2; justify-self: end; }
+#opening .op__l3 { --op-box: 49cqw; grid-column: 1 / 7; grid-row: 3; }
+#opening .op__tag { grid-column: 1 / 3; grid-row: 2; align-self: center; display: grid; gap: 6px; padding-top: .4em; }
+#opening .op__tag .m-text-4 { color: var(--color-4); }
+#opening .op__note { grid-column: 7 / 10; grid-row: 3; align-self: center; max-width: 30ch; color: var(--color-4); position: relative; z-index: 1; }
+#opening .op__star { grid-column: 9 / 11; grid-row: 3; justify-self: center; align-self: center; width: clamp(80px, 11cqw, 150px); aspect-ratio: 1; margin-bottom: -4%; }
+#opening .op__star .m-star { width: 100%; height: 100%; }
+#opening .op__cta { grid-column: 10 / -1; grid-row: 3; justify-self: end; align-self: end; position: relative; z-index: 1; }
 
-// reviews rotator
-const qs=$$(".q"), dots=$$("#dots button"); let qi=0, qt;
-function q(i){ qi=(i+qs.length)%qs.length; qs.forEach((x,j)=>x.classList.toggle("on",j===qi)); dots.forEach((d,j)=>{ d.classList.remove("on"); if(j===qi){ void d.offsetWidth; d.classList.add("on"); } }); clearTimeout(qt); if(qs.length>1 && !reduce) qt=setTimeout(()=>q(qi+1),6500); }
-dots.forEach((d,j)=>d.addEventListener("click",()=>q(j)));
-if(qs.length){ const tallest=Math.max(...qs.map(x=>x.offsetHeight)); $("#qs").style.minHeight=tallest+"px"; q(0); }
-addEventListener("resize",()=>{ if(qs.length){ $("#qs").style.minHeight="0px"; $("#qs").style.minHeight=Math.max(...qs.map(x=>x.offsetHeight))+"px"; } });
+#opening .op__second { position: relative; z-index: 2; min-height: 100svh; display: grid; align-content: end; padding: calc(var(--op-nav, 64px) + 24px) var(--space-1) var(--space-1); background: var(--color-2); color: var(--color-5); overflow: hidden; isolation: isolate; }
+#opening .op__second :focus-visible { outline-color: var(--color-5); }
+#opening .op__title2 { display: contents; }
+#opening .op__m1 { --op-box: 100cqw; grid-column: 1 / -1; grid-row: 1; }
+#opening .op__m2 { --op-box: 82cqw; grid-column: 3 / -1; grid-row: 2; justify-self: end; }
+#opening .op__m3 { --op-box: 40cqw; grid-column: 1 / 6; grid-row: 3; }
+#opening .op__tag2 { grid-column: 1 / 3; grid-row: 2; align-self: center; color: var(--color-5); padding-top: .4em; }
+#opening .op__sides { grid-column: 6 / -1; grid-row: 3; display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px 24px; align-items: end; }
+#opening .op__side { display: grid; gap: 10px; justify-items: start; max-width: 28ch; }
+#opening .op__more { justify-self: end; white-space: nowrap; }
+
+@media (prefers-reduced-motion: no-preference) {
+  #opening .op__frame { animation: op-frame 1.1s cubic-bezier(.2, .7, .1, 1) backwards; }
+  #opening .op__line > span { animation: op-rise .9s cubic-bezier(.2, .7, .1, 1) backwards; }
+  #opening .op__l2 > span { animation-delay: .08s; }
+  #opening .op__l3 > span { animation-delay: .16s; }
+  #opening .op__tag > *, #opening .op__note > span, #opening .op__cta > span { animation: op-rise .8s .25s cubic-bezier(.2, .7, .1, 1) backwards; }
+  #opening .op__drift { animation: op-drift 7s ease-in-out infinite alternate; }
+  #opening .op__star .m-star { animation: op-spin 24s linear infinite; }
+  #opening.is-off .op__drift, #opening.is-off .op__star .m-star { animation-play-state: paused; }
+}
+@keyframes op-frame { from { clip-path: inset(6% 4% 6% 4% round var(--radius-1)); transform: translateY(18px); } to { clip-path: inset(0 0 0 0 round var(--radius-1)); transform: none; } }
+@keyframes op-rise { from { transform: translateY(.35em); } }
+@keyframes op-drift { from { transform: scale(1.08) translateX(-2.6%); } to { transform: scale(1.08) translateX(2.6%); } }
+@keyframes op-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 760px) {
+  #opening .op__first { min-height: 600px; }
+  #opening .op__type { column-gap: 10px; row-gap: 0; }
+  #opening .op__line { font-size: min(calc(100cqw / 6.6), calc(100cqw / (var(--len) * 0.53))); }
+  #opening .op__l1 { font-size: calc(100cqw / 6.6); white-space: normal; }
+  #opening .op__l2 { grid-column: 1 / -1; }
+  #opening .op__l3 { grid-column: 1 / 10; }
+  #opening .op__star { grid-column: 10 / -1; grid-row: 3; width: 100%; max-width: 72px; justify-self: end; margin: 0; }
+  #opening .op__tag { grid-column: 1 / 8; grid-row: 4; padding-top: 14px; }
+  #opening .op__cta { grid-column: 8 / -1; grid-row: 4; align-self: end; min-height: 44px; padding: 0 16px; }
+  #opening .op__note { grid-column: 1 / -1; grid-row: 5; max-width: none; padding-top: 10px; }
+  #opening .op__m1 { font-size: calc(100cqw / 6.6); white-space: normal; }
+  #opening .op__m2 { grid-column: 1 / -1; }
+  #opening .op__m3 { grid-column: 1 / -1; }
+  #opening .op__tag2 { grid-column: 1 / -1; grid-row: 4; padding-top: 14px; }
+  #opening .op__sides { grid-column: 1 / -1; grid-row: 5; grid-template-columns: 1fr 1fr; padding-top: 18px; gap: 14px 16px; }
+  #opening .op__more { grid-column: 1 / -1; justify-self: start; }
+}
+}
+</style>
+<style data-8b-part="section:footer">
+@layer sections {
+#footer { background: var(--color-2); color: var(--color-5); padding: clamp(48px, 7vw, 96px) var(--space-1) var(--space-1); border-radius: var(--radius-1) var(--radius-1) 0 0; }
+#footer :focus-visible { outline-color: var(--color-3); }
+#footer .ft__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+#footer .ft__lead { max-width: 30ch; }
+#footer .ft__links { display: grid; gap: 6px; }
+#footer .ft__addr { font-style: normal; display: grid; gap: 6px; color: var(--color-7); }
+#footer .ft__addr a { color: var(--color-5); }
+#footer .ft__rule { height: 1px; background: var(--color-7); margin: clamp(40px, 6vw, 80px) 0 18px; transform-origin: 0 50%; opacity: .5; }
+#footer .ft__mark { container-type: inline-size; }
+#footer .ft__mark span { display: block; font-size: min(42vw, calc(100cqw / (var(--len) * 0.535))); white-space: nowrap; }
+#footer .ft__base { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: var(--color-7); padding-top: 18px; }
+@media (max-width: 760px) {
+  #footer .ft__top { grid-template-columns: 1fr 1fr; }
+  #footer .ft__lead { grid-column: 1 / -1; }
+}
+}
+</style>
+<style data-8b-part="section:services">
+@layer sections {
+#services { padding: clamp(88px, 11vw, 168px) var(--space-1) clamp(64px, 8vw, 120px); }
+#services .sv__head { container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; margin-bottom: clamp(36px, 5vw, 72px); }
+#services .sv__title { grid-column: 1 / 9; display: grid; }
+#services .sv__title > span { display: block; white-space: nowrap; font-size: min(10cqw, calc(64cqw / (var(--len) * 0.53))); }
+#services .sv__title > span:nth-child(2) { justify-self: end; }
+#services .sv__lead { grid-column: 9 / -1; max-width: 32ch; padding-bottom: .4em; }
+#services .sv__list { container-type: inline-size; border-top: 1px solid var(--color-7); }
+#services .sv__row { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); column-gap: clamp(16px, 2vw, 28px); align-items: center; padding: 14px 0; border-bottom: 1px solid var(--color-7); }
+#services .sv__word { white-space: nowrap; font-size: min(8.6cqw, calc(45cqw / (var(--len) * 0.53))); }
+#services .sv__word > span { display: inline-block; }
+#services .sv__info { display: grid; gap: 10px; justify-items: start; max-width: 34ch; }
+#services .sv__info .m-badge { color: var(--color-4); }
+#services .sv__pic { aspect-ratio: 2.6 / 1; }
+#services .sv__pic img[data-pos="top"] { object-position: 50% 12%; }
+@media (max-width: 760px) {
+  #services .sv__head { grid-template-columns: 1fr; row-gap: 18px; }
+  #services .sv__title, #services .sv__lead { grid-column: 1 / -1; }
+  #services .sv__title > span { font-size: min(15cqw, calc(100cqw / (var(--len) * 0.53))); }
+  #services .sv__row { grid-template-columns: 1fr; row-gap: 12px; padding: 18px 0 20px; }
+  #services .sv__word { font-size: min(17cqw, calc(100cqw / (var(--len) * 0.53))); }
+  #services .sv__pic { aspect-ratio: 2.3 / 1; }
+}
+}
+</style>
+
+<style data-8b-part="section:visit">
+@layer sections {
+#visit { padding: clamp(72px, 9vw, 140px) var(--space-1); }
+#visit .vi__head { container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; margin-bottom: clamp(48px, 7vw, 100px); }
+#visit .vi__title { grid-column: 1 / 9; display: grid; }
+#visit .vi__title > span { display: block; white-space: nowrap; font-size: min(10cqw, calc(66cqw / (var(--len) * 0.53))); }
+#visit .vi__title > span:nth-child(2) { padding-left: 24cqw; }
+#visit .vi__lead { grid-column: 9 / -1; max-width: 30ch; padding-bottom: .4em; }
+#visit .vi__track { position: relative; max-width: 1180px; margin: 0 auto; }
+#visit .vi__line { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; margin-left: -2px; border-radius: var(--radius-2); background: var(--color-7); overflow: hidden; }
+#visit .vi__fill { position: absolute; inset: 0; border-radius: var(--radius-2); background: linear-gradient(180deg, var(--color-6), var(--color-3)); transform-origin: 50% 0; }
+#visit .vi__steps { display: grid; gap: clamp(40px, 6vw, 88px); }
+#visit .vi__step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr); align-items: start; }
+#visit .vi__num { grid-column: 2; justify-self: center; display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--radius-2); border: 2px solid var(--color-2); background: var(--color-5); font-family: var(--font-2); font-size: 16px; font-weight: 500; position: relative; z-index: 1; transition: background-color .4s, color .4s, border-color .4s; }
+#visit .vi__body { display: grid; gap: 12px; grid-row: 1; max-width: 46ch; }
+#visit .vi__step:nth-child(odd) .vi__body { grid-column: 1; justify-self: end; text-align: right; justify-items: end; }
+#visit .vi__step:nth-child(even) .vi__body { grid-column: 3; }
+#visit .vi__body .m-text { color: var(--color-8); }
+#visit .vi__step.is-done .vi__num { background: var(--color-2); color: var(--color-5); }
+@media (prefers-reduced-motion: no-preference) {
+  #visit .is-pending .vi__step:not(.is-done) .vi__body { color: var(--color-8); }
+  #visit .is-pending .vi__step:not(.is-done) .vi__num { border-color: var(--color-7); color: var(--color-8); }
+}
+@media (max-width: 760px) {
+  #visit .vi__head { grid-template-columns: 1fr; row-gap: 18px; }
+  #visit .vi__title, #visit .vi__lead { grid-column: 1 / -1; }
+  #visit .vi__title > span { font-size: min(16cqw, calc(100cqw / (var(--len) * 0.53))); }
+  #visit .vi__title > span:nth-child(2) { padding-left: 0; justify-self: end; }
+  #visit .vi__line { left: 26px; }
+  #visit .vi__step { grid-template-columns: 52px minmax(0, 1fr); column-gap: 18px; }
+  #visit .vi__num { grid-column: 1; }
+  #visit .vi__step:nth-child(odd) .vi__body, #visit .vi__step:nth-child(even) .vi__body { grid-column: 2; justify-self: start; text-align: left; justify-items: start; }
+}
+}
+</style>
+<style data-8b-part="section:work">
+@layer sections {
+#work { padding: clamp(72px, 9vw, 140px) var(--space-1) clamp(48px, 6vw, 96px); }
+#work .wk__head { container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
+#work .wk__title { grid-column: 1 / 8; display: grid; }
+#work .wk__title > span { display: block; white-space: nowrap; font-size: min(10cqw, calc(56cqw / (var(--len) * 0.53))); }
+#work .wk__title > span:nth-child(2) { justify-self: end; }
+#work .wk__lead { grid-column: 9 / -1; max-width: 30ch; padding-bottom: .4em; }
+#work .wk__stack { display: grid; gap: clamp(20px, 3vw, 40px); }
+#work .wk__card { position: sticky; top: 16px; display: grid; grid-template-rows: auto auto; gap: 18px; padding: 12px 12px 22px; border-radius: calc(var(--radius-1) + 12px); background: var(--color-5); border: 1px solid var(--color-7); overflow: hidden; }
+#work .wk__card:nth-child(2) { top: 30px; }
+#work .wk__card:nth-child(3) { top: 44px; }
+#work .wk__card:nth-child(4) { top: 58px; }
+#work .wk__card:nth-child(5) { top: 72px; }
+#work .wk__band { height: min(54vh, 44vw); min-height: 220px; }
+#work .wk__band img { transform: scale(1.12); }
+#work .wk__meta { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); gap: 12px 24px; align-items: start; padding: 0 10px; }
+#work .wk__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+#work .wk__meta .m-text-4 { color: var(--color-8); }
+#work .wk__dim { position: absolute; inset: 0; background: var(--color-2); opacity: 0; pointer-events: none; }
+@media (max-width: 760px) {
+  #work .wk__head { grid-template-columns: 1fr; row-gap: 18px; }
+  #work .wk__title, #work .wk__lead { grid-column: 1 / -1; }
+  #work .wk__title > span { font-size: min(18cqw, calc(100cqw / (var(--len) * 0.53))); }
+  #work .wk__band { height: 42vh; min-height: 200px; }
+  #work .wk__meta { grid-template-columns: 1fr; padding: 0 4px; }
+}
+}
+</style>
+
+
+<style data-8b-part="section:reviews">
+@layer sections {
+#reviews { padding: clamp(72px, 9vw, 140px) 0; }
+#reviews .rv__head { container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; margin: 0 var(--space-1) clamp(36px, 5vw, 64px); }
+#reviews .rv__title { grid-column: 1 / 9; display: grid; }
+#reviews .rv__title > span { display: block; white-space: nowrap; font-size: min(10cqw, calc(66cqw / (var(--len) * 0.53))); }
+#reviews .rv__title > span:nth-child(2) { justify-self: end; }
+#reviews .rv__lead { grid-column: 9 / -1; max-width: 30ch; padding-bottom: .4em; }
+#reviews .rv__viewport { padding: 0 var(--space-1); }
+#reviews .rv__row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+#reviews .rv__card { height: 100%; display: grid; align-content: space-between; gap: 28px; }
+#reviews .rv__card .m-text-4 { color: var(--color-8); }
+#reviews .rv__who { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+@media (prefers-reduced-motion: no-preference) {
+  #reviews .rv__viewport.is-looping { overflow: hidden; padding: 0; }
+  #reviews .is-looping .rv__row { display: flex; gap: 0; width: max-content; animation: rv-loop 70s linear infinite; }
+  #reviews .is-looping .rv__item { width: clamp(280px, 30vw, 400px); padding-left: 14px; }
+  #reviews .is-looping:hover .rv__row, #reviews .is-looping:focus-within .rv__row, #reviews .is-looping.is-off .rv__row { animation-play-state: paused; }
+}
+@keyframes rv-loop { to { transform: translateX(-50%); } }
+@media (max-width: 760px) {
+  #reviews .rv__head { grid-template-columns: 1fr; row-gap: 18px; }
+  #reviews .rv__title, #reviews .rv__lead { grid-column: 1 / -1; }
+  #reviews .rv__title > span { font-size: min(15cqw, calc(100cqw / (var(--len) * 0.53))); }
+}
+}
+</style>
+
+
+<style data-8b-part="section:contact">
+@layer sections {
+#contact { padding: clamp(96px, 11vw, 160px) var(--space-1) clamp(56px, 7vw, 100px); }
+#contact .ct__frame { position: relative; }
+#contact .ct__band { aspect-ratio: 3.6 / 1; }
+#contact .ct__type { container-type: inline-size; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; align-items: end; padding-top: 16px; }
+#contact .ct__title { display: contents; }
+#contact .ct__title > span { display: block; white-space: nowrap; font-size: min(calc(100cqw / 8.5), calc(var(--ct-box) / (var(--len) * 0.53))); }
+#contact .ct__l1 { --ct-box: 100cqw; grid-column: 1 / -1; grid-row: 1; }
+#contact .ct__l2 { --ct-box: 100cqw; grid-column: 1 / -1; grid-row: 2; justify-self: end; }
+#contact .ct__l3 { --ct-box: 50cqw; grid-column: 1 / 7; grid-row: 3; }
+#contact .ct__tag { grid-column: 8 / -1; grid-row: 3; align-self: center; justify-self: end; display: grid; gap: 6px; padding-top: .4em; }
+#contact .ct__tag .m-text-4 { color: var(--color-4); }
+#contact .ct__body { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(20px, 3vw, 44px); margin-top: clamp(36px, 5vw, 64px); align-items: start; }
+#contact .ct__ways { display: grid; gap: 8px; justify-items: start; }
+#contact .ct__ways .m-text-4 { color: var(--color-8); margin-top: 10px; max-width: 34ch; }
+#contact .ct__form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+#contact .ct__field { display: grid; gap: 6px; }
+#contact .ct__field--wide { grid-column: 1 / -1; }
+#contact .ct__field .m-text-4 { color: var(--color-8); }
+#contact .ct__send { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+#contact .ct__status { color: var(--color-4); }
+@media (max-width: 760px) {
+  #contact .ct__band { aspect-ratio: 1.8 / 1; }
+  #contact .ct__title > span { font-size: min(calc(100cqw / 6.6), calc(100cqw / (var(--len) * 0.53))); }
+  #contact .ct__l1 { white-space: normal; font-size: calc(100cqw / 6.6); }
+  #contact .ct__l2, #contact .ct__l3 { grid-column: 1 / -1; }
+  #contact .ct__tag { grid-column: 1 / -1; grid-row: 4; padding-top: 16px; justify-self: start; }
+  #contact .ct__body { grid-template-columns: 1fr; }
+  #contact .ct__form { grid-template-columns: 1fr; }
+}
+}
+</style>
+<style data-8b-part="motion">
+@layer scenes {
+[data-8b-live] [data-8b-motion~="leader"] { animation-name: motion-leader-scale; animation-duration: 1s; animation-delay: 0s; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); animation-fill-mode: both; animation-play-state: paused; transform: none; }
+[data-8b-live] [data-8b-motion~="leader"].is-in { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="strip"] { animation-name: motion-strip-clippath; animation-duration: 1.1s; animation-delay: 0s; animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1); animation-fill-mode: both; animation-play-state: paused; }
+[data-8b-live] [data-8b-motion~="strip"].is-in { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="strip"] img { animation-name: motion-strip-img-scale; animation-duration: 1.4s; animation-delay: 0s; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); animation-fill-mode: both; animation-play-state: paused; transform: none; }
+[data-8b-live] [data-8b-motion~="strip"].is-in img { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="relay"] { view-timeline: --motion-relay block; view-timeline-inset: 0; }
+[data-8b-live] [data-8b-motion~="relay"] > * { display: block; --motion-relay-t: calc(.8 + (var(--n, 1) - 1) * .14); --motion-relay-x: -36%; animation: motion-relay auto cubic-bezier(0.25, 1, 0.5, 1) both; animation-timeline: --motion-relay; animation-range: cover calc(4vh + 38vh * var(--i, 0) * .14 / var(--motion-relay-t)) cover calc(4vh + 38vh * (var(--i, 0) * .14 + .8) / var(--motion-relay-t)); }
+[data-8b-live] [data-8b-motion~="relay"] > :nth-child(even) { --motion-relay-x: 36%; }
+@keyframes motion-relay { 0% { translate: var(--motion-relay-x) 0; opacity: 0; } 100% { translate: 0 0; opacity: 1; } }
+@keyframes motion-leader-scale { 0% { scale: 0 1; } 100% { scale: 1; } }
+@keyframes motion-strip-clippath { 0% { clip-path: inset(44% 0% round 999px); } 99.998% { clip-path: inset(0% round 999px); } 100% { clip-path: none; } }
+@keyframes motion-strip-img-scale { 0% { scale: 1.22; } 100% { scale: 1; } }
+}
+</style>
+<style data-8b-part="scene:opening">
+@layer scenes {
+@property --opening-q { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --opening-k { syntax: "<number>"; inherits: true; initial-value: 1; }
+[data-8b-live] #opening { --opening-h: 100svh; view-timeline: --opening-t block; view-timeline-inset: 0; }
+[data-8b-live] #opening .op__band, [data-8b-live] #opening .op__shade, [data-8b-live] #opening .op__star, [data-8b-live] #opening .op__line, [data-8b-live] #opening .op__tag, [data-8b-live] #opening .op__note, [data-8b-live] #opening .op__cta, [data-8b-live] #opening .op__tag2, [data-8b-live] #opening .op__sides { animation-timeline: --opening-t; animation-fill-mode: both; animation-duration: auto; }
+
+[data-8b-live] #opening.is-staged .op__band { overflow: visible; border-radius: 0; background: transparent; clip-path: inset(calc(var(--opening-q) * var(--opening-top) * -1) calc(var(--opening-q) * var(--opening-right) * -1) calc(var(--opening-q) * var(--opening-bottom) * -1) calc(var(--opening-q) * var(--opening-left) * -1) round calc(var(--opening-k) * var(--radius-1))); }
+[data-8b-live] #opening.is-staged .op__second { background: transparent; }
+[data-8b-live] #opening.is-staged .op__drift > img { inset: auto; max-width: none; object-fit: fill; width: var(--opening-w); height: var(--opening-ph); left: var(--opening-img-left); top: var(--opening-img-top); translate: calc(var(--opening-x0) * (1 - var(--opening-q))) calc(var(--opening-y0) * (1 - var(--opening-q))); scale: calc(var(--opening-s0) + (1 - var(--opening-s0)) * var(--opening-q)); }
+[data-8b-live] #opening.is-staged .op__shade { inset: auto; width: var(--opening-vw); height: var(--opening-vh); left: calc(var(--opening-left) * -1); top: calc(var(--opening-top) * -1); }
+
+[data-8b-live] #opening .op__band { animation-name: opening-q, opening-k; animation-timing-function: linear; animation-range: contain calc(var(--opening-h) * 0) contain calc(var(--opening-h) * 0.56075), contain calc(var(--opening-h) * 0.28037) contain calc(var(--opening-h) * 0.56075); }
+[data-8b-live] #opening .op__shade { animation-name: opening-shade; animation-timing-function: linear; animation-range: contain calc(var(--opening-h) * 0.23364) contain calc(var(--opening-h) * 0.65421); }
+[data-8b-live] #opening .op__star { animation-name: opening-star; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0.3333); animation-range: contain calc(var(--opening-h) * 0) contain calc(var(--opening-h) * 0.42056); }
+[data-8b-live] #opening .op__title .op__line { animation-name: opening-out-left; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0); }
+[data-8b-live] #opening .op__l1 { animation-range: contain calc(var(--opening-h) * 0) contain calc(var(--opening-h) * 0.37383); }
+[data-8b-live] #opening .op__title .op__l2 { animation-name: opening-out-right; animation-range: contain calc(var(--opening-h) * 0.03738) contain calc(var(--opening-h) * 0.41121); }
+[data-8b-live] #opening .op__l3 { animation-range: contain calc(var(--opening-h) * 0.07477) contain calc(var(--opening-h) * 0.4486); }
+[data-8b-live] #opening .op__tag, [data-8b-live] #opening .op__note, [data-8b-live] #opening .op__cta { animation-name: opening-aside; animation-timing-function: linear; }
+[data-8b-live] #opening .op__tag { animation-range: contain calc(var(--opening-h) * 0) contain calc(var(--opening-h) * 0.20561); }
+[data-8b-live] #opening .op__note { animation-range: contain calc(var(--opening-h) * 0.02804) contain calc(var(--opening-h) * 0.23364); }
+[data-8b-live] #opening .op__cta { animation-range: contain calc(var(--opening-h) * 0.05607) contain calc(var(--opening-h) * 0.26168); }
+[data-8b-live] #opening .op__title2 .op__line { animation-name: opening-in-left; animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); }
+[data-8b-live] #opening .op__m1 { animation-range: contain calc(var(--opening-h) * 0.51402) contain calc(var(--opening-h) * 0.88785); }
+[data-8b-live] #opening .op__title2 .op__m2 { animation-name: opening-in-right; animation-range: contain calc(var(--opening-h) * 0.57009) contain calc(var(--opening-h) * 0.94393); }
+[data-8b-live] #opening .op__m3 { animation-range: contain calc(var(--opening-h) * 0.62617) contain calc(var(--opening-h) * 1); }
+[data-8b-live] #opening .op__tag2, [data-8b-live] #opening .op__sides { animation-name: opening-rest; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); }
+[data-8b-live] #opening .op__tag2 { animation-range: contain calc(var(--opening-h) * 0.70093) contain calc(var(--opening-h) * 0.93458); }
+[data-8b-live] #opening .op__sides { animation-range: contain calc(var(--opening-h) * 0.74766) contain calc(var(--opening-h) * 0.98131); }
+
+@keyframes opening-q { 0% { --opening-q: 0; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0); } 50% { --opening-q: .5; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); } 100% { --opening-q: 1; } }
+@keyframes opening-k { 0% { --opening-k: 1; } 100% { --opening-k: 0; } }
+@keyframes opening-shade { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes opening-star { 0% { rotate: 0deg; scale: 1; opacity: 1; } 100% { rotate: 150deg; scale: 2.6; opacity: 0; } }
+@keyframes opening-out-left { 0% { translate: 0 0; } 100% { translate: -115% 0; } }
+@keyframes opening-out-right { 0% { translate: 0 0; } 100% { translate: 115% 0; } }
+@keyframes opening-aside { 0% { translate: 0 0; opacity: 1; } 100% { translate: 0 50px; opacity: 0; } }
+@keyframes opening-in-left { 0% { translate: -70% 0; opacity: 0; } 100% { translate: 0 0; opacity: 1; } }
+@keyframes opening-in-right { 0% { translate: 70% 0; opacity: 0; } 100% { translate: 0 0; opacity: 1; } }
+@keyframes opening-rest { 0% { translate: 0 40px; opacity: 0; } 100% { translate: 0 0; opacity: 1; } }
+}
+</style>
+<style data-8b-part="scene:services">
+@layer scenes {
+[data-8b-live] #services .sv__list > li { view-timeline: --services-item block; view-timeline-inset: 0; }
+[data-8b-live] #services .sv__list > li > .sv__pic, [data-8b-live] #services .sv__list > li > .sv__pic > img, [data-8b-live] #services .sv__list > li > .sv__word > span { animation-timeline: --services-item; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); animation-fill-mode: both; }
+[data-8b-live] #services .sv__list > li > .sv__pic { animation-name: services-figure-sv-pic-clippath; animation-range: cover 25% cover 78%; }
+[data-8b-live] #services .sv__list > li > .sv__pic > img { animation-name: services-figure-sv-pic-img-scale; animation-range: cover 25% cover 78%; transform: none; }
+[data-8b-live] #services .sv__list > li > .sv__word > span { animation-name: services-h3-sv-word-span-translate, services-h3-sv-word-span-color; animation-range: cover 25% cover 41%, cover 25% cover 78%; transform: none; }
+@keyframes services-figure-sv-pic-clippath { 0% { clip-path: inset(46% 0% round 26px); } 30.1887% { clip-path: inset(0% round 26px); } 30.1907% { clip-path: none; } 69.8113% { clip-path: none; } 69.8133% { clip-path: inset(0% round 26px); } 100% { clip-path: inset(46% 0% round 26px); } }
+@keyframes services-figure-sv-pic-img-scale { 0% { scale: 1.25; } 30.1887% { scale: 1; } 69.8113% { scale: 1; } 100% { scale: 1.25; } }
+@keyframes services-h3-sv-word-span-translate { 0% { translate: 0px 0px; } 100% { translate: min(3vw, 48px) 0px; } }
+@keyframes services-h3-sv-word-span-color { 0% { color: var(--color-8); } 30.1887% { color: var(--color-2); } 69.8113% { color: var(--color-2); } 100% { color: var(--color-8); } }
+}
+</style>
+<style data-8b-part="scene:visit">
+@layer scenes {
+[data-8b-live] #visit .vi__track { view-timeline: --visit-t block; view-timeline-inset: 0; }
+[data-8b-live] #visit .vi__fill { animation: visit-fill auto linear both; animation-timeline: --visit-t; animation-range: cover 38vh cover calc(100% - 62vh); }
+@keyframes visit-fill { 0% { clip-path: inset(0% 0% 100% 0%); } 100% { clip-path: inset(0% 0% 0% 0%); } }
+}
+</style>
+<style data-8b-part="scene:work">
+@layer scenes {
+[data-8b-live] #work { timeline-scope: --work-t2, --work-t3, --work-t4; }
+[data-8b-live] #work .wk__stack > li { view-timeline-inset: 0; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(-n+3), [data-8b-live] #work .wk__stack > li > .wk__band > img, [data-8b-live] #work .wk__stack > li:nth-of-type(-n+3) > .wk__dim { animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(1) { view-timeline: --work-item block; animation-name: work-li-wk-card-scale; animation-timeline: --work-t2; animation-range: cover 0% cover calc(100vh - 30px); transform: none; transform-origin: 50% 0%; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(2) { view-timeline: --work-item block, --work-t2 block; animation-name: work-li-wk-card-scale; animation-timeline: --work-t3; animation-range: cover 0% cover calc(100vh - 44px); transform: none; transform-origin: 50% 0%; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(3) { view-timeline: --work-item block, --work-t3 block; animation-name: work-li-wk-card-scale; animation-timeline: --work-t4; animation-range: cover 0% cover calc(100vh - 58px); transform: none; transform-origin: 50% 0%; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(4) { view-timeline: --work-item block, --work-t4 block; }
+[data-8b-live] #work .wk__stack > li > .wk__band > img { animation-name: work-figure-wk-band-img-translate; animation-timeline: --work-item; animation-range: cover 0% cover calc(100vh - 16px - 14px * var(--i)); transform: none; scale: 1.12; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(-n+3) > .wk__dim { animation-name: work-div-wk-dim-opacity; }
+[data-8b-live] #work .wk__stack > li:nth-of-type(1) > .wk__dim { animation-timeline: --work-t2; animation-range: cover 0% cover calc(100vh - 30px); }
+[data-8b-live] #work .wk__stack > li:nth-of-type(2) > .wk__dim { animation-timeline: --work-t3; animation-range: cover 0% cover calc(100vh - 44px); }
+[data-8b-live] #work .wk__stack > li:nth-of-type(3) > .wk__dim { animation-timeline: --work-t4; animation-range: cover 0% cover calc(100vh - 58px); }
+@keyframes work-figure-wk-band-img-translate { 0% { translate: 0px -7%; } 100% { translate: 0px 0px; } }
+@keyframes work-li-wk-card-scale { 0% { scale: 1; } 100% { scale: 0.93; } }
+@keyframes work-div-wk-dim-opacity { 0% { opacity: 0; } 100% { opacity: 0.4; } }
+}
+</style>
+
+<style data-8b-part="scene:reviews">
+@layer scenes {
+}
+</style>
+
+<style data-8b-part="scene:contact">
+@layer scenes {
+[data-8b-live] #contact .ct__frame { view-timeline: --contact-t block; view-timeline-inset: 0; }
+[data-8b-live] #contact .ct__band, [data-8b-live] #contact .ct__band > img { animation-duration: auto; animation-fill-mode: both; animation-timeline: --contact-t; animation-range: cover 8vh cover 66vh; animation-timing-function: linear; }
+[data-8b-live] #contact .ct__band { animation-name: contact-band, contact-rest; animation-range: cover 8vh cover 66vh, cover 63.1vh cover 66vh; animation-fill-mode: both, forwards; }
+[data-8b-live] #contact .ct__band > img { animation-name: contact-img; }
+@keyframes contact-band { 0% { clip-path: inset(-16% calc(var(--space-1) * -1) round 0px); overflow: visible; border-radius: 0; background: transparent; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0); } 50% { clip-path: inset(-8% calc(var(--space-1) * -.5) round calc(var(--radius-1) * .5)); overflow: visible; border-radius: 0; background: transparent; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); } 100% { clip-path: inset(0% 0px round var(--radius-1)); overflow: visible; border-radius: 0; background: transparent; } }
+@keyframes contact-rest { 0%, 100% { clip-path: none; overflow: hidden; border-radius: var(--radius-1); background: var(--color-2); } }
+@keyframes contact-img { 0% { scale: 1.3728; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0); } 50% { scale: 1.1864; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); } 100% { scale: 1; } }
+}
+</style>
+<script data-8b-part="motion-gate">
+if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.supports('animation-timeline: view()')) document.documentElement.setAttribute('data-8b-live', '');
 </script>
-</body>
+<meta content="noindex, nofollow" name="robots"/></head>
+<body>
+<!-- navigation: fixed row of outlined pills: wordmark, area select, four section links, phone and a black Book a visit; Menu pill and full-screen overlay on phones; hides on scroll down -->
+<header data-8b-section="navigation" id="navigation">
+<nav aria-label="Main" class="nav__bar">
+<a class="m-btn-3 nav__brand" href="#opening"><span>Leak Detection</span></a>
+<label class="m-field-2 nav__area"><span class="visually-hidden">Your area</span><select class="m-field-2__select" data-area-select="">
+<option selected="" value="Northridge">Northridge</option>
+
+
+
+
+<option selected="" value="Van Nuys">Van Nuys</option><option selected="" value="Sherman Oaks">Sherman Oaks</option><option selected="" value="Encino">Encino</option><option selected="" value="Reseda">Reseda</option><option selected="" value="Burbank">Burbank</option></select><svg aria-hidden="true" class="m-field-2__icon" viewbox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg></label>
+<ul class="nav__group">
+<li><a class="m-btn-3" href="#services"><span>Services</span></a></li>
+
+<li><a class="m-btn-3" href="#work"><span>Work</span></a></li>
+
+</ul>
+<a class="m-btn-3 nav__phone" href="tel:+18185102192"><span>(818) 510-2192</span></a>
+<a class="m-btn-2 nav__book" href="tel:+18185102192"><span>Call now</span></a>
+<button aria-controls="menu" aria-expanded="false" class="m-btn-3 nav__menu" type="button"><span>Menu</span></button>
+</nav>
+<div class="nav__overlay" hidden="" id="menu">
+<div class="nav__overlay-top">
+<a class="m-btn-3 nav__brand" href="#opening"><span>Leak Detection</span></a>
+<button aria-label="Close menu" class="m-icon-btn nav__close" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+<ul class="nav__overlay-links" data-8b-items=":scope &gt; li">
+<li><a class="m-text-2" href="#services">Services</a></li>
+
+<li><a class="m-text-2" href="#visit">How a visit goes</a></li>
+<li><a class="m-text-2" href="#work">Work</a></li>
+
+<li><a class="m-text-2" href="#contact">Contact</a></li>
+</ul>
+<div class="nav__overlay-foot">
+<a class="m-btn-3" href="tel:+18185102192"><span>(818) 510-2192</span></a>
+<a class="m-btn-2" href="tel:+18185102192"><span>Call now</span></a>
+</div>
+</div>
+</header>
+<main>
+<!-- opening: two screens: a wide rounded photo band over a three-line staggered uppercase headline with an orange tagline, a note, the asterisk and a Book a visit button, then a dark screen with a statement and the cold side and hot side lists (animation: scene:opening) -->
+<section aria-labelledby="opening-title" class="l-clip" data-8b-section="opening" id="opening">
+<div class="op__first">
+<div aria-hidden="true" class="op__spacer"></div>
+<div class="op__frame">
+<div class="op__band">
+<div class="op__drift"><img alt="Emergency Leak Detection on the job" class="op__img" fetchpriority="high" height="900" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RWa-YeJ0dH_OIWlTRNeV9sxPANBEEUIwtDqp6erdrV0GG2HsYKda5Q4CD2klBiIhWFXdQ9yz-60xqWCoCnUkX7VfYCCkgPdmRh0H16te5o4-CRNWsWmj42f_n-gjCbyl8sBDPgCrUmQWL7=w2000" width="1600"/></div>
+<div aria-hidden="true" class="op__shade"></div>
+</div>
+</div>
+<div class="op__type">
+<h1 class="op__title m-text-2" id="opening-title">
+<span class="op__line op__l1" style="--len:16.0"><span>Leak detection &amp;</span></span>
+<span class="op__line op__l2" style="--len:15.3"><span>plumbing in San</span></span>
+<span class="op__line op__l3" style="--len:15.0"><span>Fernando Valley</span></span>
+</h1>
+<div class="op__tag">
+<p class="m-text-3">Open 24 hours,<br/>Sun–Fri</p>
+<p class="m-text-4">Serving <span data-area-text="">Northridge</span> and nearby.</p>
+</div>
+<p class="op__note m-text-4"><span>Water leak? We find it and fix it — day or night. Emergency leak detection and plumbing repair in the San Fernando Valley. Slab leaks, pinhole leaks, and pipes behind walls.</span></p>
+<div class="op__star"><svg aria-hidden="true" class="m-star" viewbox="-60 -60 120 120"><path d="M-13 -22.52L-13 -44A13 13 0 0 1 13 -44L13 -22.52L31.61 -33.26A13 13 0 0 1 44.61 -10.74L26 0L44.61 10.74A13 13 0 0 1 31.61 33.26L13 22.52L13 44A13 13 0 0 1 -13 44L-13 22.52L-31.61 33.26A13 13 0 0 1 -44.61 10.74L-26 0L-44.61 -10.74A13 13 0 0 1 -31.61 -33.26Z"></path></svg></div>
+<a class="m-btn op__cta" href="tel:+18185102192"><span class="m-btn__label">Call (818) 510-2192</span><svg aria-hidden="true" class="m-btn__icon" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+<div class="op__second">
+<div class="op__type">
+<h2 class="op__title2 m-text-2">
+<span class="op__line op__m1" style="--len:12.0"><span>Rated 5.0 by</span></span>
+<span class="op__line op__m2" style="--len:12.0"><span>43 neighbors</span></span>
+<span class="op__line op__m3" style="--len:10.2"><span>on Google.</span></span>
+</h2>
+<p class="op__tag2 m-text-3">Emergency Leak Detection, San Fernando Valley.</p>
+<div class="op__sides">
+<div class="op__side"><span class="m-badge-2">Leak detection</span><p class="m-text-4">Hidden leaks found behind walls and under floors.</p></div>
+<div class="op__side"><span class="m-badge-3">Pipe repair</span><p class="m-text-4">Pinhole leaks in copper pipes repaired.</p></div>
+<a class="m-link op__more m-text-4" href="#services">Everything we do</a>
+</div>
+</div>
+</div>
+</section>
+<!-- services: index of seven services as giant words, each with a note, a price tag and a panoramic photo strip (animation: scene:services) -->
+<section aria-labelledby="services-title" class="l-clip" data-8b-section="services" id="services">
+<div class="sv__head">
+<h2 class="sv__title m-text-2" data-8b-items=":scope &gt; span" data-8b-motion="relay" id="services-title"><span style="--len:4.3">What</span><span style="--len:6.3">we fix</span></h2>
+<p class="sv__lead m-text-6">Emergency leak detection and plumbing repair in the San Fernando Valley. Slab leaks, pinhole leaks, and pipes behind walls.</p>
+</div>
+<ol class="sv__list" data-8b-items=":scope &gt; li">
+<li class="sv__row">
+<h3 class="sv__word m-text-2" style="--len:14.0"><span>Leak detection</span></h3>
+<div class="sv__info"><p class="m-text-4">Hidden leaks found behind walls and under floors.</p></div>
+<figure class="sv__pic m-band"><img alt="Emergency Leak Detection: Leak detection" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R8NWUqTr0GwQenmRKBm6N8HP3NxnIx0D-KBzA7CuWbA4yvYTARcPNV2PeW7MNQT96FPHXzDEa9NfIQhDnwJmAZDXply0MN8BMhkJghiGI0ROMQ2lfK6zs7mYxSixDvopD3WbEIwo-gW4Ku=w1000" width="1600"/></figure>
+</li>
+<li class="sv__row">
+<h3 class="sv__word m-text-2" style="--len:11.0"><span>Pipe repair</span></h3>
+<div class="sv__info"><p class="m-text-4">Pinhole leaks in copper pipes repaired.</p></div>
+<figure class="sv__pic m-band"><img alt="Emergency Leak Detection: Pipe repair" height="1065" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SbejiTbfL2id44BtAi_0RikKpBq0lzQeGtnwsQGq7bYos2FTTMdAgU6kWrkT0B68k8QFUQUkslArNmqAI1EPweSNRpht3uw96bZtoz67LpTchG6AR-eSU5HHBWsivOgjAPgFNMfwxGS9PV=w1000" width="1600"/></figure>
+</li>
+<li class="sv__row">
+<h3 class="sv__word m-text-2" style="--len:17.4"><span>Showers &amp; toilets</span></h3>
+<div class="sv__info"><p class="m-text-4">Shower leaks and toilet tanks fixed.</p></div>
+<figure class="sv__pic m-band"><img alt="Emergency Leak Detection: Showers &amp; toilets" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q8lza35h7u6ptWEcFt_xutxqsNk8v76jwFWwT70DN49aH0mwrz3MqveO4eL2A3Peno3o_qdpUFF_7tIFRThGZp-5aJxLLvJqYViTlHEG2lXJ5Zo3BDyELcqVtnjjbMsAEsj5UecbiIaS5Z=w1000" width="1600"/></figure>
+</li>
+<li class="sv__row">
+<h3 class="sv__word m-text-2" style="--len:13.3"><span>Water heaters</span></h3>
+<div class="sv__info"><p class="m-text-4">Repair and replacement.</p></div>
+<figure class="sv__pic m-band"><img alt="Emergency Leak Detection: Water heaters" data-pos="top" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TD-Cd6MdFkAt395q46AqUgNCauXpJpFVB8d7JFI7sJ93C34Fes_JtZ_Lv0RT51WMnjY5ZK3eJA9zSt5psORpKKyTn_im6hzrqHFpC2k4jQ-nuNSrWtq3oVlq6AGPwPLt_6eOEaw1ZjdglK=w1000" width="1600"/></figure>
+</li>
+
+
+
+</ol>
+</section>
+<!-- prices: fixed price board of eight jobs with dotted leaders, beside a heading, a lead and a note marked with the asterisk -->
+
+<!-- visit: five steps of a visit zig-zagging either side of a vertical line that fills from blue to orange (animation: scene:visit) -->
+<section aria-labelledby="visit-title" class="l-clip" data-8b-section="visit" id="visit">
+<div class="vi__head">
+<h2 class="vi__title m-text-2" data-8b-items=":scope &gt; span" data-8b-motion="relay" id="visit-title"><span style="--len:6.5">How it</span><span style="--len:5.3">works</span></h2>
+<p class="vi__lead m-text-6">Three steps, whatever the job.</p>
+</div>
+<div class="vi__track">
+<div aria-hidden="true" class="vi__line"><div class="vi__fill"></div></div>
+<ol class="vi__steps" data-8b-items=":scope &gt; li">
+<li class="vi__step"><span class="vi__num">1</span><div class="vi__body"><h3 class="m-text-5">Call</h3><p class="m-text">Tell us where you're seeing water.</p></div></li>
+<li class="vi__step"><span class="vi__num">2</span><div class="vi__body"><h3 class="m-text-5">We find it</h3><p class="m-text">Pinpoint the leak before opening walls.</p></div></li>
+<li class="vi__step"><span class="vi__num">3</span><div class="vi__body"><h3 class="m-text-5">Fixed</h3><p class="m-text">Repaired and checked before we leave.</p></div></li>
+
+
+</ol>
+</div>
+</section>
+<!-- work: four recent jobs as panoramic photo cards that stack as you scroll, each with a title, three tags and a line (animation: scene:work) -->
+<section aria-labelledby="work-title" class="l-clip" data-8b-section="work" id="work">
+<div class="wk__head">
+<h2 class="wk__title m-text-2" data-8b-items=":scope &gt; span" data-8b-motion="relay" id="work-title"><span style="--len:6.2">On the</span><span style="--len:3.0">job</span></h2>
+<p class="wk__lead m-text-6">Photos from the Emergency Leak Detection Google listing.</p>
+</div>
+<ol class="wk__stack" data-8b-fixed="4" data-8b-items=":scope &gt; li">
+<li class="wk__card">
+<figure class="wk__band m-band"><img alt="Emergency Leak Detection photo 1" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tge2xrr6yNlhgLFNs8uk3CB3QLJUuJBVLuqPtv7pAIC2DKW96OBEm8hfPxUKsbtKhGumI32kCgNkh1uGMBSelQRn2MazJmPRl9tP_WHhVlXlOM-P1nvzRQrng3ADGRicH-_c5IQc1j5P0d=w1600" width="1600"/></figure>
+<div class="wk__meta"><h3 class="m-text-5">Leak detection</h3></div>
+<div aria-hidden="true" class="wk__dim"></div>
+</li>
+<li class="wk__card">
+<figure class="wk__band m-band"><img alt="Emergency Leak Detection photo 2" height="1064" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T8BkhUuUoy0eFlI4zF9v8CvRo6Or0cdO2E3yzTSUbwsnPPykpLTCu8jTd73ZpVoYwIbiTAQq60muymyx39jFWfwv_MYLV3wPuTB2_uff0DIbh_GzJ3ta0-QsSjCfh8ILsUmr6X4o_8ZvMw=w1600" width="1600"/></figure>
+<div class="wk__meta"><h3 class="m-text-5">Pipe repair</h3></div>
+<div aria-hidden="true" class="wk__dim"></div>
+</li>
+<li class="wk__card">
+<figure class="wk__band m-band"><img alt="Emergency Leak Detection photo 3" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sq1k9GBuEL5vIJGQ1aBW9jZLgIFzU5SkVocfaN5mybngeI4r8AibpmJxwe6t8PXnJF2Abmu2ynDzPSx0LgQyRkI1rQHIZCmZlGikMkCafxEPe6xwKOVPV-RE9HeI--XbMv5QOESU73Squ4=w1600" width="1600"/></figure>
+<div class="wk__meta"><h3 class="m-text-5">Showers &amp; toilets</h3></div>
+<div aria-hidden="true" class="wk__dim"></div>
+</li>
+<li class="wk__card">
+<figure class="wk__band m-band"><img alt="Emergency Leak Detection photo 4" height="1067" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RWa-YeJ0dH_OIWlTRNeV9sxPANBEEUIwtDqp6erdrV0GG2HsYKda5Q4CD2klBiIhWFXdQ9yz-60xqWCoCnUkX7VfYCCkgPdmRh0H16te5o4-CRNWsWmj42f_n-gjCbyl8sBDPgCrUmQWL7=w1600" width="1600"/></figure>
+<div class="wk__meta"><h3 class="m-text-5">Water heaters</h3></div>
+<div aria-hidden="true" class="wk__dim"></div>
+</li>
+</ol>
+</section>
+<!-- team: four engineers in tall capsule portraits on a staggered row, each with a name, two tags and a line -->
+
+<!-- heat: boiler or heat pump advice: a blue card and an orange card that part to reveal a heat pump photo between them (animation: scene:heat) -->
+
+<!-- reviews: six short reviews on white cards in one continuous moving row (animation: scene:reviews) -->
+<section aria-labelledby="reviews-title" class="l-clip" data-8b-section="reviews" id="reviews">
+<div class="rv__head">
+<h2 class="rv__title m-text-2" data-8b-items=":scope &gt; span" data-8b-motion="relay" id="reviews-title"><span style="--len:8.3">What the</span><span style="--len:13.0">neighbors say</span></h2>
+<p class="rv__lead m-text-6">Rated 5.0 out of 5 from 43 Google reviews.</p>
+</div>
+<div class="rv__viewport" data-loop-row="">
+<ul class="rv__row" data-8b-items=":scope &gt; li">
+<li class="rv__item"><blockquote class="rv__card m-surface"><p class="m-text-6">“They worked from nine in the morning till 10 at night cleared up leak…”</p><footer class="rv__who"><span class="m-text-4">Addisyn W.</span><span class="m-badge">Google review</span></footer></blockquote></li>
+<li class="rv__item"><blockquote class="rv__card m-surface"><p class="m-text-6">“I recently had a pinhole leak in a copper pipe behind the wall, and…”</p><footer class="rv__who"><span class="m-text-4">Berenice T.</span><span class="m-badge">Google review</span></footer></blockquote></li>
+
+
+
+
+</ul>
+</div>
+</section>
+<!-- emergency: dark emergency block: heading, the phone number as a giant orange link filling the width, three first steps and a gas flame photo (animation: scene:emergency) -->
+
+<!-- faq: questions and answers (native <details>) with the asterisk as the toggle, beside a heading and a phone line -->
+
+<!-- contact: closing photo band, a giant three-line heading with a call-back tagline, phone and email pills, the address and a call-back form (animation: scene:contact) -->
+<section aria-labelledby="contact-title" class="l-clip" data-8b-section="contact" id="contact">
+<div class="ct__frame"><figure class="ct__band m-band"><img alt="Emergency Leak Detection at work" height="900" loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TD-Cd6MdFkAt395q46AqUgNCauXpJpFVB8d7JFI7sJ93C34Fes_JtZ_Lv0RT51WMnjY5ZK3eJA9zSt5psORpKKyTn_im6hzrqHFpC2k4jQ-nuNSrWtq3oVlq6AGPwPLt_6eOEaw1ZjdglK=w1600" width="1600"/></figure></div>
+<div class="ct__type">
+<h2 class="ct__title m-text-2" id="contact-title"><span class="ct__l1" style="--len:7.0">Tell us</span><span class="ct__l2" style="--len:6.3">what's</span><span class="ct__l3" style="--len:8.0">going on</span></h2>
+<div class="ct__tag"><p class="m-text-3">Call, text or<br/>send a request</p><p class="m-text-4">Sun–Fri: Open 24 hours · Saturday: Closed</p></div>
+</div>
+<div class="ct__body">
+<div class="ct__ways">
+<a class="m-btn-3" href="tel:+18185102192"><span>(818) 510-2192</span></a>
+
+<p class="m-text-4">Serving Northridge, Van Nuys, Sherman Oaks, Encino, Reseda and Burbank.</p>
+</div>
+<form action="#contact" class="ct__form m-surface" method="post" novalidate="">
+<label class="ct__field"><span class="m-text-4">Your name</span><input autocomplete="name" class="m-field" name="name" required="" type="text"/></label>
+<label class="ct__field"><span class="m-text-4">Phone</span><input autocomplete="tel" class="m-field" name="phone" required="" type="tel"/></label>
+<label class="ct__field"><span class="m-text-4">ZIP code</span><input autocomplete="postal-code" class="m-field" name="postcode" type="text"/></label>
+<label class="ct__field"><span class="m-text-4">The job</span><select class="m-field" name="job"><option>Leak detection</option><option>Pipe repair</option><option>Showers &amp; toilets</option><option>Water heaters</option><option>Something else</option></select></label>
+<label class="ct__field ct__field--wide"><span class="m-text-4">What's happening</span><textarea class="m-field" name="message" rows="4"></textarea></label>
+<div class="ct__send">
+<p class="ct__status m-text-4" data-done="Thanks. We'll call you back within the working hour." data-invalid="Please add your name and a phone number." role="status"></p>
+<button class="m-btn" type="submit"><span class="m-btn__label">Send request</span><svg aria-hidden="true" class="m-btn__icon" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- footer: dark footer: one-line description, five links, address, phone, email, a drawn rule, the wordmark filling the width, copyright with the Design: 8B credit, Gas Safe number and Book a visit -->
+<footer data-8b-section="footer" id="footer">
+<div class="ft__top">
+<p class="ft__lead m-text-6">Emergency Leak Detection. Leak detection &amp; plumbing in the San Fernando Valley.</p>
+<ul class="ft__links m-text" data-8b-items=":scope &gt; li">
+<li><a class="m-link" href="#services">Services</a></li>
+
+<li><a class="m-link" href="#visit">How it works</a></li>
+<li><a class="m-link" href="#work">Photos</a></li><li><a class="m-link" href="#reviews">Reviews</a></li>
+
+</ul>
+<address class="ft__addr m-text">
+<span>Northridge, Van Nuys, Sherman Oaks, Encino, Reseda and Burbank</span>
+<a class="m-link" href="tel:+18185102192">(818) 510-2192</a>
+
+</address>
+</div>
+<div aria-hidden="true" class="ft__rule" data-8b-enter="92%" data-8b-motion="leader"></div>
+<p aria-label="Leak Detection" class="ft__mark m-text-2"><span style="--len:14.2">Leak Detection</span></p>
+<div class="ft__base m-text-4">
+<span>© 2026 Emergency Leak Detection · Design: <a data-8b-credit="" href="https://8b.com/" style="color:inherit">8B</a></span>
+
+<a class="m-link" href="tel:+18185102192">Call (818) 510-2192</a>
+</div>
+</footer>
+<script data-8b-part="section-script:navigation">
+(() => {
+  const header = document.getElementById('navigation');
+  const toggle = header.querySelector('.nav__menu');
+  const overlay = header.querySelector('.nav__overlay');
+  const close = header.querySelector('.nav__close');
+  const setMenu = open => {
+    overlay.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) { window.motionKit?.wheel?.stop(); close.focus(); } else { window.motionKit?.wheel?.start(); }
+  };
+  toggle.addEventListener('click', () => setMenu(true));
+  close.addEventListener('click', () => { setMenu(false); toggle.focus(); });
+  overlay.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !overlay.hidden) { setMenu(false); toggle.focus(); } });
+  let last = window.scrollY, travel = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY, step = y - last;
+    last = y;
+    if (!step) return;
+    travel = Math.sign(step) === Math.sign(travel) ? travel + step : step;
+    if (y < 80 || travel < -24) header.classList.remove('is-hidden');
+    else if (travel > 24 && !header.contains(document.activeElement)) header.classList.add('is-hidden');
+  }, { passive: true });
+  header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
+  const select = header.querySelector('[data-area-select]');
+  select.addEventListener('change', () => {
+    document.querySelectorAll('[data-area-text]').forEach(node => { node.textContent = select.value; });
+  });
+})();
+</script>
+<script data-8b-part="section-script:opening">
+(() => {
+  const section = document.getElementById('opening');
+  const header = document.getElementById('navigation');
+  const setNav = () => section.style.setProperty('--op-nav', header.querySelector('.nav__bar').offsetHeight + 24 + 'px');
+  setNav();
+  new ResizeObserver(setNav).observe(header.querySelector('.nav__bar'));
+  new IntersectionObserver(([entry]) => section.classList.toggle('is-off', !entry.isIntersecting)).observe(section.querySelector('.op__first'));
+})();
+</script>
+<script data-8b-part="section-script:contact">
+(() => {
+  const form = document.querySelector('#contact .ct__form');
+  const status = form.querySelector('.ct__status');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.checkValidity()) { status.textContent = status.dataset.invalid; form.querySelector(':invalid')?.focus(); return; }
+    status.textContent = status.dataset.done;
+    form.reset();
+  });
+})();
+</script>
+<script data-8b-part="motion-kit">
+(() => {
+const live = document.documentElement.hasAttribute('data-8b-live');
+const measures = new Set();
+let queued = false;
+const run = fn => { try { fn(); } catch (error) { console.error('[motion-kit] measure failed', error); } };
+const remeasure = () => {
+if (queued) return;
+queued = true;
+requestAnimationFrame(() => { queued = false; measures.forEach(run); realign(); });
+};
+const realign = () => document.getAnimations().forEach(animation => {
+if (animation.timeline && animation.timeline !== document.timeline && animation.playState === 'running') { animation.pause(); animation.play(); }
+});
+window.motionKit = {
+live,
+box(element) {
+if (!(element instanceof HTMLElement)) { const r = element.getBoundingClientRect(); return { x: r.left + scrollX, y: r.top + scrollY, w: r.width, h: r.height }; }
+let x = 0, y = 0, node = element;
+while (node) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
+return { x, y, w: element.offsetWidth, h: element.offsetHeight };
+},
+set(element, vars) { for (const [name, value] of Object.entries(vars)) element.style.setProperty(name, String(value)); },
+measure(fn) { if (!live) return; measures.add(fn); run(fn); },
+scene(id, fn) {
+if (!live) return;
+try { fn(); } catch (error) {
+console.error(`[motion-kit] scene ${id} failed; its section stays static`, error);
+document.querySelector(`style[data-8b-part="scene:${id}"]`)?.setAttribute('media', 'not all');
+}
+}
+};
+if (!live) { window.motionReady = Promise.resolve(); return; }
+const number = () => document.querySelectorAll('[data-8b-items]').forEach(group => {
+let items;
+try { items = [...group.querySelectorAll(group.getAttribute('data-8b-items'))]; } catch { return; }
+items.forEach((item, index) => { item.style.setProperty('--i', index); item.style.setProperty('--n', items.length); });
+});
+number();
+measures.add(number);
+requestAnimationFrame(realign);
+new ResizeObserver(remeasure).observe(document.body);
+document.fonts.ready.then(remeasure);
+addEventListener('load', remeasure);
+window.motionReady = document.fonts.ready.then(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+})();
+(() => {
+const kit = window.motionKit;
+if (!kit.live || !matchMedia('(pointer: fine)').matches) return;
+let target = scrollY, current = scrollY, last = 0, running = false, paused = false;
+const inner = (node, dy) => {
+for (; node && node !== document.body && node !== document.documentElement; node = node.parentElement) {
+if (!/(auto|scroll)/.test(getComputedStyle(node).overflowY) || node.scrollHeight <= node.clientHeight) continue;
+if (dy > 0 ? node.scrollTop + node.clientHeight < node.scrollHeight - 1 : node.scrollTop > 0) return true;
+}
+return false;
+};
+const step = now => {
+current += (target - current) * (1 - Math.exp(-5.3 * Math.min(0.05, (now - last) / 1000)));
+last = now;
+if (Math.abs(target - current) < 0.5) current = target;
+scrollTo({ top: current, behavior: 'instant' });
+if (current !== target) requestAnimationFrame(step); else running = false;
+};
+addEventListener('wheel', event => {
+if (paused || event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY) || inner(event.target, event.deltaY)) return;
+event.preventDefault();
+if (!running) target = current = scrollY;
+const unit = event.deltaMode === 1 ? 40 : event.deltaMode === 2 ? innerHeight : 1;
+target = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target + event.deltaY * unit * 0.95));
+if (!running) { running = true; last = performance.now(); requestAnimationFrame(step); }
+}, { passive: false });
+kit.wheel = { stop() { paused = true; }, start() { paused = false; } };
+})();
+(() => {
+const kit = window.motionKit;
+if (!kit.live) return;
+const at = element => {
+const own = parseFloat(element.getAttribute('data-8b-enter'));
+return own >= 0 && own <= 100 ? own / 100 : 0.88;
+};
+let pending = [...document.querySelectorAll('[data-8b-motion]')].map(element => ({ element, y: 0, at: at(element) }));
+let queued = false;
+const check = () => {
+queued = false;
+pending = pending.filter(item => {
+if (item.y > scrollY + innerHeight * item.at) return true;
+item.element.classList.add('is-in');
+return false;
+});
+};
+const queue = () => { if (!queued) { queued = true; requestAnimationFrame(check); } };
+kit.measure(() => { pending.forEach(item => { item.y = kit.box(item.element).y; }); queue(); });
+addEventListener('scroll', queue, { passive: true });
+})();
+(() => {
+if (!window.motionKit.live) return;
+const sheet = new CSSStyleSheet();
+sheet.replaceSync('[data-8b-off],[data-8b-off]::before,[data-8b-off]::after{animation-play-state:paused!important}');
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+const seen = new Set(), loops = new Map();
+const watch = new IntersectionObserver(entries => {
+entries.forEach(entry => entry.isIntersecting ? seen.add(entry.target) : seen.delete(entry.target));
+loops.forEach((section, element) => element.toggleAttribute('data-8b-off', !seen.has(element) && !seen.has(section)));
+});
+const scan = () => document.getAnimations().forEach(animation => {
+const element = animation.effect?.target;
+if (!element || loops.has(element) || animation.effect.getTiming().iterations !== Infinity || animation.timeline !== document.timeline) return;
+const section = element.closest('section,header,footer') || element;
+loops.set(element, section);
+watch.observe(element);
+watch.observe(section);
+});
+scan();
+addEventListener('load', scan);
+document.addEventListener('animationstart', scan, true);
+})();
+(() => {
+const kit = window.motionKit;
+kit.track = () => {};
+if (!kit.live) return;
+const named = { top: 0, center: 0.5, bottom: 1 };
+const point = text => text.trim().split(/\s+/).map(word => named[word] ?? parseFloat(word) / 100);
+kit.track = (element, start, end, fn) => {
+const [s0, v0] = point(start), [s1, v1] = point(end);
+let queued = false;
+const run = () => {
+queued = false;
+const box = element.getBoundingClientRect(), vh = innerHeight;
+const d0 = box.top + box.height * s0 - vh * v0, d1 = box.top + box.height * s1 - vh * v1;
+fn(d1 === d0 ? (d0 <= 0 ? 1 : 0) : Math.min(1, Math.max(0, -d0 / (d1 - d0))));
+};
+addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(run); } }, { passive: true });
+kit.measure(run);
+};
+})();
+</script>
+<script data-8b-part="scene-script:opening">
+motionKit.scene('opening', () => {
+  const section = document.getElementById('opening');
+  const first = section.querySelector('.op__first');
+  const frame = section.querySelector('.op__frame');
+  const img = section.querySelector('.op__img');
+  const ratio = Number(img.getAttribute('width')) / Number(img.getAttribute('height'));
+  motionKit.measure(() => {
+    const vw = first.clientWidth, vh = first.clientHeight;
+    const bl = frame.offsetLeft, bt = frame.offsetTop, bw = frame.offsetWidth, bh = frame.offsetHeight;
+    const W = Math.max(vw, vh * ratio), H = W / ratio;
+    motionKit.set(section, {
+      '--opening-h': first.offsetHeight + 'px', '--opening-vw': vw + 'px', '--opening-vh': vh + 'px',
+      '--opening-top': bt + 'px', '--opening-left': bl + 'px', '--opening-right': vw - bl - bw + 'px', '--opening-bottom': vh - bt - bh + 'px',
+      '--opening-w': W + 'px', '--opening-ph': H + 'px', '--opening-img-left': (vw - W) / 2 - bl + 'px', '--opening-img-top': (vh - H) / 2 - bt + 'px',
+      '--opening-s0': Math.max(bw, bh * ratio) / W, '--opening-x0': bl + bw / 2 - vw / 2 + 'px', '--opening-y0': bt + bh / 2 - vh / 2 + 'px'
+    });
+  });
+  motionKit.track(section, 'top top', 'top -100%', progress => section.classList.toggle('is-staged', progress > 0.0005));
+});
+</script>
+<script data-8b-part="scene-script:visit">
+motionKit.scene('visit', () => {
+  const track = document.querySelector('#visit .vi__track');
+  const steps = [...track.querySelectorAll('.vi__step')];
+  let marks = [];
+  motionKit.measure(() => { marks = steps.map(step => (step.offsetTop + step.querySelector('.vi__num').offsetHeight / 2) / track.offsetHeight); });
+  track.classList.add('is-pending');
+  motionKit.track(track, 'top 62%', 'bottom 62%', progress => steps.forEach((step, i) => step.classList.toggle('is-done', progress >= marks[i] - 0.001)));
+});
+</script>
+<script data-8b-part="scene-script:reviews">
+motionKit.scene('reviews', () => {
+  const viewport = document.querySelector('#reviews [data-loop-row]');
+  const row = viewport.querySelector('[data-8b-items]');
+  [...row.children].forEach(item => {
+    const copy = item.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.inert = true;
+    row.append(copy);
+  });
+  viewport.classList.add('is-looping');
+});
+</script>
+<div class="sl-note" role="note"><span>Website preview made for <b>Emergency Leak Detection</b>. Not live yet, and not affiliated with Emergency Leak Detection until approved.</span><button aria-label="Hide this note" onclick="this.parentNode.remove()" type="button">×</button></div>
+<style>body{overflow-x:clip}
+.sl-note{position:fixed;left:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;gap:10px;max-width:min(520px,calc(100vw - 24px));padding:9px 10px 9px 14px;border-radius:12px;background:rgba(17,17,17,.88);color:#fff;font:500 12.5px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.sl-note b{font-weight:700}
+.sl-note button{flex:0 0 auto;width:26px;height:26px;border:0;border-radius:8px;background:rgba(255,255,255,.14);color:#fff;font:600 16px/1 system-ui;cursor:pointer}
+@media print{.sl-note{display:none}}
+</style></body>
 </html>
