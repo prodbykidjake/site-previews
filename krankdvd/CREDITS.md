@@ -4,8 +4,8 @@ Third-party work used by `index.html`.
 
 ## Template
 
-Kinfold (genealogy website template) by 8B: https://8b.com/templates/kinfold/
-Source: https://github.com/8bsite/genealogy-website-template, MIT License (see `LICENSE`).
+Cut Short (film festival website template) by 8B: https://8b.com/templates/cut-short/
+Source: https://github.com/8bsite/film-festival-website-template, MIT License (see `LICENSE`).
 
 ## Photos (`photos/`)
 
@@ -18,8 +18,7 @@ Source: https://github.com/8bsite/genealogy-website-template, MIT License (see `
 
 ## Fonts (SIL Open Font License 1.1)
 
-- Reddit Sans, Google Fonts: https://fonts.google.com/specimen/Reddit+Sans
-- Playwrite US Trad, Google Fonts: https://fonts.google.com/specimen/Playwrite+US+Trad
+- Stack Sans Headline, Stack Sans Text and Stack Sans Notch, Google Fonts: https://fonts.google.com/
 
 ## Libraries
 
