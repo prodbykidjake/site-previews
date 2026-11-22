@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KrankDVD · Book a studio session in North Hollywood</title>
+<meta name="description" content="Book producer and engineer KrankDVD for recording, mixing and custom beats at Studio Lyfe, The Watche Studio and Boss Gang Studio in North Hollywood.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book KrankDVD">
+<meta property="og:description" content="Recording, mixing and custom beats in North Hollywood. Pick a studio and send a request.">
+<meta name="theme-color" content="#E3E5E9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237ce7f0'/%3E%3Cstop offset='.5' stop-color='%23a98bff'/%3E%3Cstop offset='1' stop-color='%23ff9ad5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23E3E5E9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --silver:#E3E5E9;
+  --sheen:#F4F5F7;
+  --ink:#000;
+  --steel:#545963;
+  --line:#C3C7CE;
+  --rec:#D7261E;
+  --holo:conic-gradient(from 20deg,#d9dce1,#7ce7f0 9%,#a98bff 17%,#ff9ad5 24%,#ffe680 31%,#d9dce1 38%,#9cf5b5 47%,#7ce7f0 55%,#d9dce1 63%,#ff9ad5 72%,#a98bff 80%,#ffe680 89%,#d9dce1);
+  --gutter:clamp(16px,4vw,48px);
+  --max:1240px;
+  --radius-lg:28px;
+  --radius-sm:12px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--silver);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.55;font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.num{font-variant-numeric:tabular-nums}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:700;font-size:16px;letter-spacing:.01em;padding:14px 24px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;cursor:pointer;line-height:1.1;white-space:nowrap;transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.small{padding:10px 18px;font-size:15px}
+.rec{width:9px;height:9px;border-radius:50%;background:var(--rec);flex:none;box-shadow:0 0 0 3px rgba(215,38,30,.22)}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(227,229,233,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.brand{font-weight:900;font-variation-settings:"wdth" 125;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.top nav{display:flex;gap:22px;margin-left:auto}
+.top nav a{text-decoration:none;font-weight:500;color:var(--steel)}
+.top nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,112px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:clamp(24px,4vw,64px)}
+.hero h1{margin:0;font-weight:900;font-variation-settings:"wdth" 125;font-size:clamp(64px,13.5vw,212px);line-height:.82;letter-spacing:-.045em}
+.hero h1 span{display:block}
+.hero h1 .dvd{-webkit-text-stroke:2px var(--ink);color:transparent;letter-spacing:-.02em}
+.hero .lede{font-size:clamp(19px,1.6vw,22px);max-width:30ch;margin:32px 0 28px;line-height:1.4}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .direct{margin:28px 0 0;color:var(--steel);font-size:15px;display:flex;flex-wrap:wrap;gap:6px 20px}
+.hero .direct a{text-decoration:none;font-weight:600;color:var(--ink)}
+.hero .direct a:hover{text-decoration:underline}
+
+.disc-stage{position:relative;justify-self:end;width:min(100%,560px)}
+.disc{position:relative;aspect-ratio:1;border-radius:50%;background:
+  radial-gradient(circle,transparent 0 16.5%,rgba(255,255,255,.65) 16.5% 17.3%,rgba(0,0,0,.06) 17.3% 33%,transparent 33%),
+  repeating-radial-gradient(circle,rgba(255,255,255,.18) 0 1px,transparent 1px 4px),
+  var(--holo);
+  -webkit-mask:radial-gradient(circle,transparent 0 6.8%,#000 7%);mask:radial-gradient(circle,transparent 0 6.8%,#000 7%);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+  animation:spin 26s linear infinite}
+.disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(130deg,rgba(255,255,255,.55),transparent 42%,transparent 60%,rgba(255,255,255,.35));mix-blend-mode:soft-light}
+.disc-ring{position:absolute;inset:0;animation:spin 26s linear infinite}
+.disc-ring text{font-family:"Archivo",sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.24em;fill:rgba(0,0,0,.55);font-variation-settings:"wdth" 112}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* sections */
+.section{padding:clamp(64px,9vw,128px) 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
+.section h2{margin:0;font-weight:850;font-variation-settings:"wdth" 118;font-size:clamp(40px,6vw,80px);line-height:.92;letter-spacing:-.03em}
+.section-head p{margin:0;color:var(--steel);max-width:52ch;font-size:18px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px}
+.about-grid .bio{font-size:clamp(20px,2vw,26px);line-height:1.42;margin:0;max-width:34ch;font-variation-settings:"wdth" 96}
+.facts{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.facts li{border-top:2px solid var(--ink);padding-top:12px;font-size:15px;color:var(--steel)}
+.facts strong{display:block;color:var(--ink);font-size:30px;font-weight:850;font-variation-settings:"wdth" 120;line-height:1.05;letter-spacing:-.02em}
+
+/* services */
+.services{list-style:none;margin:0;padding:0}
+.service{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:16px 48px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}
+.service:first-child{border-top:1px solid var(--line)}
+.service h3{margin:0;font-weight:850;font-variation-settings:"wdth" 125;font-size:clamp(30px,3.6vw,48px);line-height:1;letter-spacing:-.03em}
+.service p{margin:0;color:var(--steel);max-width:44ch}
+.service .price{text-align:right}
+.service .price b{display:block;font-size:24px;font-weight:800;font-variation-settings:"wdth" 110}
+.service .price span{color:var(--steel);font-size:15px}
+.beat-prices{list-style:none;margin:0 0 18px;padding:0}
+.beat-prices li{display:flex;justify-content:space-between;gap:16px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.beat-prices b{font-weight:800}
+
+/* studios */
+.studios{display:grid;gap:20px}
+.studio{background:var(--sheen);border-radius:var(--radius-lg);padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px;position:relative;overflow:hidden}
+.studio::before{content:"";position:absolute;width:260px;aspect-ratio:1;border-radius:50%;background:var(--holo);right:-130px;top:-130px;opacity:.55;-webkit-mask:radial-gradient(circle,transparent 0 7%,#000 7.2%);mask:radial-gradient(circle,transparent 0 7%,#000 7.2%);pointer-events:none}
+.studio h3{margin:0 0 10px;font-weight:850;font-variation-settings:"wdth" 120;font-size:clamp(32px,3.8vw,52px);line-height:.95;letter-spacing:-.03em}
+.studio .where{margin:0 0 4px;color:var(--steel)}
+.studio .where a{color:var(--ink);font-weight:600}
+.rooms{list-style:none;margin:0;padding:0;position:relative}
+.room{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px 20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.room:first-child{border-top:1px solid var(--line)}
+.room .letter{width:54px;height:54px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:900;font-size:22px;font-variation-settings:"wdth" 125}
+.room .rate{font-size:28px;font-weight:850;font-variation-settings:"wdth" 115;letter-spacing:-.02em;line-height:1}
+.room .rate small{font-size:15px;font-weight:500;color:var(--steel);letter-spacing:0;font-variation-settings:"wdth" 100}
+.room .label{display:block;font-size:14px;color:var(--steel);margin-top:4px;font-weight:500;letter-spacing:0;font-variation-settings:"wdth" 100}
+.room.budget .letter{border-style:dashed;font-size:18px}
+.room.budget .rate{font-size:20px}
+.gear{margin-top:20px;grid-column:1 / -1}
+.gear summary{cursor:pointer;font-weight:700;display:inline-flex;align-items:center;gap:10px;list-style:none;padding:8px 0}
+.gear summary::-webkit-details-marker{display:none}
+.gear summary::before{content:"+";width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:600;line-height:1}
+.gear[open] summary::before{content:"–"}
+.gear dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px 32px;margin:14px 0 0}
+.gear dt{font-size:14px;color:var(--steel)}
+.gear dd{margin:2px 0 0;font-weight:600}
+
+/* how it works */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:step}
+.steps li{counter-increment:step;border-top:2px solid var(--ink);padding-top:16px}
+.steps li::before{content:counter(step);display:block;font-weight:900;font-variation-settings:"wdth" 125;font-size:48px;line-height:1;margin-bottom:14px;-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.steps h3{margin:0 0 6px;font-size:20px;font-weight:800}
+.steps p{margin:0;color:var(--steel);font-size:16px}
+.pay-methods{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--steel)}
+.pay-methods b{color:var(--ink)}
+
+/* credits */
+.credits{width:100%;border-collapse:collapse}
+.credits th{text-align:left;font-weight:500;color:var(--steel);font-size:14px;padding:0 0 12px;border-bottom:2px solid var(--ink)}
+.credits td{padding:18px 16px 18px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.credits td:first-child{font-weight:800;font-size:22px;font-variation-settings:"wdth" 115;letter-spacing:-.01em}
+.credits td:last-child{color:var(--steel);padding-right:0}
+.credits .yr{font-variant-numeric:tabular-nums;color:var(--steel)}
+
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 48px 22px 0;font-weight:700;font-size:clamp(18px,1.7vw,22px);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:28px;font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{margin:0 0 24px;color:var(--steel);max-width:64ch}
+
+/* contact */
+.contact{padding:clamp(64px,9vw,128px) 0 40px;border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(48px,9vw,140px)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:48px 0 64px}
+.contact-grid a,.contact-grid div{display:block;text-decoration:none;border-top:2px solid var(--ink);padding-top:14px}
+.contact-grid span{display:block;color:var(--steel);font-size:14px}
+.contact-grid b{font-size:clamp(20px,2vw,26px);font-weight:800;font-variation-settings:"wdth" 108;word-break:break-word}
+.contact-grid a:hover b{text-decoration:underline}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--steel);font-size:14px;padding-top:24px;border-top:1px solid var(--line)}
+
+/* banner after payment */
+.banner{background:var(--ink);color:#fff;padding:14px 0;font-weight:600}
+.banner .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.banner button{background:none;border:0;color:#fff;font:inherit;font-size:22px;cursor:pointer;padding:0 4px}
+
+/* booking sheet */
+dialog.sheet{margin:0 0 0 auto;height:100dvh;max-height:100dvh;width:min(560px,100vw);max-width:100vw;border:0;padding:0;background:var(--sheen);color:var(--ink);box-shadow:-24px 0 60px rgba(0,0,0,.18)}
+dialog.sheet[open]{animation:slidein .32s cubic-bezier(.2,.8,.2,1)}
+dialog.sheet::backdrop{background:rgba(20,22,26,.45)}
+@keyframes slidein{from{transform:translateX(40px);opacity:0}}
+.sheet-inner{padding:28px clamp(18px,4vw,36px) 40px;min-height:100%}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:24px}
+.sheet h2{margin:0;font-weight:850;font-variation-settings:"wdth" 118;font-size:34px;line-height:1;letter-spacing:-.02em}
+.sheet .sub{margin:8px 0 0;color:var(--steel)}
+.close{width:44px;height:44px;flex:none;border-radius:50%;border:1.5px solid var(--ink);background:transparent;font-size:22px;cursor:pointer;line-height:1;color:var(--ink)}
+.field{display:block;margin:0 0 16px}
+.field > span,.legend{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+.field small{font-weight:400;color:var(--steel)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.12)}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+fieldset{border:0;margin:0 0 16px;padding:0}
+.choices{display:grid;gap:8px}
+.choice{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--line);background:#fff;cursor:pointer}
+.choice:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.choice input{accent-color:#000;width:18px;height:18px;margin:0}
+.choice .grow{flex:1}
+.choice b{font-weight:800}
+.choices.inline{grid-template-columns:repeat(3,minmax(0,1fr))}
+.choices.inline .choice{justify-content:center;text-align:center;font-weight:600;font-size:15px;padding:12px 8px}
+.choices.inline input{position:absolute;opacity:0;pointer-events:none}
+.choices.inline .choice:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.divider{border:0;border-top:1px solid var(--line);margin:24px 0}
+.estimate{background:#fff;border-radius:var(--radius-sm);padding:16px;margin:8px 0 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.estimate b{font-size:28px;font-weight:850;font-variation-settings:"wdth" 115}
+.estimate p{margin:0;flex-basis:100%;color:var(--steel);font-size:14px}
+.form-error{color:var(--rec);font-weight:600;margin:0 0 14px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sheet .btn[type=submit]{width:100%;justify-content:center;padding:17px}
+.sheet .btn[disabled]{opacity:.55;cursor:progress}
+.done{text-align:left}
+.done .disc-mini{width:96px;aspect-ratio:1;border-radius:50%;background:var(--holo);-webkit-mask:radial-gradient(circle,transparent 0 9%,#000 9.4%);mask:radial-gradient(circle,transparent 0 9%,#000 9.4%);margin:8px 0 24px;animation:spin 6s linear infinite}
+.done .id{display:inline-block;font-weight:900;font-size:22px;font-variation-settings:"wdth" 120;background:#fff;padding:6px 12px;border-radius:8px;margin:4px 0 12px;letter-spacing:.02em}
+.done .stack{display:grid;gap:10px;margin-top:20px}
+.done .stack .btn{justify-content:center}
+
+/* responsive */
+@media (max-width:960px){
+  .top nav{display:none}
+  .top .btn{margin-left:auto}
+  .hero .wrap{grid-template-columns:1fr}
+  .disc-stage{position:absolute;right:-28vw;top:24px;width:76vw;opacity:.9;z-index:-1}
+  .hero{isolation:isolate;overflow:hidden}
+  .section-head,.about-grid,.studio{grid-template-columns:1fr}
+  .service{grid-template-columns:1fr}
+  .service .price{text-align:left}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .hero h1{font-size:clamp(64px,22vw,120px)}
+  .disc-stage{right:-50vw;top:-8px;width:88vw;opacity:.6}
+  .hero .ctas .btn{flex:1;justify-content:center}
+  .facts{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .room{grid-template-columns:auto 1fr}
+  .room .btn{grid-column:1 / -1;justify-content:center}
+  .row{grid-template-columns:1fr 1fr}
+  .row .field:first-child{grid-column:1 / -1}
+  .row.two{grid-template-columns:1fr;gap:0}
+  .choices.inline{grid-template-columns:1fr}
+  .credits thead{display:none}
+  .credits tr{display:block;border-bottom:1px solid var(--line);padding:14px 0}
+  .credits td{display:block;border:0;padding:2px 0}
+  .top .btn .label-long{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="banner" id="banner" hidden><div class="wrap"><span id="banner-text"></span><button type="button" aria-label="Dismiss" onclick="this.closest('.banner').hidden=true">×</button></div></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#">KrankDVD</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#studios">Studios</a>
+      <a href="#credits">Credits</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="btn small" type="button" data-book><span class="rec" aria-hidden="true"></span><span>Book<span class="label-long"> a session</span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1 aria-label="KrankDVD"><span>Krank</span><span class="dvd">DVD</span></h1>
+        <p class="lede">Producer and engineer in North Hollywood. Book David to record, mix, or make your beat at one of three studios.</p>
+        <div class="ctas">
+          <a class="btn" href="#studios"><span class="rec" aria-hidden="true"></span>Pick a studio</a>
+          <button class="btn ghost" type="button" data-book-beat>Order a beat</button>
+        </div>
+        <p class="direct">
+          <a href="sms:+12136426551">Text (213) 642-6551</a>
+          <a href="mailto:Krankthat@icloud.com">Krankthat@icloud.com</a>
+        </p>
+      </div>
+      <div class="disc-stage" aria-hidden="true">
+        <div class="disc"></div>
+        <svg class="disc-ring" viewBox="0 0 400 400">
+          <defs><path id="ring" d="M200,200 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/></defs>
+          <text><textPath href="#ring">KRANKDVD · RECORDING · MIXING · CUSTOM BEATS · NORTH HOLLYWOOD ·</textPath></text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <h2>About David</h2>
+      <div>
+        <!-- EDIT: replace this with David's own bio. -->
+        <p class="bio">David, known as KrankDVD, is a producer and engineer based in North Hollywood. He records artists, mixes their records and makes beats from scratch, and he works out of three NoHo studios so you can pick the room and the budget that fit your session.</p>
+        <ul class="facts">
+          <li><strong>3</strong>studios in North Hollywood</li>
+          <li><strong>6</strong>rooms to choose from</li>
+          <li><strong>$65</strong>an hour and up</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p>Studio time is booked by the hour at the room you choose. Beats are a flat price.</p>
+      </div>
+      <ul class="services">
+        <li class="service">
+          <h3>Recording</h3>
+          <p>David engineers your session from setup to bounce: vocals, instruments, full songs. Book any room and come ready to cut.</p>
+          <div class="price"><b>From $65/hr</b><span>Rate depends on the room</span></div>
+        </li>
+        <li class="service">
+          <h3>Mixing</h3>
+          <p>Mix the record you just tracked, or bring your stems from somewhere else and mix them in the room with David.</p>
+          <div class="price"><b>From $65/hr</b><span>Or ask for a project quote</span></div>
+        </li>
+        <li class="service">
+          <h3>Custom beats</h3>
+          <p>A beat made for your song, or lease one that's ready to go. Tell David the vibe and send a few references.</p>
+          <div class="price">
+            <ul class="beat-prices num">
+              <li><span>Lease</span><b>$60</b></li>
+              <li><span>Custom, one week</span><b>$125</b></li>
+              <li><span>Custom, same day</span><b>$200</b></li>
+            </ul>
+            <button class="btn small" type="button" data-book-beat>Order a beat</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="studios">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Studios</h2>
+        <p>Pick the studio and room you want. You'll send David a request, and nothing is charged until he approves it.</p>
+      </div>
+      <div class="studios" id="studio-list"><!-- filled from CATALOG below --></div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How booking works</h2>
+        <p>Your session is locked in once payment comes through.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Send a request</h3><p>Pick a studio, room, date and how many hours. David gets it by text and email.</p></li>
+        <li><h3>David approves</h3><p>He checks the room and his calendar, then approves it or suggests another time.</p></li>
+        <li><h3>Pay to lock it in</h3><p>You get a text and email with a card payment link, plus Zelle and Cash App details.</p></li>
+        <li><h3>You're booked</h3><p>Once you've paid, a confirmation with the studio address lands in your inbox.</p></li>
+      </ol>
+      <p class="pay-methods"><span><b>Card</b> through Stripe</span><span><b>Zelle</b></span><span><b>Cash App</b> $chnxbeatsllc</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="credits">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Credits</h2>
+        <p>Records David has produced, recorded or mixed.</p>
+      </div>
+      <table class="credits">
+        <thead><tr><th scope="col">Artist</th><th scope="col">Song or project</th><th scope="col">Role</th></tr></thead>
+        <tbody id="credit-rows"><!-- filled from CREDITS below --></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>Something else on your mind? Text David at (213) 642-6551.</p>
+      </div>
+      <div class="faq">
+        <details><summary>How do I book a session?</summary><p>Pick a studio and room above and fill out the short form. David gets your request by text and email. Once he approves it, you'll get a payment link, and you're booked when payment comes through.</p></details>
+        <details><summary>Is my time held as soon as I send a request?</summary><p>Not yet. Sending a request just tells David what you want. Your time is held once he approves it and you've paid.</p></details>
+        <details><summary>How do I pay?</summary><p>After David approves your request, you'll get a link to pay by card through Stripe. You can also pay by Zelle or Cash App ($chnxbeatsllc). Put your booking ID in the payment note so David can match it to your session.</p></details>
+        <details><summary>What's the special budget invoice?</summary><p>Working with a set budget or booking a bigger project? Choose "Special budget" on any studio, tell David what you have to spend, and he'll send you a custom quote.</p></details>
+        <details><summary>What's the difference between the A, B and C rooms?</summary><p>They're different rooms at the same studio, priced by size and gear. Open "Gear in this studio" under each studio to see what's there, or text David if you're not sure which room fits your session.</p></details>
+        <details><summary>What's a lease versus a custom beat?</summary><p>A lease ($60) gets you a beat David has already made. A custom beat is made from scratch for your song: $125 with a one-week turnaround, or $200 for the same day.</p></details>
+        <details><summary>What should I bring to the session?</summary><p>Your lyrics, any beats or stems as WAV files, and a couple of reference tracks for the sound you're going for.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="section-title" style="margin:0;font-weight:900;font-variation-settings:'wdth' 125;line-height:.85;letter-spacing:-.045em">Let's<br>record.</h2>
+      <div class="contact-grid">
+        <a href="sms:+12136426551"><span>Text or call</span><b class="num">(213) 642-6551</b></a>
+        <a href="mailto:Krankthat@icloud.com"><span>Email</span><b>Krankthat@icloud.com</b></a>
+        <div><span>Cash App</span><b>$chnxbeatsllc</b></div>
+      </div>
+      <p><button class="btn" type="button" data-book><span class="rec" aria-hidden="true"></span>Book a session</button></p>
+      <div class="foot"><span>© <span id="yr"></span> KrankDVD · krankdvdbooking.com</span><span>North Hollywood, CA</span></div>
+    </div>
+  </section>
+</main>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <div>
+        <h2 id="sheet-title">Book a session</h2>
+        <p class="sub" id="sheet-sub">Send David a request. Nothing is charged until he approves it.</p>
+      </div>
+      <button class="close" type="button" aria-label="Close" data-close>×</button>
+    </div>
+
+    <form id="book-form" novalidate>
+      <input type="hidden" name="kind" value="session">
+
+      <div id="session-fields">
+        <div class="row two">
+          <label class="field"><span>Studio</span><select name="studioId" id="f-studio"></select></label>
+          <label class="field"><span>Room</span><select name="roomId" id="f-room"></select></label>
+        </div>
+        <label class="field" id="budget-field" hidden><span>Your budget <small>(what you're working with)</small></span><input name="budget" placeholder="e.g. $300 for an EP session" maxlength="200"></label>
+        <fieldset>
+          <legend class="legend">What do you need?</legend>
+          <div class="choices inline">
+            <label class="choice"><input type="radio" name="service" value="recording" checked>Recording</label>
+            <label class="choice"><input type="radio" name="service" value="mixing">Mixing</label>
+            <label class="choice"><input type="radio" name="service" value="recording-mixing">Both</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label class="field"><span>Date</span><input type="date" name="date" id="f-date" required></label>
+          <label class="field"><span>Start</span><select name="start" id="f-start"></select></label>
+          <label class="field"><span>Hours</span><select name="hours" id="f-hours"></select></label>
+        </div>
+      </div>
+
+      <fieldset id="beat-fields" hidden>
+        <legend class="legend">Pick a beat option</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="beatTier" value="lease"><span class="grow">Lease a beat</span><b>$60</b></label>
+          <label class="choice"><input type="radio" name="beatTier" value="week" checked><span class="grow">Custom beat, one-week turnaround</span><b>$125</b></label>
+          <label class="choice"><input type="radio" name="beatTier" value="sameday"><span class="grow">Custom beat, same day</span><b>$200</b></label>
+        </div>
+      </fieldset>
+
+      <hr class="divider">
+
+      <div class="row two">
+        <label class="field"><span>Your name</span><input name="name" autocomplete="name" required maxlength="100"></label>
+        <label class="field"><span>Artist name <small>(optional)</small></span><input name="artist" maxlength="100"></label>
+      </div>
+      <div class="row two">
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required maxlength="200"></label>
+        <label class="field"><span>Phone <small>(for texts)</small></span><input type="tel" name="phone" autocomplete="tel" required maxlength="30"></label>
+      </div>
+      <label class="field"><span id="notes-label">Anything David should know? <small>(optional)</small></span><textarea name="notes" rows="3" maxlength="2000" id="f-notes" placeholder="Number of songs, who's coming, references…"></textarea></label>
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+
+      <div class="estimate" id="estimate" aria-live="polite"></div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="btn" type="submit" id="submit"><span class="rec" aria-hidden="true"></span>Send request</button>
+    </form>
+
+    <div class="done" id="done" hidden></div>
+  </div>
+</dialog>
+
+<script>
+/* ===================== SETTINGS =====================
+   API_BASE: the address of the booking API (the Cloudflare Worker in ./worker).
+   Leave it empty and the form will open a pre-filled text or email to David instead. */
+const API_BASE = "";
+const OWNER_PHONE = "+12136426551";
+const OWNER_EMAIL = "Krankthat@icloud.com";
+
+/* Studios and rates. Keep these in sync with worker/src/catalog.js,
+   which is what actually sets the price. */
+const CATALOG = {
+  "studio-lyfe": {
+    name: "Studio Lyfe",
+    address: "10738 Riverside Dr, North Hollywood, CA 91602",
+    rooms: { A: 85, B: 75, C: 65 },
+    budget: true,
+    gear: [
+      ["Monitors", "Focal Twin6 Be, Avantone MixCubes"],
+      ["Subwoofers", "Two Kali Audio WS-12 Wave 2"],
+      ["Mic", "Manley Reference Cardioid"],
+      ["Preamp", "Warm Audio WA273-EQ"],
+      ["Compressor", "Warm Audio WA-1B"],
+      ["Interface", "Universal Audio Apollo x8 Gen 2"],
+      ["Headphones", "Neumann NDH 20"],
+      ["Mic locker", "Manley Reference Cardioid, Warm Audio WA-8000, Neumann U 87 Ai, Shure SM7B, Shure Super 55 Deluxe"],
+    ],
+  },
+  "the-watche": {
+    name: "The Watche Studio",
+    area: "Weddington",
+    address: "11222 Weddington St, North Hollywood, CA 91601",
+    rooms: { A: 85, B: 75 },
+    budget: true,
+    gear: [
+      ["Microphone", "Sony C800G, the tube vocal mic heard on a lot of modern hip-hop and R&B"],
+      ["Interface", "UAD Apollo X8P, Thunderbolt 3"],
+      ["Monitors", "Avantone CLA-10"],
+    ],
+  },
+  "boss-gang": {
+    name: "Boss Gang Studio",
+    address: "4878 Lankershim Blvd, North Hollywood, CA 91601",
+    rooms: { A: 65 },
+    budget: false,
+    gear: [],
+  },
+};
+
+/* Credits. EDIT: replace these placeholder rows with David's real credits. */
+const CREDITS = [
+  { artist: "Artist name", project: "Song or project", role: "Produced, recorded, mixed", year: "2026" },
+  { artist: "Artist name", project: "Song or project", role: "Produced", year: "2025" },
+  { artist: "Artist name", project: "Song or project", role: "Recorded and mixed", year: "2025" },
+  { artist: "Artist name", project: "Song or project", role: "Mixed", year: "2024" },
+];
+
+const BEATS = { lease: ["Beat lease", 60], week: ["Custom beat, one-week turnaround", 125], sameday: ["Custom beat, same day", 200] };
+const SERVICES = { recording: "Recording", mixing: "Mixing", "recording-mixing": "Recording and mixing" };
+const MAX_HOURS = 12;
+
+/* ===================== PAGE ===================== */
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const money = (n) => "$" + n.toLocaleString("en-US");
+
+$("#yr").textContent = new Date().getFullYear();
+addEventListener("scroll", () => $("#top").classList.toggle("scrolled", scrollY > 8), { passive: true });
+
+// Studios
+$("#studio-list").innerHTML = Object.entries(CATALOG).map(([id, s]) => {
+  const map = "https://maps.google.com/?q=" + encodeURIComponent(s.address);
+  const rooms = Object.entries(s.rooms).map(([r, rate]) => `
+    <li class="room">
+      <span class="letter" aria-hidden="true">${r}</span>
+      <span class="rate num">${money(rate)}<small>/hr</small><span class="label">Room ${r}</span></span>
+      <button class="btn small" type="button" data-studio="${id}" data-room="${r}">Book Room ${r}</button>
+    </li>`).join("");
+  const budget = s.budget ? `
+    <li class="room budget">
+      <span class="letter" aria-hidden="true">$</span>
+      <span class="rate">Special budget<span class="label">Tell David your budget and get a custom quote</span></span>
+      <button class="btn small ghost" type="button" data-studio="${id}" data-room="budget">Request a quote</button>
+    </li>` : "";
+  const gear = s.gear.length ? `
+    <details class="gear"><summary>Gear in this studio</summary>
+      <dl>${s.gear.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    </details>` : "";
+  return `
+  <article class="studio" id="${id}">
+    <div>
+      <h3>${esc(s.name)}</h3>
+      ${s.area ? `<p class="where">${esc(s.area)}</p>` : ""}
+      <p class="where">${esc(s.address)}<br><a href="${map}" target="_blank" rel="noopener">Open in Maps</a></p>
+    </div>
+    <ul class="rooms">${rooms}${budget}</ul>
+    ${gear}
+  </article>`;
+}).join("");
+
+// Credits
+$("#credit-rows").innerHTML = CREDITS.map((c) =>
+  `<tr><td>${esc(c.artist)}</td><td>${esc(c.project)} <span class="yr">${esc(c.year || "")}</span></td><td>${esc(c.role)}</td></tr>`).join("");
+
+// After Stripe sends people back
+const params = new URLSearchParams(location.search);
+if (params.get("paid") || params.get("unpaid")) {
+  const id = esc(params.get("paid") || params.get("unpaid"));
+  $("#banner-text").innerHTML = params.get("paid")
+    ? `Payment received for ${id}. You're booked. Your confirmation is on its way to your email.`
+    : `Payment for ${id} isn't finished. Use the link in your text or email whenever you're ready.`;
+  $("#banner").hidden = false;
+  history.replaceState(null, "", location.pathname);
+}
+
+/* ===================== BOOKING FORM ===================== */
+const sheet = $("#sheet");
+const form = $("#book-form");
+const fStudio = $("#f-studio"), fRoom = $("#f-room"), fStart = $("#f-start"), fHours = $("#f-hours"), fDate = $("#f-date");
+
+fStudio.innerHTML = Object.entries(CATALOG).map(([id, s]) => `<option value="${id}">${esc(s.name)}</option>`).join("");
+for (let h = 9; h <= 26; h++) {
+  const hh = h % 24, label = (hh % 12 || 12) + (hh < 12 ? "am" : "pm") + (h >= 24 ? " (late)" : "");
+  fStart.insertAdjacentHTML("beforeend", `<option value="${String(hh).padStart(2, "0")}:00"${hh === 18 ? " selected" : ""}>${label}</option>`);
+}
+for (let h = 1; h <= MAX_HOURS; h++) fHours.insertAdjacentHTML("beforeend", `<option value="${h}"${h === 3 ? " selected" : ""}>${h}</option>`);
+const today = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+fDate.min = today;
+
+function fillRooms(studioId, roomId) {
+  const s = CATALOG[studioId];
+  fRoom.innerHTML = Object.entries(s.rooms).map(([r, rate]) => `<option value="${r}">Room ${r}, $${rate}/hr</option>`).join("")
+    + (s.budget ? `<option value="budget">Special budget (quote)</option>` : "");
+  if (roomId) fRoom.value = roomId;
+}
+
+function mode() { return form.kind.value; }
+
+function update() {
+  const beat = mode() === "beat";
+  $("#session-fields").hidden = beat;
+  $("#beat-fields").hidden = !beat;
+  $("#notes-label").innerHTML = beat ? "Describe the vibe <small>(references, BPM, artists you like)</small>" : "Anything David should know? <small>(optional)</small>";
+  $("#f-notes").placeholder = beat ? "Dark West Coast bounce, around 95 BPM, like…" : "Number of songs, who's coming, references…";
+  const s = CATALOG[fStudio.value];
+  const budget = fRoom.value === "budget";
+  $("#budget-field").hidden = beat || !budget;
+  let title, sub, est;
+  if (beat) {
+    const [name, price] = BEATS[form.beatTier.value];
+    title = "Order a beat";
+    sub = "Send David your order. Nothing is charged until he approves it.";
+    est = `<span>${esc(name)}</span><b class="num">${money(price)}</b>`;
+  } else {
+    title = `Book ${s.name}`;
+    sub = budget ? "Special budget request. David will reply with a quote." : `Room ${fRoom.value} at ${money(s.rooms[fRoom.value])}/hr. Nothing is charged until David approves it.`;
+    if (budget) est = `<span>Custom quote</span><b>Quote</b>`;
+    else {
+      const hrs = +fHours.value, rate = s.rooms[fRoom.value];
+      est = `<span class="num">${hrs} hr${hrs > 1 ? "s" : ""} × ${money(rate)}</span><b class="num">${money(hrs * rate)}</b>`;
+    }
+  }
+  $("#sheet-title").textContent = title;
+  $("#sheet-sub").textContent = sub;
+  $("#estimate").innerHTML = est + `<p>Estimate. You'll pay after David approves.</p>`;
+}
+
+function openSheet({ kind = "session", studio = "studio-lyfe", room } = {}) {
+  form.hidden = false;
+  $("#done").hidden = true;
+  $("#form-error").hidden = true;
+  form.kind.value = kind;
+  fStudio.value = studio;
+  fillRooms(studio, room);
+  update();
+  sheet.showModal();
+  sheet.scrollTop = 0;
+}
+
+fStudio.addEventListener("change", () => { fillRooms(fStudio.value); update(); });
+form.addEventListener("change", update);
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-studio],[data-book],[data-book-beat],[data-close]");
+  if (!t) return;
+  if (t.matches("[data-close]")) return sheet.close();
+  if (t.matches("[data-book-beat]")) return openSheet({ kind: "beat" });
+  if (t.matches("[data-studio]")) return openSheet({ studio: t.dataset.studio, room: t.dataset.room });
+  openSheet();
+});
+sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.close(); });
+
+function collect() {
+  const d = Object.fromEntries(new FormData(form));
+  const data = { kind: d.kind, name: d.name.trim(), artist: d.artist.trim(), email: d.email.trim(), phone: d.phone.trim(), notes: d.notes.trim(), website: d.website };
+  if (d.kind === "beat") data.beatTier = d.beatTier;
+  else Object.assign(data, { studioId: d.studioId, roomId: d.roomId, date: d.date, start: d.start, hours: +d.hours, service: d.service, budget: (d.budget || "").trim() });
+  return data;
+}
+
+function check(d) {
+  if (d.kind === "session") {
+    if (!d.date) return ["date", "Pick a date for your session."];
+    if (d.date < today) return ["date", "That date has passed. Pick an upcoming date."];
+  }
+  if (!d.name) return ["name", "Add your name."];
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) return ["email", "Check your email address. It should look like name@example.com."];
+  if (d.phone.replace(/\D/g, "").length < 10) return ["phone", "Add a phone number David can text, including the area code."];
+  return null;
+}
+
+function describe(d) {
+  if (d.kind === "beat") return BEATS[d.beatTier][0] + " (" + money(BEATS[d.beatTier][1]) + ")";
+  const s = CATALOG[d.studioId];
+  const when = new Date(d.date + "T12:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+  const [h] = d.start.split(":").map(Number);
+  const room = d.roomId === "budget" ? "special budget" + (d.budget ? " (" + d.budget + ")" : "") : `Room ${d.roomId}`;
+  const price = d.roomId === "budget" ? "" : `, est. ${money(s.rooms[d.roomId] * d.hours)}`;
+  return `${SERVICES[d.service]} at ${s.name}, ${room}, ${when} at ${(h % 12 || 12) + (h < 12 ? "am" : "pm")}, ${d.hours} hr${d.hours > 1 ? "s" : ""}${price}`;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const err = $("#form-error");
+  err.hidden = true;
+  const d = collect();
+  const problem = check(d);
+  if (problem) {
+    err.textContent = problem[1];
+    err.hidden = false;
+    form.elements[problem[0]].focus();
+    return;
+  }
+
+  // No booking API set up yet: hand the request to David by text or email.
+  if (!API_BASE) {
+    const msg = `Booking request from ${d.name}${d.artist ? " (" + d.artist + ")" : ""}: ${describe(d)}.${d.notes ? " Notes: " + d.notes : ""} Reach me at ${d.phone} / ${d.email}`;
+    showDone(`
+      <div class="disc-mini" aria-hidden="true"></div>
+      <h2>Send it to David</h2>
+      <p class="sub">Your request is written up. Send it by text or email and David will reply to approve it and send payment details.</p>
+      <div class="stack">
+        <a class="btn" href="sms:${OWNER_PHONE}?&body=${encodeURIComponent(msg)}">Send by text</a>
+        <a class="btn ghost" href="mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("Booking request: " + d.name)}&body=${encodeURIComponent(msg)}">Send by email</a>
+      </div>`);
+    return;
+  }
+
+  const btn = $("#submit");
+  btn.disabled = true;
+  btn.lastChild.textContent = "Sending…";
+  try {
+    const res = await fetch(API_BASE.replace(/\/$/, "") + "/api/bookings", {
+      method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(d),
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(out.error || "Your request didn't go through. Try again, or text David at (213) 642-6551.");
+    showDone(`
+      <div class="disc-mini" aria-hidden="true"></div>
+      <h2>Request sent</h2>
+      <p class="sub">Your booking ID</p>
+      <span class="id">${esc(out.id)}</span>
+      <p>David has your request. You'll get a text and an email once he approves it, with a link to pay. We also sent a copy to ${esc(d.email)}.</p>
+      <div class="stack"><button class="btn ghost" type="button" data-close>Done</button></div>`);
+    form.reset();
+  } catch (x) {
+    err.textContent = x.message === "Failed to fetch" ? "Your request didn't go through. Check your connection and try again, or text David at (213) 642-6551." : x.message;
+    err.hidden = false;
+  } finally {
+    btn.disabled = false;
+    btn.lastChild.textContent = "Send request";
+  }
+});
+
+function showDone(html) {
+  form.hidden = true;
+  const done = $("#done");
+  done.innerHTML = html;
+  done.hidden = false;
+  $("#sheet-title").textContent = "";
+  $("#sheet-sub").textContent = "";
+  done.querySelector("h2").setAttribute("tabindex", "-1");
+  done.querySelector("h2").focus();
+}
+</script>
+</body>
+</html>

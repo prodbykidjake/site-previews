@@ -1,0 +1,37 @@
+# Cloudflare Worker settings for the KrankDVD booking API.
+# Setup steps are in README.md.
+name = "krankdvd-booking"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Where booking requests are stored. Create it with:
+#   npx wrangler kv namespace create BOOKINGS
+# then paste the id it prints below.
+[[kv_namespaces]]
+binding = "BOOKINGS"
+id = "PASTE_KV_NAMESPACE_ID_HERE"
+
+# Serve the API at api.krankdvdbooking.com once the domain is on Cloudflare.
+# routes = [{ pattern = "api.krankdvdbooking.com", custom_domain = true }]
+
+[vars]
+SITE_URL = "https://krankdvdbooking.com"
+# Websites allowed to send booking requests (comma separated).
+ALLOWED_ORIGINS = "https://krankdvdbooking.com,https://www.krankdvdbooking.com,https://prodbykidjake.github.io"
+OWNER_EMAIL = "Krankthat@icloud.com"
+OWNER_PHONE = "+12136426551"
+OWNER_PHONE_DISPLAY = "(213) 642-6551"
+FROM_EMAIL = "KrankDVD Bookings <bookings@krankdvdbooking.com>"
+# Payment details sent to clients once David approves.
+# CONFIRM WITH DAVID: the Zelle phone/email below is a guess.
+ZELLE_HANDLE = "(213) 642-6551"
+ZELLE_NAME = ""
+CASHAPP_HANDLE = "$chnxbeatsllc"
+
+# Secrets: set with `npx wrangler secret put NAME`, never put them in this file.
+#   RESEND_API_KEY         email (resend.com)
+#   STRIPE_SECRET_KEY      card payments (stripe.com), optional
+#   STRIPE_WEBHOOK_SECRET  card payment confirmations, needed with Stripe
+#   TWILIO_ACCOUNT_SID     texts (twilio.com), optional
+#   TWILIO_AUTH_TOKEN
+#   TWILIO_FROM            the Twilio number texts come from, e.g. +18185550100
