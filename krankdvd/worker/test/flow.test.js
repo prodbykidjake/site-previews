@@ -146,6 +146,7 @@ test("full card flow: request, approve, Stripe pays, confirmation", async () => 
   assert.equal(confirmations.length, 2);
   assert.match(confirmations[0].subject, /Booking confirmed/);
   assert.match(confirmations[0].html, /10738 Riverside Dr/);
+  assert.match(confirmations[0].html, /Room A, Lotus/);
   assert.match(confirmations[1].subject, /Paid:/);
 
   // Webhook retries don't send twice.
@@ -159,7 +160,7 @@ test("full card flow: request, approve, Stripe pays, confirmation", async () => 
 
 test("Zelle flow without Stripe: approve, mark paid manually", async () => {
   const { store, sent, call } = setup({ stripe: false });
-  const { id } = await (await call("/api/bookings", post({ ...session, studioId: "the-watche", roomId: "budget", budget: "$150 for 2 songs" }))).json();
+  const { id } = await (await call("/api/bookings", post({ ...session, studioId: "weddington", roomId: "budget", budget: "$150 for 2 songs" }))).json();
   const b = JSON.parse(store.get("booking:" + id));
   assert.equal(b.estimate, null);
   const page = await (await call(`/admin/${id}?t=${b.adminToken}`)).text();
@@ -182,6 +183,18 @@ test("Zelle flow without Stripe: approve, mark paid manually", async () => {
   // Closed bookings can't be changed.
   const again = await call(`/admin/${id}`, form({ t: b.adminToken, action: "decline" }));
   assert.match(await again.text(), /already closed/);
+});
+
+test("rooms without a set rate are quoted on approval", async () => {
+  const { store, call } = setup();
+  const { id } = await (await call("/api/bookings", post({ ...session, studioId: "weddington", roomId: "D" }))).json();
+  const b = JSON.parse(store.get("booking:" + id));
+  assert.equal(b.estimate, null);
+  const page = await (await call(`/admin/${id}?t=${b.adminToken}`)).text();
+  assert.match(page, /Room D, The Vault/);
+  assert.match(page, /no set hourly rate/);
+  const bad = await call("/api/bookings", post({ ...session, studioId: "boss-gang", roomId: "budget" }));
+  assert.equal(bad.status, 400);
 });
 
 test("beat order and decline", async () => {

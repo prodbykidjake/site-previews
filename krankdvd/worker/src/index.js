@@ -10,7 +10,7 @@
 //   3b. Client pays by Zelle or Cash App -> David taps "Mark as paid" on the review page
 //      Both send the booking confirmation to the client and to David. (status: paid)
 
-import { STUDIOS, BEATS, SERVICES, MAX_HOURS } from "./catalog.js";
+import { STUDIOS, BEATS, SERVICES, MAX_HOURS, roomLabel } from "./catalog.js";
 
 const YEAR = 60 * 60 * 24 * 365;
 const CHECKOUT_LIFETIME = 60 * 60 * 23; // Stripe allows up to 24 hours
@@ -124,7 +124,8 @@ function validate(b) {
   const studio = STUDIOS[b.studioId];
   if (!studio) return { error: "Pick a studio." };
   const budget = b.roomId === "budget";
-  if (!budget && !(b.roomId in studio.rooms)) return { error: "Pick a room at " + studio.name + "." };
+  if (budget && !studio.budget) return { error: "Pick a room at " + studio.name + "." };
+  if (!budget && !Object.hasOwn(studio.rooms, b.roomId)) return { error: "Pick a room at " + studio.name + "." };
   if (!/^\d{4}-\d{2}-\d{2}$/.test(b.date || "") || isNaN(Date.parse(b.date))) return { error: "Pick a date." };
   const yesterday = new Date(Date.now() - 36 * 3600 * 1000).toISOString().slice(0, 10);
   if (b.date < yesterday) return { error: "That date has passed. Pick an upcoming date." };
@@ -146,7 +147,7 @@ function validate(b) {
       budgetNote: budget ? budgetNote : "",
       client,
       notes,
-      estimate: budget ? null : studio.rooms[b.roomId] * hours * 100,
+      estimate: budget || studio.rooms[b.roomId].rate == null ? null : studio.rooms[b.roomId].rate * hours * 100,
     },
   };
 }
@@ -173,7 +174,7 @@ async function adminPage(id, token, env, origin, flash) {
         <label>Amount to charge (USD)
           <input name="amount" inputmode="decimal" required value="${amountValue}" placeholder="e.g. 250">
         </label>
-        ${booking.estimate == null ? `<p class="hint">This is a special budget request, so there's no set price. Enter the amount you agreed on.</p>` : `<p class="hint">Website price: ${money(booking.estimate)}. Change it if you agreed on something different.</p>`}
+        ${booking.estimate == null ? `<p class="hint">${booking.roomId === "budget" ? "This is a special budget request" : "This room has no set hourly rate"}, so there's no website price. Enter the amount you agreed on.</p>` : `<p class="hint">Website price: ${money(booking.estimate)}. Change it if you agreed on something different.</p>`}
         <label>Note to the client (optional)
           <textarea name="note" rows="3" placeholder="e.g. Bring your stems on a USB drive.">${esc(booking.approvalNote || "")}</textarea>
         </label>
@@ -506,8 +507,13 @@ function paymentOptionsText(env) {
 function summary(b) {
   if (b.kind === "beat") return BEATS[b.beatTier].name;
   const studio = STUDIOS[b.studioId];
-  const room = b.roomId === "budget" ? "special budget" : `Room ${b.roomId}`;
+  const room = b.roomId === "budget" ? "special budget" : roomShort(b.studioId, b.roomId);
   return `${SERVICES[b.service]} at ${studio.name}, ${room}, ${fmtDate(b.date)} at ${fmtTime(b.start)}, ${b.hours} hr${b.hours > 1 ? "s" : ""}`;
+}
+
+function roomShort(studioId, roomId) {
+  const room = STUDIOS[studioId].rooms[roomId];
+  return room.name === `Room ${roomId}` ? room.name : `Room ${roomId}, ${room.name}`;
 }
 
 function detailsTable(b, forOwner = false) {
@@ -518,7 +524,7 @@ function detailsTable(b, forOwner = false) {
     const studio = STUDIOS[b.studioId];
     rows.push(["Service", SERVICES[b.service]]);
     rows.push(["Studio", studio.name]);
-    rows.push(["Room", b.roomId === "budget" ? "Special budget (custom quote)" : `Room ${b.roomId}, $${studio.rooms[b.roomId]}/hr`]);
+    rows.push(["Room", roomLabel(b.studioId, b.roomId)]);
     rows.push(["When", `${fmtDate(b.date)} at ${fmtTime(b.start)}`]);
     rows.push(["Length", `${b.hours} hour${b.hours > 1 ? "s" : ""}`]);
     if (b.budgetNote) rows.push(["Budget", b.budgetNote]);

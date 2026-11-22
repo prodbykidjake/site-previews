@@ -4,7 +4,7 @@ Booking site for KrankDVD (David). Two parts:
 
 | Part | What it is | Where |
 |---|---|---|
-| Website | One HTML file built on the 8B Hushkey template (MIT): studios, room keys, services, about, booking steps, credits, beats, FAQ, booking form | `index.html` |
+| Website | One HTML file built on the 8B Kinfold template (MIT): a sheet per studio with room tabs, photos, rates and gear; how booking works; about David; credits; beats; FAQ; the booking form. Photos in `photos/` | `index.html` |
 | Booking API | Cloudflare Worker that stores requests, texts and emails David, handles approve and decline, sends payment links and confirmations | `worker/` |
 
 The website works without the API: the form writes up the request and opens a pre-filled text or email to David. Once the API is running, set `API_BASE` in `index.html` and the full automatic flow switches on.
@@ -25,11 +25,10 @@ The website works without the API: the form writes up the request and opens a pr
 ## Before going live: fill these in
 
 - [ ] **Zelle details.** `worker/wrangler.toml` currently uses David's phone number as a guess (`ZELLE_HANDLE`). Confirm the phone or email his Zelle is on, and the name it shows (`ZELLE_NAME`).
-- [ ] **Credits.** Replace the placeholder rows in `index.html` (search for `credits__row`).
-- [ ] **Bio.** Replace the About text in `index.html` (search for `EDIT:`).
-- [ ] **Studio Lyfe headphone locker.** The list I was given was cut off ("Neumann N…"), so it's left out. Add it to the Studio Lyfe gear list in `index.html` (search for `Mic locker`).
-- [ ] **Studio photos.** The studio frames show rates and gear instead of photos. Real photos of each room would help.
-- [ ] **Studio name.** Check the spelling of "The Watche Studio".
+- [ ] **Credits.** Replace the placeholder slips in `index.html` (search for `letters__item`).
+- [ ] **Bio.** Replace the Meet David text in `index.html` (search for `EDIT:`).
+- [ ] **Weddington Studios rates.** The Brick (C) and the Vault (D) show "Ask for rate". When they have rates, set them in both places listed under Changing prices.
+- [ ] **Boss Gang gear list.** The room shows "coming soon" until there's a list.
 - [ ] Optional: a cancellation and refund policy for the FAQ.
 
 ## Setting up the booking API
@@ -87,7 +86,7 @@ Make sure the site's address is listed in `ALLOWED_ORIGINS` in `wrangler.toml`.
 Rates live in two places. Change both:
 
 - `worker/src/catalog.js`: what clients are actually charged
-- `index.html`: the `CATALOG` block in the booking script, plus the room keys and studio frames that show the rates
+- `index.html`: the `CATALOG` block in the booking script, plus the rate badge on each room (search for `/hr`)
 
 ## Tests
 

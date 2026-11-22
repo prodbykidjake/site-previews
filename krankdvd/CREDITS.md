@@ -4,17 +4,22 @@ Third-party work used by `index.html`.
 
 ## Template
 
-Hushkey product landing page template by 8B: https://8b.com/templates/hushkey/
-Source: https://github.com/8bsite/product-landing-page-template, MIT License (see `LICENSE`).
+Kinfold (genealogy website template) by 8B: https://8b.com/templates/kinfold/
+Source: https://github.com/8bsite/genealogy-website-template, MIT License (see `LICENSE`).
 
-## Photos
+## Photos (`photos/`)
 
-None. The studio frames are drawn in HTML and CSS. Add real photos of the studios when David has them.
+| Files | Source |
+|---|---|
+| `lyfe-*.jpg` | Studio Lyfe, North Hollywood (Lotus, Sunset and Alley rooms) |
+| `wedd-*.jpg` | Weddington Studios, weddingtonstudios.com (Phantom, Weddington, Brick and Vault rooms), used with the owner's OK |
+| `boss-*.jpg` | Boss Gang Studio, North Hollywood |
+| `david.jpg` | David (KrankDVD) at work |
 
 ## Fonts (SIL Open Font License 1.1)
 
-- Mozilla Headline, Google Fonts: https://fonts.google.com/specimen/Mozilla+Headline
-- Mozilla Text, Google Fonts: https://fonts.google.com/specimen/Mozilla+Text
+- Reddit Sans, Google Fonts: https://fonts.google.com/specimen/Reddit+Sans
+- Playwrite US Trad, Google Fonts: https://fonts.google.com/specimen/Playwrite+US+Trad
 
 ## Libraries
 
