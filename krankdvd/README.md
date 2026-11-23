@@ -7,6 +7,8 @@ Booking site for KrankDVD (David). Two parts:
 | Website | One HTML file built on the 8B Cut Short template (MIT): all eight rooms with photos, rates, gear and Book buttons; services; the three studios; custom beats; about David; credits; how booking works; FAQ; the booking form. Photos in `photos/` | `index.html` |
 | Version 2 | Same content on the 8B Ostro (boutique hotel) template | `v2/index.html` |
 | Version 3 | Same content on the 8B Arcline (fitness) template | `v3/index.html` |
+| Version 4 | Same content on the 8B Onda (design studio) template | `v4/index.html` |
+| Version 5 | Same content on the 8B Tallyhouse (accountant) template | `v5/index.html` |
 | Booking API | Cloudflare Worker that stores requests, texts and emails David, handles approve and decline, sends payment links and confirmations | `worker/` |
 
 The website works without the API: the form writes up the request and opens a pre-filled text or email to David. Once the API is running, set `API_BASE` in `index.html` and the full automatic flow switches on.
