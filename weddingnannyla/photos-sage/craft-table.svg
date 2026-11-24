@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#f1e4dc"/>
+<g stroke="#3f4a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<rect x="230" y="470" width="540" height="40" rx="10" fill="#e9b98c"/>
+<path d="M270 510 L250 640 M730 510 L750 640 M420 510 L410 600 M580 510 L590 600" fill="none"/>
+<rect x="270" y="400" width="140" height="70" rx="6" fill="#ffffff" transform="rotate(-6 340 435)"/>
+<rect x="430" y="395" width="140" height="75" rx="6" fill="#fff6c8"/>
+<circle cx="640" cy="430" r="38" fill="#c4d3cf"/><rect x="615" y="390" width="50" height="16" rx="6" fill="#ffffff"/>
+<g transform="rotate(-20 320 330)"><rect x="306" y="330" width="28" height="110" rx="6" fill="#d39a86"/><path d="M306 330 L320 300 L334 330 Z" fill="#d39a86"/></g><g transform="rotate(-5 380 320)"><rect x="366" y="320" width="28" height="110" rx="6" fill="#e3cb8e"/><path d="M366 320 L380 290 L394 320 Z" fill="#e3cb8e"/></g><g transform="rotate(18 700 330)"><rect x="686" y="330" width="28" height="110" rx="6" fill="#93ad8f"/><path d="M686 330 L700 300 L714 330 Z" fill="#93ad8f"/></g><g transform="rotate(8 470 330)"><rect x="456" y="330" width="28" height="110" rx="6" fill="#9fb6b8"/><path d="M456 330 L470 300 L484 330 Z" fill="#9fb6b8"/></g>
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3f4a3a" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3f4a3a">Kids' craft table</text>
+</g>
+</svg>

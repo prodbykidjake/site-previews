@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#f3ecdb"/>
+<g stroke="#3f4a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<rect x="300" y="520" width="120" height="120" rx="10" fill="#d39a86"/>
+<rect x="420" y="520" width="120" height="120" rx="10" fill="#9fb6b8"/>
+<rect x="360" y="400" width="120" height="120" rx="10" fill="#e3cb8e"/>
+<rect x="400" y="300" width="60" height="100" rx="10" fill="#93ad8f"/>
+<circle cx="660" cy="580" r="62" fill="#e3b7a8"/><path d="M600 580 Q660 540 720 580 M600 580 Q660 620 720 580" fill="none"/>
+<path d="M560 640 L760 640" fill="none"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3f4a3a" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3f4a3a">Building blocks and soft play</text>
+</g>
+</svg>

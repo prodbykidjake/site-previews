@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#e3eae4"/>
+<g stroke="#3f4a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<path d="M300 640 L500 300 L700 640 Z" fill="#efd8cf"/>
+<path d="M500 300 L440 640 M500 300 L560 640" fill="none"/>
+<path d="M440 640 Q500 520 560 640 Z" fill="#3f4a3a" fill-opacity=".15"/>
+<path d="M500 300 L500 250 L545 265 L500 280" fill="#d39a86"/>
+<path d="M230 330 Q500 420 770 330" fill="none"/>
+<path d="M290 352 l20 40 l20 -32 Z M390 380 l18 40 l22 -34 Z M600 380 l18 40 l22 -36 Z M690 352 l18 40 l22 -36 Z" fill="#e3cb8e"/>
+<rect x="240" y="580" width="90" height="60" rx="26" fill="#c4d3cf"/><rect x="680" y="585" width="90" height="55" rx="24" fill="#d3dfca"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3f4a3a" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3f4a3a">Play tent and reading nook</text>
+</g>
+</svg>

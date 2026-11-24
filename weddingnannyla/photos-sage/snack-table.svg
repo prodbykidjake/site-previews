@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#f3ecdb"/>
+<g stroke="#3f4a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<rect x="230" y="500" width="540" height="36" rx="10" fill="#e9b98c"/>
+<path d="M270 536 L260 640 M730 536 L740 640" fill="none"/>
+<ellipse cx="360" cy="490" rx="80" ry="16" fill="#ffffff"/><circle cx="335" cy="470" r="18" fill="#d39a86"/><circle cx="375" cy="466" r="18" fill="#e3cb8e"/>
+<rect x="470" y="400" width="60" height="90" rx="10" fill="#c4d3cf"/><path d="M500 400 L515 350" fill="none"/>
+<ellipse cx="650" cy="490" rx="80" ry="16" fill="#ffffff"/><path d="M600 480 L700 480 L680 440 L620 440 Z" fill="#e3b7a8"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3f4a3a" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3f4a3a">Kids' snack table</text>
+</g>
+</svg>

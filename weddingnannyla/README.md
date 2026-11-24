@@ -6,8 +6,13 @@ Website previews for Wedding Nanny LA: childcare at weddings and events in Los A
 |---|---|---|
 | Version 1 | 8B community template (soft pinks, arches, rounded cards) | `index.html` |
 | Version 2 | 8B florist template (blush, deep plum, magenta, square edges) | `v2/index.html` |
+| Version 3 | 8B boutique hotel template, in the logo's cream and sage | `v3/index.html` |
+| Version 4 | 8B podiatrist template (framed cells), in the logo's cream and sage | `v4/index.html` |
+| Version 5 | 8B language school template (playful shapes), in the logo's cream and sage | `v5/index.html` |
 
-Both versions have the same content: services, the kids' space, a sample wedding day (version 2), packages, the price calculator, personalized care and group sizes, how booking works, safety, the service area, notes for couples and parents, the guest check-in form, FAQ and the inquiry form.
+Versions 3 to 5 use her logo (`brand/`) and sage-toned placeholder pictures (`photos-sage/`). Their colours are set at the top of each page's `section:wedding-nanny` style block (`--color-1` and so on).
+
+All versions have the same content: services, the kids' space, a sample wedding day (version 2), packages, the price calculator, personalized care and group sizes, how booking works, safety, the service area, notes for couples and parents, the guest check-in form, FAQ and the inquiry form.
 
 ## How it works today
 
@@ -20,11 +25,11 @@ Both versions have the same content: services, the kids' space, a sample wedding
 
 | What | Where | Now |
 |---|---|---|
-| Photos | `photos/*.svg` | Drawn placeholders, labelled "PLACEHOLDER PHOTO" |
+| Photos | `photos/*.svg` (v1, v2), `photos-sage/*.svg` (v3 to v5) | Drawn placeholders, labelled "PLACEHOLDER PHOTO". `photos-sage/hero.svg` is a decorative bunting pattern used as the wide hero picture |
 | Planning ratio | `RATIO` in the build, `ratio` in the page script | About 4 kids per caregiver, shown as an estimate only |
 | Activity setup price | `SETUP` / `setup` | $150 |
 | Package sizes and prices | Packages section | Sample packages at $50 per caregiver, per hour |
-| Her note to couples | Letter (v1) and notes (v2) sections, marked `<!-- EDIT -->` | Draft text |
+| Her note to couples | Letter (v1), notes (v2) and about (v3) sections, marked `<!-- EDIT -->` | Draft text |
 | Mileage on the version 2 service-area scale | Service area section | Rough distances from downtown LA |
 
 The settings at the top of the page script (`const WN = { rate, ratio, setup, deposit, balanceDays, minHours }`) control the calculator.

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#e2eadc"/>
+<g stroke="#3f4a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<ellipse cx="500" cy="600" rx="280" ry="60" fill="#efd8cf"/>
+<rect x="250" y="340" width="150" height="230" rx="10" fill="#e9b98c"/>
+<path d="M250 415 L400 415 M250 490 L400 490" fill="none"/>
+<rect x="270" y="360" width="24" height="52" fill="#d39a86"/><rect x="300" y="368" width="22" height="44" fill="#9fb6b8"/><rect x="328" y="356" width="26" height="56" fill="#e3cb8e"/>
+<rect x="275" y="440" width="50" height="46" rx="6" fill="#93ad8f"/><circle cx="360" cy="462" r="22" fill="#e3b7a8"/>
+<circle cx="600" cy="480" r="48" fill="#d9a066"/><circle cx="565" cy="440" r="18" fill="#d9a066"/><circle cx="635" cy="440" r="18" fill="#d9a066"/>
+<ellipse cx="600" cy="570" rx="62" ry="54" fill="#d9a066"/><circle cx="585" cy="475" r="5" fill="#3f4a3a"/><circle cx="615" cy="475" r="5" fill="#3f4a3a"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3f4a3a" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3f4a3a">Kids' activity area</text>
+</g>
+</svg>
