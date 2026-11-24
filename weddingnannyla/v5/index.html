@@ -775,6 +775,15 @@ textarea.wn-input { min-height: 100px; resize: vertical; }
   #languages .lg-lead { display: grid; gap: 14px; justify-items: start; }
   #languages .lg-lead .m-text { margin: 0; }
 }
+/* phones: no pinned track, the service cards become a swipeable row */
+@media (max-width: 899.98px) {
+  html:not([data-8b-live]) #languages .lg-viewport { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--space-2); scrollbar-width: none; padding-bottom: 8px; }
+  html:not([data-8b-live]) #languages .lg-viewport::-webkit-scrollbar { display: none; }
+  html:not([data-8b-live]) #languages .lg-track { display: flex; width: max-content; gap: 12px; }
+  html:not([data-8b-live]) #languages .lg-panel { flex: none; width: min(320px, 78vw); min-height: 340px; scroll-snap-align: start; }
+  .wn-swipe { display: block; margin: 10px 0 0; font-size: 14px; font-weight: 600; opacity: .75; }
+}
+.wn-swipe { display: none; }
 /* steps */
 .wn-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .wn-step { display: grid; gap: 12px; align-content: start; justify-items: start; padding: clamp(20px, 2.4vw, 30px); border-radius: var(--radius-2); background: var(--color-3); }
@@ -794,7 +803,7 @@ textarea.wn-input { min-height: 100px; resize: vertical; }
 }
 </style>
 <script data-8b-part="motion-gate">
-if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.supports('animation-timeline: view()')) document.documentElement.setAttribute('data-8b-live', '');
+if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.supports('animation-timeline: view()') && matchMedia('(min-width: 900px)').matches) document.documentElement.setAttribute('data-8b-live', '');
 </script>
 </head>
 <body>
@@ -908,6 +917,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <span class="m-shape-2 lg-shape lg-shape--a" aria-hidden="true"></span><span class="m-shape-4 lg-shape lg-shape--b" aria-hidden="true"></span>
         </li>
       </ul>
+      <p class="wn-swipe" aria-hidden="true">Swipe for more →</p>
     </div>
   </div>
 </section>
