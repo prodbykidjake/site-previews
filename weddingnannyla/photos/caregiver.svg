@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#f3e8ff"/>
+<g stroke="#3b2a33" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<circle cx="420" cy="380" r="62" fill="#e9b98c"/><path d="M330 640 Q330 470 420 460 Q510 470 510 640 Z" fill="#ffb3c7"/>
+<circle cx="600" cy="460" r="44" fill="#d9a066"/><path d="M535 640 Q535 520 600 512 Q665 520 665 640 Z" fill="#9fd3f0"/>
+<path d="M505 560 Q540 530 560 560" fill="none"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3b2a33" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3b2a33">Our team</text>
+</g>
+</svg>

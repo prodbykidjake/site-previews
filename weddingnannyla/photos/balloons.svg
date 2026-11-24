@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#e4eefc"/>
+<g stroke="#3b2a33" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<path d="M420 470 Q430 560 480 640 M520 440 Q510 560 490 640 M610 480 Q560 560 500 640" fill="none"/>
+<ellipse cx="420" cy="400" rx="70" ry="84" fill="#ffb3c7"/><ellipse cx="530" cy="360" rx="72" ry="86" fill="#ffd166"/><ellipse cx="610" cy="420" rx="66" ry="80" fill="#9fd3f0"/>
+<path d="M412 484 l16 0 l-8 12 Z M522 446 l16 0 l-8 12 Z M602 500 l16 0 l-8 12 Z" fill="#3b2a33"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3b2a33" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3b2a33">Celebration setup</text>
+</g>
+</svg>

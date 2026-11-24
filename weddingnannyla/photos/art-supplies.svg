@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#f3e8ff"/>
+<g stroke="#3b2a33" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<rect x="300" y="430" width="140" height="210" rx="14" fill="#ffffff"/>
+<g transform="rotate(-10 330 350)"><rect x="316" y="350" width="28" height="110" rx="6" fill="#f26b6b"/><path d="M316 350 L330 320 L344 350 Z" fill="#f26b6b"/></g><g transform="rotate(0 370 340)"><rect x="356" y="340" width="28" height="110" rx="6" fill="#ffd166"/><path d="M356 340 L370 310 L384 340 Z" fill="#ffd166"/></g><g transform="rotate(10 410 350)"><rect x="396" y="350" width="28" height="110" rx="6" fill="#6aa8ff"/><path d="M396 350 L410 320 L424 350 Z" fill="#6aa8ff"/></g>
+<ellipse cx="610" cy="560" rx="150" ry="95" fill="#f6dcc0"/>
+<circle cx="560" cy="520" r="24" fill="#f26b6b"/><circle cx="625" cy="505" r="24" fill="#6aa8ff"/><circle cx="685" cy="545" r="24" fill="#7ac77a"/><circle cx="650" cy="605" r="24" fill="#ffd166"/>
+<circle cx="560" cy="595" r="20" fill="#f3e8ff"/>
+<path d="M700 420 L760 360" fill="none"/><path d="M690 430 l20 -6 l-14 -14 Z" fill="#3b2a33"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3b2a33" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3b2a33">Arts and crafts supplies</text>
+</g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<rect width="1000" height="1000" fill="#2f2440"/>
+<g stroke="#3b2a33" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+<path d="M180 300 Q340 380 500 300 Q660 380 820 300" fill="none" stroke="#f7e6c4" stroke-width="4"/>
+<g fill="#ffe9a8" stroke="none"><circle cx="230" cy="322" r="10"/><circle cx="300" cy="345" r="10"/><circle cx="370" cy="352" r="10"/><circle cx="440" cy="335" r="10"/><circle cx="560" cy="335" r="10"/><circle cx="630" cy="352" r="10"/><circle cx="700" cy="345" r="10"/><circle cx="770" cy="322" r="10"/></g>
+<ellipse cx="350" cy="560" rx="130" ry="34" fill="#f7f1ea" stroke="#f7e6c4"/>
+<path d="M230 560 L240 640 L460 640 L470 560" fill="#f7f1ea" stroke="#f7e6c4"/>
+<ellipse cx="650" cy="560" rx="130" ry="34" fill="#f7f1ea" stroke="#f7e6c4"/>
+<path d="M530 560 L540 640 L760 640 L770 560" fill="#f7f1ea" stroke="#f7e6c4"/>
+<rect x="340" y="490" width="20" height="50" fill="#ffe9a8" stroke="#f7e6c4"/><rect x="640" y="490" width="20" height="50" fill="#ffe9a8" stroke="#f7e6c4"/>
+<path d="M350 480 q8 -16 0 -26 q-8 10 0 26 M650 480 q8 -16 0 -26 q-8 10 0 26" fill="#ffb347" stroke="none"/>
+
+</g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="250" y="688" width="500" height="64" rx="32" fill="#ffffff" fill-opacity=".82"/>
+<text x="500" y="718" font-size="20" letter-spacing="3" fill="#3b2a33" fill-opacity=".6">PLACEHOLDER PHOTO</text>
+<text x="500" y="742" font-size="22" font-weight="700" fill="#3b2a33">Wedding reception</text>
+</g>
+</svg>
